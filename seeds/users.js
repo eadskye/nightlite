@@ -2,7 +2,7 @@
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('users').del()
     .then(function () {
       return Promise.all([
         // Inserts seed entries
@@ -47,8 +47,11 @@ exports.seed = function(knex, Promise) {
           username: 'kristen',
           hashed_password:'$2a$08$NEYUnSWHpur6KtShIPd66uvp/60ZVmDGChk1rHQsRuptTs7m4se7O',
           admin: false
-        }),
+        })
 
       ]);
-    });
+    })
+    .then(function(){
+  return knex.raw("SELECT setval('users_id_seq', (SELECT MAX(id) FROM users))");
+  });
 };
