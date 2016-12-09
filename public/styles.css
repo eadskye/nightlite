@@ -1,0 +1,9 @@
+ /* TODO create stylesheet  */
+
+ body {
+   background-image: url(imgs/nightlite.jpg);
+   background-repeat: no-repeat;
+   background-position: center;
+   background-attachment: fixed;
+   background-size: cover;
+ }
