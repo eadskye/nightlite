@@ -1,5 +1,5 @@
 'use strict';
-//TODO seed user table
+//TODO seed comments
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
   return knex('table_name').del()

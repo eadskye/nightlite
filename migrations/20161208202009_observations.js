@@ -1,5 +1,5 @@
 'use strict';
-//TODO create user table
+//TODO create observations table
 exports.up = function(knex, Promise) {
 
 };
