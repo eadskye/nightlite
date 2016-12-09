@@ -6,6 +6,7 @@ const ev = require('express-validation');
 const validations = require('../validations/comments');
 const knex = require('../knex');
 const {decamelizeKeys, camelizeKeys} = require('humps');
+const bcrypt = require('bcrypt');
 
 router.get('/observations', (req, res, next) => {
 
