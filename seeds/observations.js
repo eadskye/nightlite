@@ -40,4 +40,5 @@ exports.seed = function(knex, Promise) {
     .then(function(){
       return knex.raw("SELECT setval('observations_id_seq', (SELECT MAX(id) FROM observations))");
     });
+
 };
