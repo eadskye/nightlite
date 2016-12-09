@@ -1,0 +1,40 @@
+{
+  "name": "nightlite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eadskye/nightlite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eadskye/nightlite/issues"
+  },
+  "homepage": "https://github.com/eadskye/nightlite#readme",
+  "dependencies": {
+    "bcrypt": "^1.0.1",
+    "body-parser": "^1.15.2",
+    "boom": "^4.2.0",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^2.0.0",
+    "express": "^4.14.0",
+    "express-validation": "^1.0.1",
+    "humps": "^2.0.0",
+    "joi": "^9.0.4",
+    "jsonwebtoken": "^7.2.1",
+    "knex": "^0.12.6",
+    "morgan": "^1.7.0",
+    "pg": "^6.1.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "supertest": "^2.0.1"
+  }
+}
