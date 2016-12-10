@@ -27,13 +27,21 @@ const path = require('path');
 app.use(express.static(path.join('public')));
 
 // CSRF protection
-app.use((req, res, next) => {
-  if (/json/.test(req.get('Accept'))) {
-    return next();
-  }
+// app.use((req, res, next) => {
+//   if (/json/.test(req.get('Accept'))) {
+//     return next();
+//   }
+//
+//   res.sendStatus(406);
+// });
 
-  res.sendStatus(406);
-});
+const users = require('./routes/users');
+// const observations = require('./routes/observations');
+// const comments = require('./routes/comments');
+
+app.use(users);
+// app.use(observations);
+// app.use(comments);
 
 app.use((err, _req, res, _next) => {
   if (err.output && err.output.statusCode) {
