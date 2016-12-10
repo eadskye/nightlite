@@ -10,7 +10,7 @@ exports.up = function(knex, Promise) {
   table.decimal('latitude', 7, 4).notNullable();
   table.decimal('longitude', 7, 4).notNullable();
   table.integer('stars').notNullable().defaultTo('');
-  table.string('name').notNullable().defaultTo();
+  table.string('name').notNullable().defaultTo('');
   table.text('description').notNullable().defaultTo('');
   table.timestamps(true, true);
 
