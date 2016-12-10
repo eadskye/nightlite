@@ -1,104 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+<html lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
   <title>NightLite</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="styles1.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="styles1.css" type="text/css" rel="stylesheet" media="screen,projection">
 
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 <div class="navbar-fixed">
   <nav class="transparent" role="navigation">
-      <div class="nav-wrapper"><a id="logo-container" href="#" class="brand-logo">Logo</a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="#"></a></li>
-        </ul>
-
-        <ul id="nav-mobile" class="side-nav">
-          <li><a href="#"></a></li>
-        </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons"></i></a>
-      </div>
-    </nav>
-    <div class="section no-pad-bot" id="index-banner">
+      <div class="nav-wrapper"><a id="logo-container" href="#" class="brand-logo">nightlite</a>
+        <div class="nav-wrapper">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="user.html">User</a></li>
+        <li><a href="learn.html">Learn</a></li>
+        <li><a href="map.html">Map</a></li>
+        <li><a href="index.html">Logout</a></li>
+      </ul>
+    </div>
+    </div></nav>
+    <div class="section no-pad-bot" id="userpost">
       <div class="container">
 
         <br><br>
-        <h4 class="header center white-text">Create new observation post</h4>
+        <h4 class="header center white-text">My Observations</h4>
         <div class="row center">
           <h5 class="header col s12 light"></h5>
         </div>
         <div class="row center">
-          <!-- <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange"></a> -->
-        </div>
+        <div class="col s12 m5">
+          <div class="card-panel white">
+            
+            <span class="black-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-    <div class="container">
-              <div class="transparent">
-              <div class="center">
-                  <div class="card-content white-text">
-                    <div class="row">
 
-      <form class="col s12">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s12">
-              <textarea id="textarea1" class="materialize-textarea"></textarea>
-              <label for="textarea1">Location Name</label>
-            </div>
+            </span>
           </div>
 
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s12">
-              <textarea id="textarea2" class="materialize-textarea"></textarea>
-              <label for="textarea1">Location Coordinates</label>
-            </div>
+          <div class="row center">
+            <a href="http://materializecss.com/getting-started.html" id="updatepost" class="btn-large waves-effect transparent">Update</a>
+              <a href="http://materializecss.com/getting-started.html" id="deletepost" class="btn-large waves-effect transparent">Delete</a>
           </div>
-
-        <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <textarea id="textarea3" class="materialize-textarea"></textarea>
-          <label for="textarea1">Description</label>
         </div>
       </div>
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s6">
-            <textarea id="textarea4" class="materialize-textarea"></textarea>
-            <label for="textarea1">Date</label>
-          </div>
-
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s6">
-              <!-- <textarea id="textarea5" class="materialize-textarea"></textarea> -->
-              <label for="textarea1">Rating:</label>
-            </div>
-          </div>
-    </form>
-  </div>
-
-
-
-      </form>
-
-
-    <div class="row center">
-      <a href="http://materializecss.com/getting-started.html" id="submit-button" class="btn-large waves-effect transparent">Submit</a>
-        <a href="http://materializecss.com/getting-started.html" id="cancel-button" class="btn-large waves-effect transparent">Cancel</a>
-    </div>
 
 
 
@@ -109,6 +65,7 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-</body>
 
-</html>
+
+
+</div></div></div></body></html>
