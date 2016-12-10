@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <link href="style3.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link rel="stylesheet" href="https://js.arcgis.com/3.18/esri/css/esri.css">
+<script src="https://js.arcgis.com/3.18/"></script>
+
 </head>
 
 
@@ -75,6 +78,18 @@
         </div>
     </div>
 
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col s12 ">
+                  <script>require(["esri/map", "dojo/domReady!"], function(Map) {
+                var map = new Map("map", {
+                  center: [-118, 34.5],
+                  zoom: 8,
+                  basemap: "topo"
+                });
+              });</script>
+</div></div></div></div>
 
 
     <!-- Comment Section Start-->
@@ -104,6 +119,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     <script src="js/init.js"></script>
 
+    
 </body>
 
 </html>
