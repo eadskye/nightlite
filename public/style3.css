@@ -1,0 +1,30 @@
+body {
+  background-image: url(imgs/mapbg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#zipcode {
+  opacity: 0.5;
+}
+
+#information {
+  background-color: white;
+  opacity: 0.5;
+  padding: 20px;
+}
+
+.divider  {
+  opacity: 0.5;
+}
+
+.container {
+
+}
+
+button {
+  opacity: 0.9;
+
+}
