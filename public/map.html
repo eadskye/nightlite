@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>Map</title>
+
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link href="style3.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+
+<body>
+    <!-- Navigation -->
+
+    <nav class="transparent" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">nightlite</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Learn</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="side-nav">
+                <li><a href="#">Learn</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+
+
+    <div class="container">
+        <div class="section">
+            <div class="row"></div>
+
+            <!-- Zip Code Submit  -->
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div id="input" class="input-field col s12 l6">
+                            <input placeholder="" id="zipcode" type="text" class="col s6 validate grey lighten-4 ">
+                            <button class="col s3 btn waves-effect waves-light blue lighten-2" type="submit" name="action">Explore
+</button>
+
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Insert Map
+    <div> MAP CODE GOES HERE </div>
+  -->
+
+        </div>
+    </div>
+
+
+
+
+    <!-- Post Update Buttons -->
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col s12 ">
+                    <button class="btn waves-effect waves-light blue lighten-2" type="submit" name="action">POST NEW OBSERVATION
+</button> <button class="btn waves-effect waves-light blue lighten-2" type="submit" name="action">UPDATE OBSERVATION
+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Comment Section Start-->
+    <div class="container">
+        <div class="section" id="information">
+            <div class="row">
+                <div class="col s12 m6 l6">
+                    <h5 class="black-text">Information</h5>
+                    <div id="location" class="black-text">Location:</div>
+                    <div id="description" class="black-text">Description:</div>
+                    <div id="rating" class="black-text">Rating:</div>
+                    <div id="coordinates" class="black-text">Coordinates:</div>
+                    <div id="date" class="black-text">Date:</div>
+                    <div id="posted" class="black-text">Posted by:</div>
+                    <div id="comments" class="black-text">Comments:</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Comment Section End-->
+
+
+
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script src="js/init.js"></script>
+
+</body>
+
+</html>
