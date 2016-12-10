@@ -9,6 +9,7 @@ const {decamelizeKeys, camelizeKeys} = require('humps');
 const bcrypt = require('bcrypt');
 
 router.get('/users', (req, res, next) => {
+
   knex('users')
     .orderBy('username')
     .then((users) => {
@@ -40,6 +41,7 @@ router.post('/users', (req, res, next) => {
       username: req.body.username,
       hashed_password: hashed
     }, '*')
+    //TODO remove this res.send and change to redirect or commented toast to let user know it worked
     .then(
       res.send('it Worked!!')
     )
@@ -48,8 +50,32 @@ router.post('/users', (req, res, next) => {
     });
 });
 
-// router.delete('/users', ev(validations.delete), (req, res, next) => {
-//
-// });
+//TODO ev(validations.delete),
+router.delete('/users/:id', (req, res, next) => {
+
+  let user;
+
+  knex('users')
+    .where('id', req.params.id)
+    .first()
+    .then((result)=>{
+      if(!result){
+        return next();
+      }
+      user = result;
+
+      return knex('users')
+      .del()
+      .where('id', req.params.id);
+    })
+
+    .then((result) =>{
+      delete result.id;
+      res.send('user deleted ' + user);
+    })
+    .catch((err) =>{
+      next(err);
+    });
+});
 
 module.exports = router;
