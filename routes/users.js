@@ -71,7 +71,9 @@ router.delete('/users/:id', (req, res, next) => {
 
     .then((result) =>{
       delete result.id;
-      res.send('user deleted ' + user);
+      //TODO add user name to message when doing CSS toast
+      // console.log(result);
+      res.send('user deleted ');
     })
     .catch((err) =>{
       next(err);
