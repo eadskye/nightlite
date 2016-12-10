@@ -13,12 +13,12 @@ router.get('/users', (req, res, next) => {
     .orderBy('username')
     .then((users) => {
       //TODO cookies admin (key and value)
-      // if(!req.cookies.admin){
-      //   //TODO add toast in css?
-      //   res.status(401).send('insuffient privileges');
-      // }else{
+      if(!req.cookies.admin){
+        //TODO add toast in css?
+        res.status(401).send('Insuffient privileges');
+      }else{
       res.send(users).status(200);
-      // }
+      }
 
     })
     .catch((err) =>{
@@ -30,10 +30,24 @@ router.get('/users', (req, res, next) => {
 //
 // });
 
-// router.post('/users', ev(validations.post), (req, res, next) => {
-//
-// });
-//
+//TODO ev(validations.post),
+
+router.post('/users', (req, res, next) => {
+  var hashed = bcrypt.hashSync(req.body.password, 8);
+
+  knex('users')
+    .insert({
+      username: req.body.username,
+      hashed_password: hashed
+    }, '*')
+    .then(
+      res.send('it Worked!!')
+    )
+    .catch((err) =>{
+      next(err);
+    });
+});
+
 // router.delete('/users', ev(validations.delete), (req, res, next) => {
 //
 // });
