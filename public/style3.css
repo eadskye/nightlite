@@ -14,6 +14,9 @@ body {
   background-size: cover;
 }
 
+#search {
+  padding-bottom: 10px;
+}
 
 #map {
   margin: 0 auto;
@@ -30,7 +33,12 @@ body {
   margin-right: 15px;
 }
 
-
+#information {
+  background-color: white;
+  opacity: 0.5;
+  margin-top: 10px;
+  padding: 20px;
+}
 
 #pollution {
   background-color: white;
