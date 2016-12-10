@@ -8,6 +8,9 @@ const knex = require('../knex');
 const {decamelizeKeys, camelizeKeys} = require('humps');
 const bcrypt = require('bcrypt');
 
+//changes
+const bodyParser = require('body-parser');
+
 router.get('/comments', (req, res, next) => {
 
 });
