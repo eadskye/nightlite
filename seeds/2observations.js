@@ -36,7 +36,7 @@ exports.seed = function(knex, Promise) {
           description: 'It was awesome. I love stars!'
         })
       ]);
-    });
+    })
     .then(function(){
       return knex.raw("SELECT setval('observations_id_seq', (SELECT MAX(id) FROM observations))");
     });
