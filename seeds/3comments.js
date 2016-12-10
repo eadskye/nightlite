@@ -13,18 +13,17 @@ exports.seed = function(knex, Promise) {
           observation_id:1,
           comment: "Stars were beautiful - great evening",
           stars: 5
-      }),
-      knex('comments').insert({
-        id: 2,
-        user_id: 2,
-        observation_id:2,
-        comment: "Clear skys, great spot",
-        stars: 5
-      })
-    ]);
-  })
-      .then(function(){
- return knex.raw("SELECT setval('comments_id_seq', (SELECT MAX(id) FROM comments))");
-    });
-
+        }),
+        knex('comments').insert({
+          id: 2,
+          user_id: 2,
+          observation_id:2,
+          comment: "Clear skys, great spot",
+          stars: 5
+        })
+      ]);
+    })
+    .then(function(){
+      return knex.raw("SELECT setval('comments_id_seq', (SELECT MAX(id) FROM comments))");
+  });
 };
