@@ -37,6 +37,7 @@ router.post('/users', (req, res, next) => {
   var hashed = bcrypt.hashSync(req.body.password, 8);
 
   knex('users')
+  
     .insert({
       username: req.body.username,
       hashed_password: hashed
