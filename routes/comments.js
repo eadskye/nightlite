@@ -10,13 +10,9 @@ const bcrypt = require('bcrypt');
 
 const bodyParser = require('body-parser');
 
-//get comments for the observation id that the user is looking at
-
-  //get the obs id from the DOM
-
+//get comments for a given observation id
 router.get('/comments/:obsid', (req, res, next) => {
   let observationId = parseInt(req.params.obsid);
-  console.log(observationId);
 
    knex.from('comments').leftJoin('observations', 'comments.id', 'observations.id')
    .where({
@@ -24,7 +20,6 @@ router.get('/comments/:obsid', (req, res, next) => {
    })
   //.orderBy('updated_at', 'desc')
   .then((results) => {
-    console.log(results);
     res.send(results);
   })
   .catch((err) => {
@@ -50,7 +45,7 @@ router.post('/comments', ev(validations.post), (req, res, next) => {
       });
 
 });
-//
+//patch comment by id
 router.patch('/comments/:id', (req, res, next) => {
   var id = req.params.id;
   knex('comments')
@@ -59,7 +54,6 @@ router.patch('/comments/:id', (req, res, next) => {
   })
   .first()
   .then((comment) => {
-    console.log(comment);
     if (!comment || !req.body.comment){
       return next();
     } return knex('comments')
@@ -69,7 +63,6 @@ router.patch('/comments/:id', (req, res, next) => {
     .where({'id' : id});
   })
   .then((comments) => {
-    console.log(comments[0]);
     res.send(comments[0]);
   })
   .catch ((err) => {
@@ -78,7 +71,7 @@ router.patch('/comments/:id', (req, res, next) => {
 });
 
 
-
+//delete comment by id
 router.delete('/comments/:id', (req, res, next) => {
   var id = req.params.id;
   let comment;
@@ -87,11 +80,9 @@ router.delete('/comments/:id', (req, res, next) => {
   .where('id', id)
   .first()
   .then ((result) => {
-    console.log(result);
     if (!result) {
       return next();
     }
-      console.log(result);
   comment = result;
 
   return knex('comments')
