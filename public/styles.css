@@ -1,14 +1,12 @@
+ /* TODO create stylesheet  */
 
-/* TODO create stylesheet  */
-
-/*html,
-body {
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
-}*/
-
+ /*html,
+ body {
+     height: 100%;
+     margin: 0px;
+     padding: 0px;
+     width: 100%;
+ }*/
 
 .input-field label.active {
      color: #FFF;
@@ -35,53 +33,6 @@ body {
   .input-field input[type=password]:focus + label {
    color: #FFF;
  }
-
-
-/*STAR RATING CSS*/
-
-.rating {
-    unicode-bidi: bidi-override;
-    direction: rtl;
-    width: 9em;
-}
-
-/*.rating input {
-      position: absolute;
-    left: -999999px;
-}*/
-
-  .rating label {
-      display: inline-block;
-      font-size: 0;
-  }
-
-.rating > label:before {
-    position: relative;
-    font: 24px/1 FontAwesome;
-    display: block;
-    content: "\f005";
-    color: #ccc;
-    background: -webkit-linear-gradient(-45deg, #d9d9d9 0%, #b3b3b3 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.rating > label:hover:before,
-.rating > label:hover ~ label:before,
-.rating > label.selected:before,
-.rating > label.selected ~ label:before {
-    color: #f0ad4e;
-    background: -webkit-linear-gradient(-45deg, #fcb551 0%, #d69a45 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-/*STAR RATING CSS*/
-
-#obsform {
-  padding: 30px;
-  color: rgb(43, 43, 40);
-}
-
 
 .align-form {
  margin-top: 30px;
@@ -110,6 +61,8 @@ body {
  border-radius: 8px;
  margin-left: 15px;
 }
+
+
 
 .indexBG {
   background-image: url(imgs/nightlite.jpg);
@@ -218,6 +171,51 @@ button {
  border-radius: 8px;
 }
 
+/*STAR RATING CSS*/
+
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    width: 9em;
+}
+
+/*.rating input {
+      position: absolute;
+    left: -999999px;
+}*/
+
+  .rating label {
+      display: inline-block;
+      font-size: 0;
+  }
+
+.rating > label:before {
+    position: relative;
+    font: 24px/1 FontAwesome;
+    display: block;
+    content: "\f005";
+    color: #ccc;
+    background: -webkit-linear-gradient(-45deg, #d9d9d9 0%, #b3b3b3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rating > label:hover:before,
+.rating > label:hover ~ label:before,
+.rating > label.selected:before,
+.rating > label.selected ~ label:before {
+    color: #f0ad4e;
+    background: -webkit-linear-gradient(-45deg, #fcb551 0%, #d69a45 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/*STAR RATING CSS*/
+
+#obsform {
+  padding: 30px;
+  color: rgb(43, 43, 40);
+}
+
 #enter {
  margin-right: 8px;
  opacity: 0.8;
@@ -250,14 +248,15 @@ button {
  border-radius: 8px;
 }
 
-#submit-button {
- opacity: 0.8;
- font-family: 'Raleway', sans-serif;
- font-weight: 700;
- letter-spacing: 0.0625em;
- -webkit-border-radius: 8px;
- -moz-border-radius: 8px;
- border-radius: 8px;
+
+#submit-button, #cancel-button {
+  opacity: 0.8;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.0625em;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
 }
 
 #cancel-button {

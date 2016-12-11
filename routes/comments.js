@@ -9,15 +9,24 @@ const {decamelizeKeys, camelizeKeys} = require('humps');
 const bcrypt = require('bcrypt');
 
 const bodyParser = require('body-parser');
-//
-// router.get('/comments', (req, res, next) => {
-//
-// });
-//
-// router.get('/comments/:id', (req, res, next) => {
-//
-// });
-//
+
+//get comments for a given observation id
+router.get('/comments/:obsid', (req, res, next) => {
+  let observationId = parseInt(req.params.obsid);
+
+   knex.from('comments').leftJoin('observations', 'comments.id', 'observations.id')
+   .where({
+     observation_id: observationId
+   })
+  //.orderBy('updated_at', 'desc')
+  .then((results) => {
+    res.send(results);
+  })
+  .catch((err) => {
+    next(err);
+  });
+});
+
 //TODO update observaton_id and user_id location from post request - is it in body or cookie??
 router.post('/comments', ev(validations.post), (req, res, next) => {
   console.log(req.body);
@@ -36,13 +45,59 @@ router.post('/comments', ev(validations.post), (req, res, next) => {
       });
 
 });
-//
-// router.patch('/comments', ev(validations.patch), (req, res, next) => {
-//
-// });
-//
-// router.delete('/comments', ev(validations.delete), (req, res, next) => {
-//
-// });
+//patch comment by id
+router.patch('/comments/:id', (req, res, next) => {
+  var id = req.params.id;
+  knex('comments')
+  .where({
+    id: id
+  })
+  .first()
+  .then((comment) => {
+    if (!comment || !req.body.comment){
+      return next();
+    } return knex('comments')
+    .update({
+      comment: req.body.comment
+    }, '*')
+    .where({'id' : id});
+  })
+  .then((comments) => {
+    res.send(comments[0]);
+  })
+  .catch ((err) => {
+    next(err);
+  });
+});
+
+
+//delete comment by id
+router.delete('/comments/:id', (req, res, next) => {
+  var id = req.params.id;
+  let comment;
+
+  knex('comments')
+  .where('id', id)
+  .first()
+  .then ((result) => {
+    if (!result) {
+      return next();
+    }
+  comment = result;
+
+  return knex('comments')
+    .del()
+    .where('id', id);
+  })
+  .then(() => {
+    delete comment.id;
+    res.send(comment);
+  })
+  .catch((err) => {
+    next(err);
+  });
+});
+
+
 //
 module.exports = router;
