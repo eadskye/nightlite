@@ -19,10 +19,27 @@ router.get('/observations', (req, res, next) => {
    });
 });
 
-// router.get('/observations/:id', (req, res, next) => {
-//
-// });
-//
+//TODO will get all of a users observations to update and delete
+router.get('/observations/:user_id', (req, res, next) => {
+  let userId = parseInt(req.params.user_id);
+
+  knex('observations')
+    .where('user_id', userId)
+    .first()
+    .then((result) => {
+
+      if (!result) {
+        return next();
+      }
+      res.send(result);
+
+    })
+    .catch((err) => {
+      next(err);
+    });
+
+});
+
 // router.post('/observations', ev(validations.post), (req, res, next) => {
 //
 // });
