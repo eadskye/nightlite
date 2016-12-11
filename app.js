@@ -36,11 +36,11 @@ app.use(express.static(path.join('public')));
 // });
 
 const users = require('./routes/users');
-// const observations = require('./routes/observations');
+const observations = require('./routes/observations');
 const comments = require('./routes/comments');
 
 app.use(users);
-// app.use(observations);
+app.use(observations);
 app.use(comments);
 
 app.use((err, _req, res, _next) => {

@@ -84,6 +84,7 @@ require([
 
     map.on("load", initFunc);
     map.on("load", formatData);
+    map.on("load", getObservations);
 
     function orientationChanged() {
         if (map) {
@@ -185,14 +186,47 @@ require([
 
         observationArray.push(obsGraphic);
     }
-    addGraphics();
-  }
+    addGraphics();  }
 
     function addGraphics() {
-        console.log(observationArray);
-        console.log(observationArray.length);
+        // console.log(observationArray);
+        // console.log(observationArray.length);
         for (i = 0; i < observationArray.length; ++i) {
             map.graphics.add(observationArray[i]);
         }
     }
 });
+
+// (function($){
+//   $.ajax({
+//              dataType: 'json',
+//              url: 'http://localhost:8000/observations',
+//              method: 'GET',
+//              cache: false,
+//          })
+//              .done(function(data) {
+//                var dataAsString = data;
+//                console.log(data);
+//              })
+//              .fail(function(jqXHR, textStatus, errorThrown) {
+//                console.log("jxXHR : ", jqXHR , " - status : " , textStatus , " - error : " , errorThrown);
+//              });
+// })(jQuery); // end of jQuery name space
+
+
+function getObservations() {
+  $.ajax({
+             dataType: 'json',
+             url: 'http://localhost:8000/observations',
+             method: 'GET',
+             cache: false,
+         })
+             .done(function(data) {
+               var dataAsString = data;
+               console.log(data);
+
+             })
+             .fail(function(jqXHR, textStatus, errorThrown) {
+               console.log("jxXHR : ", jqXHR , " - status : " , textStatus , " - error : " , errorThrown);
+             });
+}
