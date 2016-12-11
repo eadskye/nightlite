@@ -2,126 +2,101 @@
     <html lang="en">
 
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
-        <title>Login</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+      <title>Login</title>
 
-        <!-- CSS  -->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
-        <link href="styles.css" type="text/css" rel="stylesheet" media="screen,projection">
-
-        <!-- Font  -->
-        <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway:400,500,600,700,800" rel="stylesheet">
-
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-        <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    </head>
-
-    <body class="loginBG">
-        <div class="navbar-fixed">
-            <nav class="transparent" role="navigation">
-                <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">nightlite</a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="#">Login</a></li>
-                    </ul>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="learn.html">Learn</a></li>
-                    </ul>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="map.html">Explore</a></li>
-                    </ul>
+      <!-- CSS  -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
 
 
-                    <ul id="nav-mobile" class="side-nav">
-                        <li><a href="user.html">Sign In</a></li>
-                        <li><a href="learn.html">Learn</a></li>
-                        <li><a href="map.html">Explore</a></li>
+      <!-- Font  -->
+      <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway:400,500,600,700,800" rel="stylesheet">
+
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+      <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+      <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+      <link href="styles.css" type="text/css" rel="stylesheet" media="screen,projection">
+  </head>
+
+  <body class="loginBG">
+      <div class="navbar-fixed">
+          <nav class="transparent" role="navigation">
+              <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">nightlite</a>
+                  <ul class="right hide-on-med-and-down">
+                      <li><a href="#">Login</a></li>
+                  </ul>
+                  <ul class="right hide-on-med-and-down">
+                      <li><a href="learn.html">Learn</a></li>
+                  </ul>
+                  <ul class="right hide-on-med-and-down">
+                      <li><a href="map.html">Explore</a></li>
+                  </ul>
 
 
-                    </ul>
-                    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-                </div>
-            </nav>
+                  <ul id="nav-mobile" class="side-nav">
+                      <li><a href="user.html">Sign In</a></li>
+                      <li><a href="learn.html">Learn</a></li>
+                      <li><a href="map.html">Explore</a></li>
 
 
+                  </ul>
+                  <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+              </div>
+          </nav>
+      </div>
 
-            <div class="section no-pad-bot" id="index-banner">
-                <div class="container">
+<div class="container">
+      <br><br>
+      <h4 class=" white-text">Login or Create New Account</h4>
+      <div class="row">
+          <h5 class="header col s12 light"></h5>
+      </div>
+    </div>
 
-                    <br><br>
-                    <h4 class="header center white-text">Login</h4>
-                    <div class="row center">
-                        <h5 class="header col s12 light"></h5>
-                    </div>
-                    <div class="row center">
-                        <!-- <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange"></a> -->
-                    </div>
+      <div class="container">
+          <div class="section align-form">
+              <div class="row"></div>
 
-                    <div class="container">
-                        <div class="transparent">
-                            <div class="center">
-                                <div class="card-content white-text">
-                                    <div class="row">
+              <!-- Login Form -->
+              <form class="col s12 m6">
 
-                                        <form class="col s12">
+                  <!-- Username -->
+                  <div class="row">
+                      <div class="input-field  col s6 l5  white-text">
+                          <input id="loginuser" type="text" class="validate"></input>
+                          <label class="active" for="loginuser">Username</label>
+                      </div>
+                  </div>
 
-                                            <div class="row">
-                                                <div class="input-field col s6">
-                                                    <input id="loginuser" class="validate"></input>
-                                                    <label class="active" for="loginuser">Username</label>
-                                                </div>
-                                            </div>
+                  <!-- Password -->
+                  <div class="row">
+                      <div class="input-field  col s6 l5 white-text">
+                          <input id="userpassword" type="password" class="validate"></input>
+                          <label class="active" for="userpassword">Password</label>
+                      </div>
+                  </div>
 
+                  <!-- Submit Button -->
+                  <div class="row">
+                      <button id="login" class="col s3 m2 btn waves-effect waves-light blue lighten-2" type="submit" name="action">Login</button>
+                      <button id="createaccount" class="col s3 m2 btn waves-effect waves-light blue lighten-2" type="submit" name="action">Create Account</button>
+                  </div>
+              </form>
+          </div>
+      </div>
 
-                                            <div class="row">
-                                                <div class="input-field col s6">
-                                                    <input id="userpassword" type="password" class="validate"></input>
-                                                    <label class="active" for="userpassword">Password</label>
-                                                </div>
-                                            </div>
-
-
-
-                                        </form>
-
-
-
-
-
-
-
-                                        <div class="row center">
-                                            <a href="map.html" id="submitpass" class="btn-large waves-effect transparent">Submit</a>
-
-                                        </div>
-
-
-
-
-
-
-                                        <!--  Scripts-->
-                                        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-                                        <script src="js/materialize.js"></script>
-                                        <script src="js/init.js"></script>
-
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/materialize.js"></script>
+        <script src="js/init.js"></script>
     </body>
 
     </html>

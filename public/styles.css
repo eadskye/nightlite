@@ -7,6 +7,7 @@
      padding: 0px;
      width: 100%;
  }*/
+
 .indexBG {
    background-image: url(imgs/nightlite.jpg);
    background-color: #000;
@@ -201,6 +202,16 @@
   border-radius: 8px;
 }
 
+#cancel-button {
+  opacity: 0.8;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.0625em;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
 #updatepost {
   margin-right: 8px;
   opacity: 0.8;
@@ -290,6 +301,4 @@
 
  .image {
  text-align: center;
- }
-
  }
