@@ -11,7 +11,6 @@ const bcrypt = require('bcrypt');
 router.get('/observations', (req, res, next) => {
  knex('observations')
    .orderBy('name')
-   // .first()
    .then((results) => {
      res.send(results);
    })
