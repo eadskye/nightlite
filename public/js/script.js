@@ -1,10 +1,26 @@
-
 // for (var i = 0; i < response.length; i++) {
 // var obj = {
 //     lat: -40,
 //     long: 40,
 // };
 // mapArr.push(obj);
+
+var observations;
+
+(function($) {
+    $.ajax({
+            dataType: 'json',
+            url: 'http://localhost:8000/observations',
+            method: 'GET',
+            cache: false,
+        })
+        .done(function(data) {
+            observations = data;
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            console.log("jxXHR : ", jqXHR, " - status : ", textStatus, " - error : ", errorThrown);
+        });
+})(jQuery); // end of jQuery name space
 
 require([
     "esri/Color",
@@ -37,34 +53,45 @@ require([
     var long = -98;
     var lat = 39;
     var observationArray = [];
-    var pointArr = [{
-        Lon: -106.62,
-        Lat: 35.1107,
-        Location: "Downtown Albuquerque",
-        Rating: "☆☆",
-        Coordinates: "-106.61, 35.1107",
-        Description: "Not too many stars downtown!",
-        Image: "<img src='http://davidzentz.com/blog/wp-content/uploads/2014/01/20131223-untitled-_DEZ6857-Edit1.jpg' style='height: 150px;'>"
-    }, {
-        Lon: -101.62,
-        Lat: 47.1107,
-        Location: "Downtown Albuquerque",
-        Rating: "☆☆",
-        Coordinates: "101.61, 47.1107",
-        Description: "Not too many stars downtown!",
-        Image: "<img src='http://davidzentz.com/blog/wp-content/uploads/2014/01/20131223-untitled-_DEZ6857-Edit1.jpg' style='height: 150px;'>"
-    }, {
-        Lon: -74.62,
-        Lat: 40.1107,
-        Location: "New York City",
-        Rating: "☆☆",
-        Coordinates: "74.61, 40.1107",
-        Description: "Not too many stars downtown!",
-        Image: "<img src='http://davidzentz.com/blog/wp-content/uploads/2014/01/20131223-untitled-_DEZ6857-Edit1.jpg' style='height: 150px;'>"
-    }];
+
+    var pointArr = observations;
+
+    // var pointArr = [{  created_at:"2016-12-10T22:51:41.010Z",
+    //     description:"Ok, Devin kept shining a flashlight at me",
+    //     id:2,
+    //     latitude:"40.0150",
+    //     longitude:"-99.2705",
+    //     name:"Galvanize Balcony",
+    //     stars:2,
+    //     updated_at:"2016-12-10T22:51:41.010Z",
+    //     user_id:2,
+    //     Image: "<img src='http://davidzentz.com/blog/wp-content/uploads/2014/01/20131223-untitled-_DEZ6857-Edit1.jpg' style='height: 150px;'>"
+    // }, {
+    //     created_at:"2016-12-10T22:51:41.010Z",
+    //     description:"Ok, Devin kept shining a flashlight at me",
+    //     id:2,
+    //     latitude:"38.0150",
+    //     longitude:"-97.2705",
+    //     name:"Galvanize Balcony",
+    //     stars:2,
+    //     updated_at:"2016-12-10T22:51:41.010Z",
+    //     user_id:2,
+    //     Image: "<img src='http://davidzentz.com/blog/wp-content/uploads/2014/01/20131223-untitled-_DEZ6857-Edit1.jpg' style='height: 150px;'>"
+    // }, {
+    //     created_at:"2016-12-10T22:51:41.010Z",
+    //     description:"Ok, Devin kept shining a flashlight at me",
+    //     id:2,
+    //     latitude:"42.0150",
+    //     longitude:"-96.2705",
+    //     name:"Galvanize Balcony",
+    //     stars:2,
+    //     updated_at:"2016-12-10T22:51:41.010Z",
+    //     user_id:2,
+    //     Image: "<img src='http://davidzentz.com/blog/wp-content/uploads/2014/01/20131223-untitled-_DEZ6857-Edit1.jpg' style='height: 150px;'>"
+    // }];
 
     var map = new Map("map", {
-        center: [long, lat], // long, lat
+        center: [long, lat],
         zoom: 4
     });
 
@@ -94,11 +121,16 @@ require([
 
     function initFunc(map) {
         if (navigator.geolocation) {
+            console.log("observations", observations);
             navigator.geolocation.getCurrentPosition(zoomToLocation, locationError);
             watchId = navigator.geolocation.watchPosition(showLocation, locationError);
         } else {
-            alert("Browser doesn't support Geolocation. Visit http://caniuse.com to see browser support for the Geolocation API.");
+            alertUser("Browser doesn't support Geolocation. Visit http://caniuse.com to see browser support for the Geolocation API.");
         }
+    }
+
+    function alertUser(message) {
+      alert(message);
     }
 
     function locationError(error) {
@@ -108,19 +140,19 @@ require([
         }
         switch (error.code) {
             case error.PERMISSION_DENIED:
-                alert("Location not provided");
+                alertUser("Location not provided");
                 break;
 
             case error.POSITION_UNAVAILABLE:
-                alert("Current location not available");
+                alertUser("Current location not available");
                 break;
 
             case error.TIMEOUT:
-                alert("Timeout");
+                alertUser("Timeout");
                 break;
 
             default:
-                alert("unknown error");
+                alertUser("unknown error");
                 break;
         }
     }
@@ -157,42 +189,71 @@ require([
         map.graphics.add(graphic);
     }
 
+    // Data Example
+    // *************************************************************
+    // created_at:"2016-12-10T22:51:41.010Z"
+    // description:"Ok, Devin kept shining a flashlight at me"
+    // id:2
+    // latitude:"40.0150"
+    // longitude:"105.2705"
+    // name:"Galvanize Balcony"
+    // stars:2
+    // updated_at:"2016-12-10T22:51:41.010Z"
+    // user_id:2
     function formatData() {
-    for (var i = 0; i < pointArr.length; i++) {
-        var lon = pointArr[i].Lon;
-        var lat = pointArr[i].Lat;
-        var point = new Point(lon, lat);
+        for (var i = 0; i < pointArr.length; i++) {
+            var lon = pointArr[i].longitude;
+            var lat = pointArr[i].latitude;
+            var point = new Point(lon, lat);
 
-        var obsMarker = new SimpleMarkerSymbol();
-        obsMarker.setSize(25);
-        obsMarker.setAngle(0);
-        obsMarker.setColor(new Color([255, 255, 255, 1]));
-        obsMarker.setPath(
-            "M16,3.5c-4.142,0-7.5,3.358-7.5,7.5c0,4.143,7.5,18.121,7.5,18.121S23.5,15.143,23.5,11C23.5,6.858,20.143,3.5,16,3.5z M16,14.584c-1.979,0-3.584-1.604-3.584-3.584S14.021,7.416,16,7.416S19.584,9.021,19.584,11S17.979,14.584,16,14.584z"
-        );
-        obsMarker.setStyle(SimpleMarkerSymbol.STYLE_PATH);
+            var obsMarker = new SimpleMarkerSymbol();
+            obsMarker.setSize(25);
+            obsMarker.setAngle(0);
+            obsMarker.setColor(new Color([255, 255, 255, 1]));
+            obsMarker.setPath(
+                "M16,3.5c-4.142,0-7.5,3.358-7.5,7.5c0,4.143,7.5,18.121,7.5,18.121S23.5,15.143,23.5,11C23.5,6.858,20.143,3.5,16,3.5z M16,14.584c-1.979,0-3.584-1.604-3.584-3.584S14.021,7.416,16,7.416S19.584,9.021,19.584,11S17.979,14.584,16,14.584z"
+            );
+            obsMarker.setStyle(SimpleMarkerSymbol.STYLE_PATH);
 
-        var popUp = {
-            Location: pointArr[i].Location,
-            Rating: pointArr[i].Rating,
-            Coordinates: pointArr[i].Coordinates,
-            Description: pointArr[i].Description,
-            Image: pointArr[i].Image
-        };
+            var popUp = {
+                Location: pointArr[i].name,
+                Rating: pointArr[i].stars,
+                Latitude: pointArr[i].latitude,
+                Longitude: pointArr[i].longitude,
+                Description: pointArr[i].description
+                    // Image: pointArr[i].Image
+            };
 
-        var obsInfoTemplate = new InfoTemplate("Observation");
-        var obsGraphic = new Graphic(point, obsMarker, popUp).setInfoTemplate(obsInfoTemplate);
+            var obsInfoTemplate = new InfoTemplate("Observation");
+            var obsGraphic = new Graphic(point, obsMarker, popUp).setInfoTemplate(obsInfoTemplate);
 
-        observationArray.push(obsGraphic);
+            observationArray.push(obsGraphic);
+        }
+
+        addGraphics();
     }
-    addGraphics();
-  }
 
     function addGraphics() {
-        console.log(observationArray);
-        console.log(observationArray.length);
+        console.log("pins : " , observationArray.length);
         for (i = 0; i < observationArray.length; ++i) {
             map.graphics.add(observationArray[i]);
         }
     }
 });
+
+// function getObservations() {
+//   $.ajax({
+//              dataType: 'json',
+//              url: 'http://localhost:8000/observations',
+//              method: 'GET',
+//              cache: false,
+//          })
+//              .done(function(data) {
+//                var dataAsString = data;
+//                console.log(data);
+//
+//              })
+//              .fail(function(jqXHR, textStatus, errorThrown) {
+//                console.log("jxXHR : ", jqXHR , " - status : " , textStatus , " - error : " , errorThrown);
+//              });
+// }
