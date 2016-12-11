@@ -78,31 +78,34 @@ router.patch('/comments/:id', (req, res, next) => {
 });
 
 
-//
-// router.delete('/comments/:commentid', (req, res, next) => {
-//   let commentId = commentid;
-//
-//   knex('comments')
-//   .where('id', commentId)
-//   .first()
-//   .then ((result) => {
-//     if (!result) {
-//       return next();
-//     }
-//
-//   var comment = result;
-//
-//   return knex('comments')
-//     .del()
-//     .where('id', commentId);
-//   })
-//   .then(() => {
-//     delete comment.id;
-//   })
-//   .catch((err) => {
-//     next(err);
-//   });
-// });
+
+router.delete('/comments/:id', (req, res, next) => {
+  var id = req.params.id;
+  let comment;
+
+  knex('comments')
+  .where('id', id)
+  .first()
+  .then ((result) => {
+    console.log(result);
+    if (!result) {
+      return next();
+    }
+      console.log(result);
+  comment = result;
+
+  return knex('comments')
+    .del()
+    .where('id', id);
+  })
+  .then(() => {
+    delete comment.id;
+    res.send(comment);
+  })
+  .catch((err) => {
+    next(err);
+  });
+});
 
 
 //
