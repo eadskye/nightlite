@@ -3,14 +3,13 @@
 const express = require('express');
 const app = express();
 const router = express.Router();
-// const ev = require('express-validation');
-// const validations = require('../validations/comments');
+const ev = require('express-validation');
+const validations = require('../validations/observations');
 const knex = require('../knex');
-const {
-    decamelizeKeys,
-    camelizeKeys
-} = require('humps');
+
+const {decamelizeKeys, camelizeKeys} = require('humps');
 const bcrypt = require('bcrypt');
+const boom = require('boom');
 
 var obsGET;
 
@@ -19,8 +18,8 @@ router.get('/observations', (req, res, next) => {
         .orderBy('name')
         .then((results) => {
             obsGET = JSON.stringify(results);
-            console.log(obsGET);
-            console.log(typeof obsGET);
+            // console.log(obsGET);
+            // console.log(typeof obsGET);
             res.send(obsGET);
             res.send(results);
         })
@@ -29,63 +28,106 @@ router.get('/observations', (req, res, next) => {
         });
 });
 
-router.get('/observations/:id', (req, res, next) => {
-    knex('observations')
-        .where('user_id', req.params.id)
-        .orderBy('name')
-        // .first()
-        .then((results) => {
-            obsGET = JSON.stringify(results);
-            console.log(obsGET);
-            console.log(typeof obsGET);
-            res.send(obsGET);
-            res.send(results);
-        })
-        .catch((err) => {
-            next(err);
-        });
+//TODO will get all of a users observations to update and delete
+router.get('/observations/:user_id', (req, res, next) => {
+  let userId = parseInt(req.params.user_id);
+
+  knex('observations')
+    .where('user_id', userId)
+    .first()
+    .then((result) => {
+
+      if (!result) {
+        return next();
+      }
+      res.send(result);
+
+    })
+    .catch((err) => {
+      next(err);
+    });
+
 });
 
-//     created_at:"2016-12-10T22:51:41.010Z",
-//     description:"Ok, Devin kept shining a flashlight at me",
-//     id:2,
-//     latitude:"42.0150",
-//     longitude:"-96.2705",
-//     name:"Galvanize Balcony",
-//     stars:2,
-//     updated_at:"2016-12-10T22:51:41.010Z",
-//     user_id:2,
-//     Image: "<img src='http://davidzentz.com/blog/wp-content/uploads/2014/01/20131223-untitled-_DEZ6857-Edit1.jpg' style='height: 150px;'>"
-// }];
-// ev(validations.post),
-router.post('/observations', (req, res, next) => {
-  console.log(req.body, "99999");
+//TODO validaton code router.post('/observations', ev(validations.post), (req, res, next) => {
 
-  let insertObs = decamelizeKeys({
+router.post('/observations', ev(validations.post), (req, res, next) => {
+
+  const newObservation = {
     user_id: req.body.user_id,
     latitude: req.body.latitude,
     longitude: req.body.longitude,
-    name: req.body.name,
     stars: req.body.stars,
+    name: req.body.name,
     description: req.body.description
-  });
+   };
+
+  if(!newObservation.user_id){
+    return next(boom.create(400, 'user_id must not be blank'));
+  }
+  if (!newObservation.latitude) {
+    return next(boom.create(400, 'latitude must not be blank'));
+  }
+
+  if (!newObservation.longitude) {
+    return next(boom.create(400, 'longitude must not be blank'));
+  }
+
+  if (!newObservation.stars) {
+    return next(boom.create(400, 'stars must not be blank'));
+  }
+
+  if (!newObservation.name) {
+    return next(boom.create(400, 'name must not be blank'));
+  }
+
+  if (!newObservation.description) {
+    return next(boom.create(400, 'description must not be blank'));
+  }
 
   knex('observations')
-      .insert((insertObs), '*')
-      .then((rows) => {
-          const newObs = camelizeKeys(rows[0]);
-          res.send(newObs);
-      })
-      .catch((err) => {
-          next(err);
-      });
+    .insert(newObservation)
+    .then(
+      res.send('New observation post created')
+    )
+    .catch((err) => {
+      next(err);
+    });
 });
-//
+
 // router.patch('/observations', ev(validations.patch), (req, res, next) => {
 //
 // });
+
 //
-// router.delete('/observations', ev(validations.delete), (req, res, next) => {
+// router.delete('/observations', (req, res, next) => {
+//   console.log("here");
+//     const deleteId = Number.parseInt(req.params.id);
+//     // console.log(deleteId);
+//     // if(isNaN(deleteId) || deleteId<0){
+//     //   res.sendStatus(404);
+//     // }
+//
+//     knex('observations')
+//       .where('id', deleteId)
+//       .first()
+//       .then((deleteObs) =>{
+//         if(!deleteObs){
+//           return next();
+//         }
+//         console.log(deleteObs);
+//         return knex('observations')
+//           .del()
+//           .where('id', deleteId);
+//       })
+//
+//       .then(() => {
+//         delete deleteObs.id;
+//         res.send("its gone");
+//       })
+//       .catch((err) => {
+//         next(err);
+//       });
 //
 // });
 
