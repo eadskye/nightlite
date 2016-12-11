@@ -16,10 +16,17 @@ const bodyParser = require('body-parser');
   //get the obs id from the DOM
 
 
-router.get('/comments', (req, res, next) => {
-  knex('comments')
-  .orderBy('updated_at')
+router.get('/comments/:obsid', (req, res, next) => {
+  let observationId = parseInt(req.params.obsid);
+  console.log(observationId);
+
+  knex.from('comments').innerJoin('observations', 'comments.id', 'observations.id')
+  .where({
+    observation_id: observationId
+  })
+  //.orderBy('updated_at', 'desc')
   .then((results) => {
+    console.log(results);
     res.send(results);
   })
   .catch((err) => {
@@ -27,9 +34,10 @@ router.get('/comments', (req, res, next) => {
   });
 });
 //
-// router.get('/comments/:id', (req, res, next) => {
-//
-// });
+//get comments by user id
+router.get('/comments/:userid', (req, res, next) => {
+  let userID = parseInt(req.params.userid)
+});
 //
 //TODO update observaton_id and user_id location from post request - is it in body or cookie??
 router.post('/comments', ev(validations.post), (req, res, next) => {
