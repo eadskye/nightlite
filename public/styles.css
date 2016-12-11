@@ -1,314 +1,358 @@
- /* TODO create stylesheet  */
 
- /*html,
- body {
-     height: 100%;
-     margin: 0px;
-     padding: 0px;
-     width: 100%;
- }*/
+/* TODO create stylesheet  */
+
+/*html,
+body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}*/
 
 
- .input-field label.active {
-      color: #FFF;
-      font-family: 'Raleway', sans-serif;
-      font-weight: 400;
-      letter-spacing: 0.075em;
-      font-size: 1.2em;
-    }
-
-    .input-field input[type=password]:focus {
-     border-bottom: 1px solid #FFF;
-     box-shadow: 0 1px 0 0 #FFF;
+.input-field label.active {
+     color: #FFF;
+     font-family: 'Raleway', sans-serif;
+     font-weight: 400;
+     letter-spacing: 0.075em;
+     font-size: 1.2em;
    }
 
-   .input-field input[type=text]:focus {
+   .input-field input[type=password]:focus {
     border-bottom: 1px solid #FFF;
     box-shadow: 0 1px 0 0 #FFF;
   }
 
-    .input-field input[type=text]:focus + label {
-     color: #FFF;
-   }
+  .input-field input[type=text]:focus {
+   border-bottom: 1px solid #FFF;
+   box-shadow: 0 1px 0 0 #FFF;
+ }
 
-   .input-field input[type=password]:focus + label {
+   .input-field input[type=text]:focus + label {
     color: #FFF;
   }
 
+  .input-field input[type=password]:focus + label {
+   color: #FFF;
+ }
+
+
+/*STAR RATING CSS*/
+
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    width: 9em;
+}
+
+/*.rating input {
+      position: absolute;
+    left: -999999px;
+}*/
+
+  .rating label {
+      display: inline-block;
+      font-size: 0;
+  }
+
+.rating > label:before {
+    position: relative;
+    font: 24px/1 FontAwesome;
+    display: block;
+    content: "\f005";
+    color: #ccc;
+    background: -webkit-linear-gradient(-45deg, #d9d9d9 0%, #b3b3b3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rating > label:hover:before,
+.rating > label:hover ~ label:before,
+.rating > label.selected:before,
+.rating > label.selected ~ label:before {
+    color: #f0ad4e;
+    background: -webkit-linear-gradient(-45deg, #fcb551 0%, #d69a45 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/*STAR RATING CSS*/
+
+#obsform {
+  padding: 30px;
+  color: rgb(43, 43, 40);
+}
+
+
 .align-form {
-  margin-top: 30px;
-  position: relative;
-  padding-top: 20px;
+ margin-top: 30px;
+ position: relative;
+ padding-top: 20px;
 }
 
 #login {
-  opacity: 0.8;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.0625em;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
-  margin-left: 10px;
+ opacity: 0.8;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 700;
+ letter-spacing: 0.0625em;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
+ margin-left: 10px;
 }
 
 #createaccount {
-  opacity: 0.8;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.0625em;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
-  margin-left: 15px;
+ opacity: 0.8;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 700;
+ letter-spacing: 0.0625em;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
+ margin-left: 15px;
 }
 
 .indexBG {
-   background-image: url(imgs/nightlite.jpg);
-   background-color: #000;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-attachment: fixed;
-   background-size: cover;
- }
+  background-image: url(imgs/nightlite.jpg);
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
- .mapBG  {
-   background-image: url(imgs/mapbg.jpg);
-   background-color: #000;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-attachment: fixed;
-   background-size: cover;
- }
+.mapBG  {
+  background-image: url(imgs/mapbg.jpg);
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
- .loginBG {
-   background-image: url(imgs/mapbg.jpg);
-   background-color: #000;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-attachment: fixed;
-   background-size: cover;
- }
+.loginBG {
+  background-image: url(imgs/mapbg.jpg);
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
- .obsBG {
-   background-image: url(imgs/mapbg.jpg);
-   background-color: #000;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-attachment: fixed;
-   background-size: cover;
- }
+.obsBG {
+  background-image: url(imgs/mapbg.jpg);
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
- .updateBG {
-   background-image: url(imgs/mapbg.jpg);
-   background-color: #000;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-attachment: fixed;
-   background-size: cover;
- }
+.updateBG {
+  background-image: url(imgs/mapbg.jpg);
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
- .userBG {
-   background-image: url(imgs/mapbg.jpg);
-   background-color: #000;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-attachment: fixed;
-   background-size: cover;
- }
+.userBG {
+  background-image: url(imgs/mapbg.jpg);
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
- .learnBG {
-   background-image: url(imgs/mapbg.jpg);
-   background-color: #000;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-attachment: fixed;
-   background-size: cover;
- }
+.learnBG {
+  background-image: url(imgs/mapbg.jpg);
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
- h4 {
-   font-family: 'Raleway', sans-serif;
- }
+h4 {
+  font-family: 'Raleway', sans-serif;
+}
 
- li {
-   font-family: 'Raleway', sans-serif;
-   font-weight: 600;
-   letter-spacing: 0.025em;
- }
+li {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
 
- button {
-   font-family: 'Raleway', sans-serif;
-   font-weight: 700;
-   letter-spacing: 0.0625em;
-   opacity: 0.8;
-   -webkit-border-radius: 8px;
-   -moz-border-radius: 8px;
-   border-radius: 8px;
- }
-
-#postNew {
-  margin-right: 8px;
-  margin-top: 6px;
-  opacity: 0.8;
+button {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   letter-spacing: 0.0625em;
+  opacity: 0.8;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
+}
+
+#postNew {
+ margin-right: 8px;
+ margin-top: 6px;
+ opacity: 0.8;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 700;
+ letter-spacing: 0.0625em;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
 }
 
 #updateObs {
-  margin-left: 8px;
-  margin-top: 6px;
-  opacity: 0.8;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.0625em;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+ margin-left: 8px;
+ margin-top: 6px;
+ opacity: 0.8;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 700;
+ letter-spacing: 0.0625em;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
 }
 
 #enter {
-  margin-right: 8px;
-  opacity: 0.8;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.0625em;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+ margin-right: 8px;
+ opacity: 0.8;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 700;
+ letter-spacing: 0.0625em;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
 }
 
 #login-index {
-  margin-left: 8px;
-  opacity: 0.8;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.0625em;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+ margin-left: 8px;
+ opacity: 0.8;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 700;
+ letter-spacing: 0.0625em;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
 }
 
 #zipcode-btn {
-  opacity: 0.8;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.0625em;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+ opacity: 0.8;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 700;
+ letter-spacing: 0.0625em;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
 }
 
 #submit-button {
-  opacity: 0.8;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.0625em;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+ opacity: 0.8;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 700;
+ letter-spacing: 0.0625em;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
 }
 
 #cancel-button {
-  opacity: 0.8;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.0625em;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+ opacity: 0.8;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 700;
+ letter-spacing: 0.0625em;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
 }
 
 #updatepost {
-  margin-right: 8px;
-  opacity: 0.8;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.0625em;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+ margin-right: 8px;
+ opacity: 0.8;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 700;
+ letter-spacing: 0.0625em;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
 }
 
 #deletepost {
-  margin-left: 8px;
-  opacity: 0.8;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.0625em;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+ margin-left: 8px;
+ opacity: 0.8;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 700;
+ letter-spacing: 0.0625em;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
 }
 
 .navbar-fixed {
+ font-family: 'Raleway', sans-serif;
+}
+
+div {
   font-family: 'Raleway', sans-serif;
 }
 
- div {
-   font-family: 'Raleway', sans-serif;
- }
+p {
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.0625em;
+}
 
- p {
-   font-family: 'Raleway', sans-serif;
-   letter-spacing: 0.0625em;
- }
+#search {
+  padding-bottom: 10px;
+}
 
- #search {
-   padding-bottom: 10px;
- }
+#map {
+  margin: 0 auto;
+  width: 900px;
+  height: 600px;
+}
 
- #map {
-   margin: 0 auto;
-   width: 900px;
-   height: 600px;
- }
+.arcgisSearch .searchBtn {
+  margin: 0 auto;
+}
 
- .arcgisSearch .searchBtn {
-   margin: 0 auto;
- }
+#zipcode {
+  opacity: 0.5;
+  margin-right: 15px;
+}
 
- #zipcode {
-   opacity: 0.5;
-   margin-right: 15px;
- }
+#information {
+  background-color: white;
+  opacity: 0.5;
+  margin-top: 10px;
+  padding: 20px;
+}
 
- #information {
-   background-color: white;
-   opacity: 0.5;
-   margin-top: 10px;
-   padding: 20px;
- }
+#pollution {
+  background-color: white;
+  opacity: 0.5;
+  margin-top: 10px;
+  padding: 20px;
+}
 
- #pollution {
-   background-color: white;
-   opacity: 0.5;
-   margin-top: 10px;
-   padding: 20px;
- }
+.divider  {
+  opacity: 0.5;
+}
 
- .divider  {
-   opacity: 0.5;
- }
+footer {
+  opacity: 0.7;
+  margin-top: 30px;
+  letter-spacing: 0.0625em;
+}
 
- footer {
-   opacity: 0.7;
-   margin-top: 30px;
-   letter-spacing: 0.0625em;
- }
+img {
+  position: absolute;
+  text-align:center;
+}
 
- .container {
-
- }
-
- img {
-   position: absolute;
-   text-align:center;
- }
-
- .image {
- text-align: center;
- }
+.image {
+text-align: center;
+}
