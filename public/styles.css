@@ -8,111 +8,167 @@
      width: 100%;
  }*/
 
+.input-field label.active {
+     color: #FFF;
+     font-family: 'Raleway', sans-serif;
+     font-weight: 400;
+     letter-spacing: 0.075em;
+     font-size: 1.2em;
+   }
+
+   .input-field input[type=password]:focus {
+    border-bottom: 1px solid #FFF;
+    box-shadow: 0 1px 0 0 #FFF;
+  }
+
+  .input-field input[type=text]:focus {
+   border-bottom: 1px solid #FFF;
+   box-shadow: 0 1px 0 0 #FFF;
+ }
+
+   .input-field input[type=text]:focus + label {
+    color: #FFF;
+  }
+
+  .input-field input[type=password]:focus + label {
+   color: #FFF;
+ }
+
+.align-form {
+ margin-top: 30px;
+ position: relative;
+ padding-top: 20px;
+}
+
+#login {
+ opacity: 0.8;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 700;
+ letter-spacing: 0.0625em;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
+ margin-left: 10px;
+}
+
+#createaccount {
+ opacity: 0.8;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 700;
+ letter-spacing: 0.0625em;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
+ margin-left: 15px;
+}
+
+
+
 .indexBG {
-   background-image: url(imgs/nightlite.jpg);
-   background-color: #000;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-attachment: fixed;
-   background-size: cover;
- }
+  background-image: url(imgs/nightlite.jpg);
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
- .mapBG  {
-   background-image: url(imgs/mapbg.jpg);
-   background-color: #000;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-attachment: fixed;
-   background-size: cover;
- }
+.mapBG  {
+  background-image: url(imgs/mapbg.jpg);
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
- .loginBG {
-   background-image: url(imgs/mapbg.jpg);
-   background-color: #000;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-attachment: fixed;
-   background-size: cover;
- }
+.loginBG {
+  background-image: url(imgs/mapbg.jpg);
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
- .obsBG {
-   background-image: url(imgs/mapbg.jpg);
-   background-color: #000;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-attachment: fixed;
-   background-size: cover;
- }
+.obsBG {
+  background-image: url(imgs/mapbg.jpg);
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
- .updateBG {
-   background-image: url(imgs/mapbg.jpg);
-   background-color: #000;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-attachment: fixed;
-   background-size: cover;
- }
+.updateBG {
+  background-image: url(imgs/mapbg.jpg);
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
- .userBG {
-   background-image: url(imgs/mapbg.jpg);
-   background-color: #000;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-attachment: fixed;
-   background-size: cover;
- }
+.userBG {
+  background-image: url(imgs/mapbg.jpg);
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
- .learnBG {
-   background-image: url(imgs/mapbg.jpg);
-   background-color: #000;
-   background-repeat: no-repeat;
-   background-position: center;
-   background-attachment: fixed;
-   background-size: cover;
- }
+.learnBG {
+  background-image: url(imgs/mapbg.jpg);
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
- h4 {
-   font-family: 'Raleway', sans-serif;
- }
+h4 {
+  font-family: 'Raleway', sans-serif;
+}
 
- li {
-   font-family: 'Raleway', sans-serif;
-   font-weight: 600;
-   letter-spacing: 0.025em;
- }
+li {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
 
- button {
-   font-family: 'Raleway', sans-serif;
-   font-weight: 700;
-   letter-spacing: 0.0625em;
-   opacity: 0.8;
-   -webkit-border-radius: 8px;
-   -moz-border-radius: 8px;
-   border-radius: 8px;
- }
-
-#postNew {
-  margin-right: 8px;
-  margin-top: 6px;
-  opacity: 0.8;
+button {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   letter-spacing: 0.0625em;
+  opacity: 0.8;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
 }
 
+#postNew {
+ margin-right: 8px;
+ margin-top: 6px;
+ opacity: 0.8;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 700;
+ letter-spacing: 0.0625em;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
+}
+
 #updateObs {
-  margin-left: 8px;
-  margin-top: 6px;
-  opacity: 0.8;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.0625em;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+ margin-left: 8px;
+ margin-top: 6px;
+ opacity: 0.8;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 700;
+ letter-spacing: 0.0625em;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
 }
 
 /*STAR RATING CSS*/
@@ -161,36 +217,37 @@
 }
 
 #enter {
-  margin-right: 8px;
-  opacity: 0.8;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.0625em;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+ margin-right: 8px;
+ opacity: 0.8;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 700;
+ letter-spacing: 0.0625em;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
 }
 
 #login-index {
-  margin-left: 8px;
-  opacity: 0.8;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.0625em;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+ margin-left: 8px;
+ opacity: 0.8;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 700;
+ letter-spacing: 0.0625em;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
 }
 
 #zipcode-btn {
-  opacity: 0.8;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.0625em;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+ opacity: 0.8;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 700;
+ letter-spacing: 0.0625em;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
 }
+
 
 #submit-button, #cancel-button {
   opacity: 0.8;
@@ -203,102 +260,98 @@
 }
 
 #cancel-button {
-  opacity: 0.8;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.0625em;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+ opacity: 0.8;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 700;
+ letter-spacing: 0.0625em;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
 }
 
 #updatepost {
-  margin-right: 8px;
-  opacity: 0.8;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.0625em;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+ margin-right: 8px;
+ opacity: 0.8;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 700;
+ letter-spacing: 0.0625em;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
 }
 
 #deletepost {
-  margin-left: 8px;
-  opacity: 0.8;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.0625em;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+ margin-left: 8px;
+ opacity: 0.8;
+ font-family: 'Raleway', sans-serif;
+ font-weight: 700;
+ letter-spacing: 0.0625em;
+ -webkit-border-radius: 8px;
+ -moz-border-radius: 8px;
+ border-radius: 8px;
 }
 
 .navbar-fixed {
+ font-family: 'Raleway', sans-serif;
+}
+
+div {
   font-family: 'Raleway', sans-serif;
 }
 
- div {
-   font-family: 'Raleway', sans-serif;
- }
+p {
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0.0625em;
+}
 
- p {
-   font-family: 'Raleway', sans-serif;
-   letter-spacing: 0.0625em;
- }
+#search {
+  padding-bottom: 10px;
+}
 
- #search {
-   padding-bottom: 10px;
- }
+#map {
+  margin: 0 auto;
+  width: 900px;
+  height: 600px;
+}
 
- #map {
-   margin: 0 auto;
-   width: 900px;
-   height: 600px;
- }
+.arcgisSearch .searchBtn {
+  margin: 0 auto;
+}
 
- .arcgisSearch .searchBtn {
-   margin: 0 auto;
- }
+#zipcode {
+  opacity: 0.5;
+  margin-right: 15px;
+}
 
- #zipcode {
-   opacity: 0.5;
-   margin-right: 15px;
- }
+#information {
+  background-color: white;
+  opacity: 0.5;
+  margin-top: 10px;
+  padding: 20px;
+}
 
- #information {
-   background-color: white;
-   opacity: 0.5;
-   margin-top: 10px;
-   padding: 20px;
- }
+#pollution {
+  background-color: white;
+  opacity: 0.5;
+  margin-top: 10px;
+  padding: 20px;
+}
 
- #pollution {
-   background-color: white;
-   opacity: 0.5;
-   margin-top: 10px;
-   padding: 20px;
- }
+.divider  {
+  opacity: 0.5;
+}
 
- .divider  {
-   opacity: 0.5;
- }
+footer {
+  opacity: 0.7;
+  margin-top: 30px;
+  letter-spacing: 0.0625em;
+}
 
- footer {
-   opacity: 0.7;
-   margin-top: 30px;
-   letter-spacing: 0.0625em;
- }
+img {
+  position: absolute;
+  text-align:center;
+}
 
- .container {
-
- }
-
- img {
-   position: absolute;
-   text-align:center;
- }
-
- .image {
- text-align: center;
- }
+.image {
+text-align: center;
+}
