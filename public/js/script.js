@@ -206,25 +206,14 @@ require([
             var lat = pointArr[i].latitude;
             var point = new Point(lon, lat);
 
-            // var obsMarker = new SimpleMarkerSymbol();
-            // obsMarker.setSize(25);
-            // obsMarker.setAngle(0);
-            // obsMarker.setColor(new Color([255, 255, 255, 1]));
-            // obsMarker.setPath(
-            //     "M16,3.5c-4.142,0-7.5,3.358-7.5,7.5c0,4.143,7.5,18.121,7.5,18.121S23.5,15.143,23.5,11C23.5,6.858,20.143,3.5,16,3.5z M16,14.584c-1.979,0-3.584-1.604-3.584-3.584S14.021,7.416,16,7.416S19.584,9.021,19.584,11S17.979,14.584,16,14.584z"
-            // );
-            // obsMarker.setStyle(SimpleMarkerSymbol.STYLE_PATH);
-
-            var obsMarker = new SimpleMarkerSymbol(
-                SimpleMarkerSymbol.STYLE_CIRCLE,
-                12,
-                new SimpleLineSymbol(
-                    SimpleLineSymbol.STYLE_SOLID,
-                    new Color([255, 255, 255, 0.6]),
-                    8
-                ),
-                new Color([255, 255, 255, 0.9])
+            var obsMarker = new SimpleMarkerSymbol();
+            obsMarker.setSize(25);
+            obsMarker.setAngle(0);
+            obsMarker.setColor(new Color([255, 255, 255, 1]));
+            obsMarker.setPath(
+                "M16,3.5c-4.142,0-7.5,3.358-7.5,7.5c0,4.143,7.5,18.121,7.5,18.121S23.5,15.143,23.5,11C23.5,6.858,20.143,3.5,16,3.5z M16,14.584c-1.979,0-3.584-1.604-3.584-3.584S14.021,7.416,16,7.416S19.584,9.021,19.584,11S17.979,14.584,16,14.584z"
             );
+            obsMarker.setStyle(SimpleMarkerSymbol.STYLE_PATH);
 
             var popUp = {
                 Location: pointArr[i].name,
