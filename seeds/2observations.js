@@ -9,8 +9,8 @@ exports.seed = function(knex, Promise) {
         knex('observations').insert({
           id: 1,
           user_id: 1,
-          latitude: 43.0760,
-          longitude: 107.2903,
+          latitude: 42.0760,
+          longitude: -99.2903,
           stars: 4,
           name: 'Wyoming Star Spot',
           description: 'This spot was awesome'
@@ -20,7 +20,7 @@ exports.seed = function(knex, Promise) {
           id: 2,
           user_id: 2,
           latitude: 40.0150,
-          longitude: 105.2705,
+          longitude: -96.2705,
           stars: 2,
           name: 'Galvanize Balcony',
           description: 'Ok, Devin kept shining a flashlight at me'
@@ -30,7 +30,7 @@ exports.seed = function(knex, Promise) {
           id: 3,
           user_id: 3,
           latitude: 39.7330,
-          longitude: 105.2391,
+          longitude: -99.2391,
           stars: 4,
           name: 'Golden Lookout Mountain',
           description: 'It was awesome. I love stars!'
