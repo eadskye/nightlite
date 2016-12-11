@@ -10,20 +10,27 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Map</title>
 
-    <link rel="stylesheet" href="https://js.arcgis.com/3.18/esri/css/esri.css">
-    <link rel="stylesheet" href="style3.css">
 
+    <!-- Map  -->
+    <link rel="stylesheet" href="https://js.arcgis.com/3.18/esri/css/esri.css">
+
+    <!-- CSS  -->
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway:400,500,600,700,800" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-    <link href="style3.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  
+    <!-- Font  -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway:400,500,600,700,800" rel="stylesheet">
+
+
 
 
 
 
 </head>
 
-<body>
+<body class="mapBG">
     <!-- Navigation -->
     <nav class="transparent" role="navigation">
         <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">nightlite</a>
@@ -36,10 +43,10 @@
 
 
             <ul id="nav-mobile" class="side-nav">
-                <li><a href="#">Login</a></li>
-            </ul>
-            <ul id="nav-mobile" class="side-nav">
-                <li><a href="#">Learn</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="learn.html">Learn</a></li>
+
+
             </ul>
             <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         </div>
@@ -55,7 +62,7 @@
                     <div class="row">
                         <div id="input" class="input-field col s12 l6">
                             <input placeholder="" id="zipcode" type="text" class="col s6 validate grey lighten-4 ">
-                            <button class="col s3 btn waves-effect waves-light blue lighten-2" type="submit" name="action">Explore
+                            <button id="zipcode-btn" class="col s3 btn waves-effect waves-light blue lighten-2" type="submit" name="action">Explore
                               </button>
                         </div>
                     </div>
@@ -79,10 +86,10 @@
         <div class="section">
             <div class="row">
                 <div class="col s12 ">
-                    <button class="btn waves-effect waves-light blue lighten-2" type="submit" name="action">POST NEW OBSERVATION
-                      </button>
-                    <button class="btn waves-effect waves-light blue lighten-2" type="submit" name="action">UPDATE OBSERVATION
-                      </button>
+                    <a href="obs.html" id="postNew" class="btn waves-effect waves-light blue lighten-2">POST NEW OBSERVATION</a>
+
+                    <a href="update.html" id="updateObs" class="btn waves-effect waves-light blue lighten-2" type="submit" name="action">UPDATE OBSERVATION</a>
+
                 </div>
             </div>
         </div>
