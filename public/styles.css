@@ -41,7 +41,7 @@
   padding-top: 20px;
 }
 
-#submitpass {
+#login {
   opacity: 0.8;
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
@@ -50,6 +50,17 @@
   -moz-border-radius: 8px;
   border-radius: 8px;
   margin-left: 10px;
+}
+
+#createaccount {
+  opacity: 0.8;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.0625em;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  margin-left: 15px;
 }
 
 .indexBG {
