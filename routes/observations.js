@@ -1,23 +1,31 @@
 'use strict';
 
 const express = require('express');
+const app = express();
 const router = express.Router();
 const ev = require('express-validation');
 const validations = require('../validations/observations');
 const knex = require('../knex');
-// const {decamelizeKeys, camelizeKeys} = require('humps');
-// const bcrypt = require('bcrypt');
+
+const {decamelizeKeys, camelizeKeys} = require('humps');
+const bcrypt = require('bcrypt');
 const boom = require('boom');
 
+var obsGET;
+
 router.get('/observations', (req, res, next) => {
- knex('observations')
-   .orderBy('name')
-   .then((results) => {
-     res.send(results);
-   })
-   .catch((err) => {
-     next(err);
-   });
+    knex('observations')
+        .orderBy('name')
+        .then((results) => {
+            obsGET = JSON.stringify(results);
+            // console.log(obsGET);
+            // console.log(typeof obsGET);
+            res.send(obsGET);
+            res.send(results);
+        })
+        .catch((err) => {
+            next(err);
+        });
 });
 
 //TODO will get all of a users observations to update and delete
@@ -90,6 +98,7 @@ router.post('/observations', ev(validations.post), (req, res, next) => {
 // router.patch('/observations', ev(validations.patch), (req, res, next) => {
 //
 // });
+
 //
 // router.delete('/observations', (req, res, next) => {
 //   console.log("here");
