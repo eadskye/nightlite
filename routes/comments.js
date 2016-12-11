@@ -51,34 +51,58 @@ router.post('/comments', ev(validations.post), (req, res, next) => {
 
 });
 //
-// router.patch('/comments', ev(validations.patch), (req, res, next) => {
-//
-// });
-//
-router.delete('/comments/:commentid', (req, res, next) => {
-  let commentId = commentid;
-
+router.patch('/comments/:id', (req, res, next) => {
+  var id = req.params.id;
   knex('comments')
-  .where('id', commentId)
+  .where({
+    id: id
+  })
   .first()
-  .then ((result) => {
-    if (!result) {
+  .then((comment) => {
+    console.log(comment);
+    if (!comment || !req.body.comment){
       return next();
-    }
-
-  var comment = result;
-
-  return knex('comments')
-    .del()
-    .where('id', commentId);
+    } return knex('comments')
+    .update({
+      comment: req.body.comment
+    }, '*')
+    .where({'id' : id});
   })
-  .then(() => {
-    delete comment.id;
+  .then((comments) => {
+    console.log(comments[0]);
+    res.send(comments[0]);
   })
-  .catch((err) => {
+  .catch ((err) => {
     next(err);
   });
 });
+
+
+//
+// router.delete('/comments/:commentid', (req, res, next) => {
+//   let commentId = commentid;
+//
+//   knex('comments')
+//   .where('id', commentId)
+//   .first()
+//   .then ((result) => {
+//     if (!result) {
+//       return next();
+//     }
+//
+//   var comment = result;
+//
+//   return knex('comments')
+//     .del()
+//     .where('id', commentId);
+//   })
+//   .then(() => {
+//     delete comment.id;
+//   })
+//   .catch((err) => {
+//     next(err);
+//   });
+// });
 
 
 //
