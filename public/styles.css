@@ -8,6 +8,50 @@
      width: 100%;
  }*/
 
+
+ .input-field label.active {
+      color: #FFF;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.075em;
+      font-size: 1.2em;
+    }
+
+    .input-field input[type=password]:focus {
+     border-bottom: 1px solid #FFF;
+     box-shadow: 0 1px 0 0 #FFF;
+   }
+
+   .input-field input[type=text]:focus {
+    border-bottom: 1px solid #FFF;
+    box-shadow: 0 1px 0 0 #FFF;
+  }
+
+    .input-field input[type=text]:focus + label {
+     color: #FFF;
+   }
+
+   .input-field input[type=password]:focus + label {
+    color: #FFF;
+  }
+
+.align-form {
+  margin-top: 30px;
+  position: relative;
+  padding-top: 20px;
+}
+
+#submitpass {
+  opacity: 0.8;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.0625em;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  margin-left: 10px;
+}
+
 .indexBG {
    background-image: url(imgs/nightlite.jpg);
    background-color: #000;
@@ -157,6 +201,16 @@
   border-radius: 8px;
 }
 
+#cancel-button {
+  opacity: 0.8;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.0625em;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
 #updatepost {
   margin-right: 8px;
   opacity: 0.8;
@@ -246,6 +300,4 @@
 
  .image {
  text-align: center;
- }
-
  }
