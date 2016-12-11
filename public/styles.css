@@ -1,9 +1,252 @@
  /* TODO create stylesheet  */
 
+ /*html,
  body {
+     height: 100%;
+     margin: 0px;
+     padding: 0px;
+     width: 100%;
+ }*/
+
+
+.indexBG {
    background-image: url(imgs/nightlite.jpg);
+   background-color: #000;
    background-repeat: no-repeat;
    background-position: center;
    background-attachment: fixed;
    background-size: cover;
+ }
+
+ .mapBG  {
+   background-image: url(imgs/mapbg.jpg);
+   background-color: #000;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-attachment: fixed;
+   background-size: cover;
+ }
+
+ .loginBG {
+   background-image: url(imgs/mapbg.jpg);
+   background-color: #000;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-attachment: fixed;
+   background-size: cover;
+ }
+
+ .obsBG {
+   background-image: url(imgs/mapbg.jpg);
+   background-color: #000;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-attachment: fixed;
+   background-size: cover;
+ }
+
+ .updateBG {
+   background-image: url(imgs/mapbg.jpg);
+   background-color: #000;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-attachment: fixed;
+   background-size: cover;
+ }
+
+ .userBG {
+   background-image: url(imgs/mapbg.jpg);
+   background-color: #000;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-attachment: fixed;
+   background-size: cover;
+ }
+
+ .learnBG {
+   background-image: url(imgs/mapbg.jpg);
+   background-color: #000;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-attachment: fixed;
+   background-size: cover;
+ }
+
+ h4 {
+   font-family: 'Raleway', sans-serif;
+ }
+
+ li {
+   font-family: 'Raleway', sans-serif;
+   font-weight: 600;
+   letter-spacing: 0.025em;
+ }
+
+ button {
+   font-family: 'Raleway', sans-serif;
+   font-weight: 700;
+   letter-spacing: 0.0625em;
+   opacity: 0.8;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+ }
+
+#postNew {
+  margin-right: 8px;
+  margin-top: 6px;
+  opacity: 0.8;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.0625em;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+#updateObs {
+  margin-left: 8px;
+  margin-top: 6px;
+  opacity: 0.8;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.0625em;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+#enter {
+  margin-right: 8px;
+  opacity: 0.8;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.0625em;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+#login-index {
+  margin-left: 8px;
+  opacity: 0.8;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.0625em;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+#zipcode-btn {
+  opacity: 0.8;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.0625em;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+#submit-button {
+  opacity: 0.8;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.0625em;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+#updatepost {
+  margin-right: 8px;
+  opacity: 0.8;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.0625em;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+#deletepost {
+  margin-left: 8px;
+  opacity: 0.8;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.0625em;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.navbar-fixed {
+  font-family: 'Raleway', sans-serif;
+}
+
+ div {
+   font-family: 'Raleway', sans-serif;
+ }
+
+ p {
+   font-family: 'Raleway', sans-serif;
+   letter-spacing: 0.0625em;
+ }
+
+ #search {
+   padding-bottom: 10px;
+ }
+
+ #map {
+   margin: 0 auto;
+   width: 900px;
+   height: 600px;
+ }
+
+ .arcgisSearch .searchBtn {
+   margin: 0 auto;
+ }
+
+ #zipcode {
+   opacity: 0.5;
+   margin-right: 15px;
+ }
+
+ #information {
+   background-color: white;
+   opacity: 0.5;
+   margin-top: 10px;
+   padding: 20px;
+ }
+
+ #pollution {
+   background-color: white;
+   opacity: 0.5;
+   margin-top: 10px;
+   padding: 20px;
+ }
+
+ .divider  {
+   opacity: 0.5;
+ }
+
+ footer {
+   opacity: 0.7;
+   margin-top: 30px;
+   letter-spacing: 0.0625em;
+ }
+
+ .container {
+
+ }
+
+ img {
+   position: absolute;
+   text-align:center;
+ }
+
+ .image {
+ text-align: center;
+ }
+
  }
