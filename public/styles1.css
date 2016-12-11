@@ -5,3 +5,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+.obsform {
+  opacity: 0.85;
+  margin-right: 15px;
+}
