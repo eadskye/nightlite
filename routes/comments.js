@@ -9,10 +9,23 @@ const {decamelizeKeys, camelizeKeys} = require('humps');
 const bcrypt = require('bcrypt');
 
 const bodyParser = require('body-parser');
-//
-// router.get('/comments', (req, res, next) => {
-//
-// });
+
+//get comments for the observation id that the user is looking at
+  //get all comments
+  //get all comments with a specific obs id
+  //get the obs id from the DOM
+
+
+router.get('/comments', (req, res, next) => {
+  knex('comments')
+  .orderBy('updated_at')
+  .then((results) => {
+    res.send(results);
+  })
+  .catch((err) => {
+    next(err);
+  });
+});
 //
 // router.get('/comments/:id', (req, res, next) => {
 //
