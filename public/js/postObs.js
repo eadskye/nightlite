@@ -14,7 +14,7 @@ $(document).ready(function() {
   var longitude = $("#longitude");
   var description = $("#description");
   var stars = $("#stars");
-  var numberOfStars =
+  // var numberOfStars =
 
 
   // stars.on('click', function(event) {
@@ -30,7 +30,7 @@ $(document).ready(function() {
 //   alert($(this).serialize());
 //   return false;
 // });
-// 
+//
 // submit.on('click', function() {
 //
 // var formData =      {
@@ -44,22 +44,22 @@ $(document).ready(function() {
 //
 // console.log(formData);
 
+  //
+  // $.ajax({
+  //    type: 'post',
+  //    url: 'http://localhost:8000/observations/',
+  //    data: formData,
+  //    success: function(response) {
+  //      console.log(formData);
+  //      console.log($('obsform').serialize());
+  //       console.log(response);
+  //    }
+  // });
+// });
 
-  $.ajax({
-     type: 'post',
-     url: 'http://localhost:8000/observations/',
-     data: formData,
-     success: function(response) {
-       console.log(formData);
-       console.log($('obsform').serialize());
-        console.log(response);
-     }
-  });
-});
-
-});
-
-});
+// });
+//
+// });
 //
 // $.ajax({
 //         dataType: 'json',
@@ -72,4 +72,4 @@ $(document).ready(function() {
 //     })
 //     .fail(function(jqXHR, textStatus, errorThrown) {
 //         console.log("jxXHR : ", jqXHR, " - status : ", textStatus, " - error : ", errorThrown);
-//     });
+    });
