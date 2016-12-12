@@ -15,8 +15,8 @@ var observations;
 (function($) {
     $.ajax({
             dataType: 'json',
-            url: 'http://localhost:8000/observations',
-            // url: 'https://nightlited.herokuapp.com/observations',
+            // url: 'http://localhost:8000/observations',
+            url: 'https://nightlited.herokuapp.com/observations',
             method: 'GET',
             cache: false,
         })
@@ -246,7 +246,7 @@ require([
             map.graphics.add(observationArray[i]);
         }
     }
-    
+
     (function(){
        toggleLayer=function(layer, layerFlag){
         if(layerFlag === true) {
