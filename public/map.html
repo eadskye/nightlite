@@ -68,7 +68,16 @@
     <!-- MAP START -->
     <div onorientationchange="orientationChanged();">
         <div id="map">
+
+          <div id="searchAndLabels">
             <div id="search"></div>
+
+          </div>
+          <div id="checkboxDiv">
+            <input type="checkbox" checked="checked" id="toggle-labels" name="toggle-labels"/>
+            <label for="toggle-labels">Boundaries On</label>
+          </div>
+
         </div>
     </div>
     <!-- MAP END -->
@@ -79,8 +88,8 @@
             <div class="row">
                 <div class="col s12">
                     <button href="obs.html" id="postNew" class="btn waves-effect waves-light blue lighten-2"><a href= "obs.html">POST NEW OBSERVATION</button>
-                    <button href="update.html" id="updateObs" class="btn waves-effect waves-light blue lighten-2" type="submit" name="action"><a href= "update.html">UPDATE OBSERVATION</button>
-                    <button id="toggle-labels" class="btn waves-effect waves-light blue lighten-2">Toggle Borders</button>
+                    <button href="update.html" id="updateObs" class="btn waves-effect waves-light blue lighten-2" type="submit" name="action"><a href= "update.html">UPDATE OBSERVATION</a></button>
+                    <!-- <button id="toggle-labels" class="btn waves-effect waves-light blue lighten-2">Toggle Borders</button> -->
                 </div>
             </div>
         </div>

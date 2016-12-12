@@ -17,10 +17,9 @@ router.get('/observations', (req, res, next) => {
     knex('observations')
         .orderBy('name')
         .then((results) => {
-            obsGET = JSON.stringify(results);
-            // console.log(obsGET);
-            // console.log(typeof obsGET);
-            res.send(obsGET);
+            // obsGET = JSON.stringify(results);
+            // obsGET = results;
+            // res.send(obsGET);
             res.send(results);
         })
         .catch((err) => {

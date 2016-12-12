@@ -1,11 +1,14 @@
 var toggleLayer;
 var tiled2;
 var tiled2Flag;
+var labelCheck = $("#toggle-labels");
 
 $( document ).ready(function() {
-  $("#toggle-labels").on('click', function(event) {
+  labelCheck.on('click', function(event) {
     console.log("Remove a layer");
+    // if(labelCheck.is(":checked")) {
     toggleLayer(tiled2, tiled2Flag);
+  //  }
   });
 });
 
@@ -107,6 +110,7 @@ require([
     }, "search");
     search.startup();
 
+// Add layers to amp
     var grayBase = new ArcGISTiledMapServiceLayer("https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer/");
     map.addLayer(grayBase);
 
@@ -197,17 +201,6 @@ require([
         map.graphics.add(graphic);
     }
 
-    // Data Example
-    // *************************************************************
-    // created_at:"2016-12-10T22:51:41.010Z"
-    // description:"Ok, Devin kept shining a flashlight at me"
-    // id:2
-    // latitude:"40.0150"
-    // longitude:"105.2705"
-    // name:"Galvanize Balcony"
-    // stars:2
-    // updated_at:"2016-12-10T22:51:41.010Z"
-    // user_id:2
     function formatData() {
         for (var i = 0; i < pointArr.length; i++) {
             var lon = pointArr[i].longitude;
@@ -250,16 +243,24 @@ require([
 
     (function(){
        toggleLayer=function(layer, layerFlag){
-        if(layerFlag === true) {
-           map.removeLayer(layer);
-           tiled2Flag = false;
-           return;
-         }
-         if(layerFlag === false) {
+         if(labelCheck.is(":checked")) {
            map.addLayer(layer);
-           tiled2Flag = true;
            return;
-         }
+        }
+         else {
+           map.removeLayer(layer);
+             return;
+          }
+        // if(layerFlag === false) {
+        //    map.removeLayer(layer);
+        //    tiled2Flag = true;
+        //    return;
+        //  }
+        //  if(layerFlag === true) {
+        //    map.addLayer(layer);
+        //    tiled2Flag = false;
+        //    return;
+        //  }
        };
     }());
 
