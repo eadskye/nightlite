@@ -1,76 +1,54 @@
+
 "use strict";
 
 $(document).ready(function() {
-// Code add selected class to star when it is clicked on
-  $('.rating input').change(function () {
-  var $radio = $(this);
-  $('.rating .selected').removeClass('selected');
-  $radio.closest('label').addClass('selected');
-  });
-});
-  // const submit = $('#submit-button');
-  //
-  // var name = $("#name");
-  // var latitude = $("#latitude");
-  // var longitude = $("#longitude");
-  // var description = $("#description");
-  // var stars = $("#stars");
-  // var numberOfStars =
+    // Code add selected class to star when it is clicked on
+    $('.rating input').change(function() {
+        var $radio = $(this);
+        $('.rating .selected').removeClass('selected');
+        $radio.closest('label').addClass('selected');
+    });
+    var numberOfStars;
 
+// Code to get number of stars any time user clicks on them
+    $("#stars").on('click', function(event) {
+        if ($(event.target) !== $(event.currentTarget)) {
+            numberOfStars = event.target.value;
+        }
+        return numberOfStars;
+    });
 
-  // stars.on('click', function(event) {
-  //                         var target = $(event.target);
-  //                         if (target !== $(event.currentTarget)) {
-  //                           numberOfStars = event.target.value;
-  //                           console.log(numberOfStars);
-  //                           return event.target.value;
-  //                         }
-  //                     });
+    $('#obsform').on('submit', function(event) {
+        event.preventDefault();
 
-//   $('#obsform').submit(function() {
-//   alert($(this).serialize());
-//   return false;
-// });
-//
-// submit.on('click', function() {
-//
-// var formData =      {
-//       "user_id": "2",
-//      "latitude": latitude.val(),
-//      "longitude": longitude.val(),
-//      "stars": numberOfStars,
-//      "name": name.val(),
-//      "description": description.val()
-// };
-//
-// console.log(formData);
+        var newObs = {};
 
-  //
-  // $.ajax({
-  //    type: 'post',
-  //    url: 'http://localhost:8000/observations/',
-  //    data: formData,
-  //    success: function(response) {
-  //      console.log(formData);
-  //      console.log($('obsform').serialize());
-  //       console.log(response);
-  //    }
-  // });
-// });
+        let name = $('#name').val();
+        let latitude = $('#latitude').val();
+        let longitude = $('#longitude').val();
+        let description = $('#description').val();
+        //  let stars = $(this.stars).val();
+        let stars = numberOfStars;
+        let user_id = $('#user_id').val();
 
-// });
-//
-// });
-//
-// $.ajax({
-//         dataType: 'json',
-//         url: 'http://localhost:8000/observations',
-//         method: 'GET',
-//         cache: false,
-//     })
-//     .done(function(data) {
-//         var observations = data;
-//     })
-//     .fail(function(jqXHR, textStatus, errorThrown) {
-//         console.log("jxXHR : ", jqXHR, " - status : ", textStatus, " - error : ", errorThrown);
-    // });
+        newObs.name = name;
+        newObs.latitude = latitude;
+        newObs.longitude = longitude;
+        newObs.description = description;
+        newObs.stars = stars;
+        newObs.user_id = user_id;
+
+        newObs = JSON.stringify(newObs);
+
+        //  console.log(newObs);
+
+        var $xhr = $.ajax({
+            method: 'POST',
+            url: '/observations/',
+            dataType: 'json',
+            contentType: 'application/json',
+            data: newObs
+        });
+    }); // end obsform submit
+}); // end doc ready
+
