@@ -6,7 +6,6 @@ var labelCheck = $("#toggle-labels");
 $( document ).ready(function() {
   labelCheck.on('click', function(event) {
     console.log("Remove a layer");
-    // if(labelCheck.is(":checked")) {
     toggleLayer(tiled2, tiled2Flag);
   //  }
   });

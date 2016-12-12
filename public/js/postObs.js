@@ -7,9 +7,10 @@ $(document).ready(function() {
         $('.rating .selected').removeClass('selected');
         $radio.closest('label').addClass('selected');
     });
+
+    // Code to get number of stars any time user clicks on them
     var numberOfStars;
 
-// Code to get number of stars any time user clicks on them
     $("#stars").on('click', function(event) {
         if ($(event.target) !== $(event.currentTarget)) {
             numberOfStars = event.target.value;
@@ -17,6 +18,7 @@ $(document).ready(function() {
         return numberOfStars;
     });
 
+    // Get form data when the form is submitted
     $('#obsform').on('submit', function(event) {
         event.preventDefault();
 
@@ -38,8 +40,6 @@ $(document).ready(function() {
         newObs.user_id = user_id;
 
         newObs = JSON.stringify(newObs);
-
-        //  console.log(newObs);
 
         var $xhr = $.ajax({
             method: 'POST',
