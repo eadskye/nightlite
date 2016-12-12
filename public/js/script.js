@@ -1,11 +1,14 @@
 var toggleLayer;
 var tiled2;
 var tiled2Flag;
+var labelCheck = $("#toggle-labels");
 
 $( document ).ready(function() {
-  $("#toggle-labels").on('click', function(event) {
+  labelCheck.on('click', function(event) {
     console.log("Remove a layer");
+    // if(labelCheck.is(":checked")) {
     toggleLayer(tiled2, tiled2Flag);
+  //  }
   });
 });
 
@@ -16,8 +19,8 @@ var observations;
     $.ajax({
             dataType: 'json',
             // Comment in to hook up locally
-            url: 'http://localhost:8000/observations',
-            //url: 'https://nightlited.herokuapp.com/observations',
+            // url: 'http://localhost:8000/observations',
+            url: 'https://nightlited.herokuapp.com/observations',
             method: 'GET',
             cache: false,
         })
@@ -63,40 +66,6 @@ require([
 
     var pointArr = observations;
 
-    // var pointArr = [{  created_at:"2016-12-10T22:51:41.010Z",
-    //     description:"Ok, Devin kept shining a flashlight at me",
-    //     id:2,
-    //     latitude:"40.0150",
-    //     longitude:"-99.2705",
-    //     name:"Galvanize Balcony",
-    //     stars:2,
-    //     updated_at:"2016-12-10T22:51:41.010Z",
-    //     user_id:2,
-    //     Image: "<img src='http://davidzentz.com/blog/wp-content/uploads/2014/01/20131223-untitled-_DEZ6857-Edit1.jpg' style='height: 150px;'>"
-    // }, {
-    //     created_at:"2016-12-10T22:51:41.010Z",
-    //     description:"Ok, Devin kept shining a flashlight at me",
-    //     id:2,
-    //     latitude:"38.0150",
-    //     longitude:"-97.2705",
-    //     name:"Galvanize Balcony",
-    //     stars:2,
-    //     updated_at:"2016-12-10T22:51:41.010Z",
-    //     user_id:2,
-    //     Image: "<img src='http://davidzentz.com/blog/wp-content/uploads/2014/01/20131223-untitled-_DEZ6857-Edit1.jpg' style='height: 150px;'>"
-    // }, {
-    //     created_at:"2016-12-10T22:51:41.010Z",
-    //     description:"Ok, Devin kept shining a flashlight at me",
-    //     id:2,
-    //     latitude:"42.0150",
-    //     longitude:"-96.2705",
-    //     name:"Galvanize Balcony",
-    //     stars:2,
-    //     updated_at:"2016-12-10T22:51:41.010Z",
-    //     user_id:2,
-    //     Image: "<img src='http://davidzentz.com/blog/wp-content/uploads/2014/01/20131223-untitled-_DEZ6857-Edit1.jpg' style='height: 150px;'>"
-    // }];
-
     var map = new Map("map", {
         center: [long, lat],
         zoom: 4
@@ -107,6 +76,7 @@ require([
     }, "search");
     search.startup();
 
+// Add layers to amp
     var grayBase = new ArcGISTiledMapServiceLayer("https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer/");
     map.addLayer(grayBase);
 
@@ -130,7 +100,6 @@ require([
     function initFunc(map) {
         if (navigator.geolocation) {
             console.log("observations", observations);
-            drawObservations();
             navigator.geolocation.getCurrentPosition(zoomToLocation, locationError);
             watchId = navigator.geolocation.watchPosition(showLocation, locationError);
         } else {
@@ -198,17 +167,6 @@ require([
         map.graphics.add(graphic);
     }
 
-    // Data Example
-    // *************************************************************
-    // created_at:"2016-12-10T22:51:41.010Z"
-    // description:"Ok, Devin kept shining a flashlight at me"
-    // id:2
-    // latitude:"40.0150"
-    // longitude:"105.2705"
-    // name:"Galvanize Balcony"
-    // stars:2
-    // updated_at:"2016-12-10T22:51:41.010Z"
-    // user_id:2
     function formatData() {
         for (var i = 0; i < pointArr.length; i++) {
             var lon = pointArr[i].longitude;
@@ -251,16 +209,14 @@ require([
 
     (function(){
        toggleLayer=function(layer, layerFlag){
-        if(layerFlag === true) {
-           map.removeLayer(layer);
-           tiled2Flag = false;
-           return;
-         }
-         if(layerFlag === false) {
+         if(labelCheck.is(":checked")) {
            map.addLayer(layer);
-           tiled2Flag = true;
            return;
-         }
+        }
+         else {
+           map.removeLayer(layer);
+             return;
+          }
        };
     }());
 
