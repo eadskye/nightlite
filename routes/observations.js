@@ -104,35 +104,36 @@ router.post('/observations', ev(validations.post), (req, res, next) => {
 // });
 
 //
-// router.delete('/observations', (req, res, next) => {
-//   console.log("here");
-//     const deleteId = Number.parseInt(req.params.id);
-//     // console.log(deleteId);
-//     // if(isNaN(deleteId) || deleteId<0){
-//     //   res.sendStatus(404);
-//     // }
-//
-//     knex('observations')
-//       .where('id', deleteId)
-//       .first()
-//       .then((deleteObs) =>{
-//         if(!deleteObs){
-//           return next();
-//         }
-//         console.log(deleteObs);
-//         return knex('observations')
-//           .del()
-//           .where('id', deleteId);
-//       })
-//
-//       .then(() => {
-//         delete deleteObs.id;
-//         res.send("its gone");
-//       })
-//       .catch((err) => {
-//         next(err);
-//       });
-//
-// });
+router.delete('/observations/:id', (req, res, next) => {
+ let id = Number.parseInt(req.params.id);
+ let observation = null;
+
+   if(isNaN(id) || id<0){
+     res.sendStatus(404);
+   }
+
+   knex('observations')
+     .where('id', id)
+     .first()
+     .then((result) =>{
+       if(!result){
+         return next();
+       }
+     observation = result;
+
+       // console.log(observation);
+     return knex('observations')
+       .del()
+       .where('id', id);
+     })
+     .then(() => {
+       delete observation.id;
+       res.send(observation);
+     })
+     .catch((err) => {
+       next(err);
+     });
+
+});
 
 module.exports = router;
