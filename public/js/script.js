@@ -10,7 +10,7 @@ var observations;
 (function($) {
     $.ajax({
             dataType: 'json',
-            url: 'http://localhost:8000/observations',
+            url: 'https://nightlited.herokuapp.com/observations',
             method: 'GET',
             cache: false,
         })
