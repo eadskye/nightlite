@@ -360,7 +360,8 @@ text-align: center;
   width: 750px;
   display: inline-block;
 }
-#checkboxDiv {
+#checkboxToggle {
+  display: inline-block;
   padding-bottom: 10px;
 
 }
