@@ -6,11 +6,13 @@
 // mapArr.push(obj);
 
 var observations;
-
+// Heroku is https, so we have to make the call making https
+// Localhost uses http, so call using http
 (function($) {
     $.ajax({
             dataType: 'json',
-            url: 'https://nightlited.herokuapp.com/observations',
+            url: 'http://localhost:8000/observations',
+            // url: 'https://nightlited.herokuapp.com/observations',
             method: 'GET',
             cache: false,
         })
@@ -239,21 +241,10 @@ require([
             map.graphics.add(observationArray[i]);
         }
     }
-});
 
-// function getObservations() {
-//   $.ajax({
-//              dataType: 'json',
-//              url: 'http://localhost:8000/observations',
-//              method: 'GET',
-//              cache: false,
-//          })
-//              .done(function(data) {
-//                var dataAsString = data;
-//                console.log(data);
-//
-//              })
-//              .fail(function(jqXHR, textStatus, errorThrown) {
-//                console.log("jxXHR : ", jqXHR , " - status : " , textStatus , " - error : " , errorThrown);
-//              });
-// }
+    function removeLayer (layer){
+      //if (typeof layer === typeof MAPLAYERTYPE)
+        map.removeLayer(layer);
+    }
+
+});
