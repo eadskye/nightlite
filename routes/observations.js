@@ -13,19 +13,34 @@ const boom = require('boom');
 
 var obsGET;
 
+//get observations with username for observation cards on map page
 router.get('/observations', (req, res, next) => {
     knex('observations')
         .orderBy('name')
         .then((results) => {
-            obsGET = JSON.stringify(results);
-            // console.log(obsGET);
-            // console.log(typeof obsGET);
-            res.send(obsGET);
+            // obsGET = JSON.stringify(results);
+            // obsGET = results;
+            // res.send(obsGET);
             res.send(results);
         })
         .catch((err) => {
             next(err);
         });
+
+  knex.from('observations').leftJoin('users', 'observations.id', 'users.id')
+    .select(['observations.id','observations.user_id','latitude', 'longitude', 'stars', 'name', 'description','observations.created_at', 'observations.updated_at', 'username'])
+    .then((result) => {
+      console.log(result);
+      if (!result) {
+        return next();
+      }
+      //obsGET = JSON.stringify(results);
+      res.send(result);
+
+    })
+    .catch((err) => {
+      next(err);
+    });
 });
 
 //TODO will get all of a users observations to update and delete
@@ -41,13 +56,13 @@ router.get('/observations/:user_id', (req, res, next) => {
         return next();
       }
       res.send(result);
-
     })
     .catch((err) => {
       next(err);
     });
 
 });
+//get observations with username for observation cards on map page
 
 //TODO validaton code router.post('/observations', ev(validations.post), (req, res, next) => {
 
@@ -89,6 +104,7 @@ router.post('/observations', ev(validations.post), (req, res, next) => {
     .insert(newObservation)
     .then(
       res.send('New observation post created')
+      // res.redirect('/map.html')
     )
     .catch((err) => {
       next(err);
@@ -100,35 +116,36 @@ router.post('/observations', ev(validations.post), (req, res, next) => {
 // });
 
 //
-// router.delete('/observations', (req, res, next) => {
-//   console.log("here");
-//     const deleteId = Number.parseInt(req.params.id);
-//     // console.log(deleteId);
-//     // if(isNaN(deleteId) || deleteId<0){
-//     //   res.sendStatus(404);
-//     // }
-//
-//     knex('observations')
-//       .where('id', deleteId)
-//       .first()
-//       .then((deleteObs) =>{
-//         if(!deleteObs){
-//           return next();
-//         }
-//         console.log(deleteObs);
-//         return knex('observations')
-//           .del()
-//           .where('id', deleteId);
-//       })
-//
-//       .then(() => {
-//         delete deleteObs.id;
-//         res.send("its gone");
-//       })
-//       .catch((err) => {
-//         next(err);
-//       });
-//
-// });
+router.delete('/observations/:id', (req, res, next) => {
+ let id = Number.parseInt(req.params.id);
+ let observation = null;
+
+   if(isNaN(id) || id<0){
+     res.sendStatus(404);
+   }
+
+   knex('observations')
+     .where('id', id)
+     .first()
+     .then((result) =>{
+       if(!result){
+         return next();
+       }
+     observation = result;
+
+       // console.log(observation);
+     return knex('observations')
+       .del()
+       .where('id', id);
+     })
+     .then(() => {
+       delete observation.id;
+       res.send(observation);
+     })
+     .catch((err) => {
+       next(err);
+     });
+
+});
 
 module.exports = router;
