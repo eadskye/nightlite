@@ -28,17 +28,17 @@ $.ajax({
 
 });
 
-var data = {
-created_at : "2016-12-11T23:41:16.122Z",
-description : "Super chill vibe watching the stars",
-id : 4,
-latitude : "40.0150",
-longitude :"105.2705",
-name : "Boulder Stars",
-stars : 4,
-updated_at : "2016-12-11T23:41:16.122Z",
-user_id : 3
-};
+// var data = {
+// created_at : "2016-12-11T23:41:16.122Z",
+// description : "Super chill vibe watching the stars",
+// id : 4,
+// latitude : "40.0150",
+// longitude :"105.2705",
+// name : "Boulder Stars",
+// stars : 4,
+// updated_at : "2016-12-11T23:41:16.122Z",
+// user_id : 3
+// };
 
 function drawObservations(data){
   console.log(data);
