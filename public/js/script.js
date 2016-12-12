@@ -19,8 +19,8 @@ var observations;
     $.ajax({
             dataType: 'json',
             // Comment in to hook up locally
-            url: 'http://localhost:8000/observations',
-            // url: 'https://nightlited.herokuapp.com/observations',
+            // url: 'http://localhost:8000/observations',
+            url: 'https://nightlited.herokuapp.com/observations',
             method: 'GET',
             cache: false,
         })
@@ -100,7 +100,6 @@ require([
     function initFunc(map) {
         if (navigator.geolocation) {
             console.log("observations", observations);
-            drawObservations();
             navigator.geolocation.getCurrentPosition(zoomToLocation, locationError);
             watchId = navigator.geolocation.watchPosition(showLocation, locationError);
         } else {
@@ -188,8 +187,7 @@ require([
                 Rating: pointArr[i].stars,
                 Latitude: pointArr[i].latitude,
                 Longitude: pointArr[i].longitude,
-                Description: pointArr[i].description,
-                Username: pointArr[i].username
+                Description: pointArr[i].description
                     // Image: pointArr[i].Image
             };
 
@@ -219,16 +217,6 @@ require([
            map.removeLayer(layer);
              return;
           }
-        // if(layerFlag === false) {
-        //    map.removeLayer(layer);
-        //    tiled2Flag = true;
-        //    return;
-        //  }
-        //  if(layerFlag === true) {
-        //    map.addLayer(layer);
-        //    tiled2Flag = false;
-        //    return;
-        //  }
        };
     }());
 
