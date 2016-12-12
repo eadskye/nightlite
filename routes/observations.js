@@ -1,14 +1,14 @@
 'use strict';
 
 const express = require('express');
-const app = express();
+// const app = express();
 const router = express.Router();
 const ev = require('express-validation');
 const validations = require('../validations/observations');
 const knex = require('../knex');
 
-const {decamelizeKeys, camelizeKeys} = require('humps');
-const bcrypt = require('bcrypt');
+// const {decamelizeKeys, camelizeKeys} = require('humps');
+// const bcrypt = require('bcrypt');
 const boom = require('boom');
 
 var obsGET;
@@ -53,7 +53,7 @@ router.get('/observations/:user_id', (req, res, next) => {
 
 router.post('/observations', ev(validations.post), (req, res, next) => {
 
-  const newObservation = {
+  const newObs = {
     user_id: req.body.user_id,
     latitude: req.body.latitude,
     longitude: req.body.longitude,
@@ -62,31 +62,31 @@ router.post('/observations', ev(validations.post), (req, res, next) => {
     description: req.body.description
    };
 
-  if(!newObservation.user_id){
+  if(!newObs.user_id){
     return next(boom.create(400, 'user_id must not be blank'));
   }
-  if (!newObservation.latitude) {
+  if (!newObs.latitude) {
     return next(boom.create(400, 'latitude must not be blank'));
   }
 
-  if (!newObservation.longitude) {
+  if (!newObs.longitude) {
     return next(boom.create(400, 'longitude must not be blank'));
   }
 
-  if (!newObservation.stars) {
+  if (!newObs.stars) {
     return next(boom.create(400, 'stars must not be blank'));
   }
 
-  if (!newObservation.name) {
+  if (!newObs.name) {
     return next(boom.create(400, 'name must not be blank'));
   }
 
-  if (!newObservation.description) {
+  if (!newObs.description) {
     return next(boom.create(400, 'description must not be blank'));
   }
 
   knex('observations')
-    .insert(newObservation)
+    .insert(newObs)
     .then(
       res.send('New observation post created')
     )
@@ -99,36 +99,37 @@ router.post('/observations', ev(validations.post), (req, res, next) => {
 //
 // });
 
-//
-// router.delete('/observations', (req, res, next) => {
-//   console.log("here");
-//     const deleteId = Number.parseInt(req.params.id);
-//     // console.log(deleteId);
-//     // if(isNaN(deleteId) || deleteId<0){
-//     //   res.sendStatus(404);
-//     // }
-//
-//     knex('observations')
-//       .where('id', deleteId)
-//       .first()
-//       .then((deleteObs) =>{
-//         if(!deleteObs){
-//           return next();
-//         }
-//         console.log(deleteObs);
-//         return knex('observations')
-//           .del()
-//           .where('id', deleteId);
-//       })
-//
-//       .then(() => {
-//         delete deleteObs.id;
-//         res.send("its gone");
-//       })
-//       .catch((err) => {
-//         next(err);
-//       });
-//
-// });
+//delete observation by id
+router.delete('/observations/:id', (req, res, next) => {
+  let id = Number.parseInt(req.params.id);
+  let observation = null;
+
+    if(isNaN(id) || id<0){
+      res.sendStatus(404);
+    }
+
+    knex('observations')
+      .where('id', id)
+      .first()
+      .then((result) =>{
+        if(!result){
+          return next();
+        }
+      observation = result;
+
+        // console.log(observation);
+      return knex('observations')
+        .del()
+        .where('id', id);
+      })
+      .then(() => {
+        delete observation.id;
+        res.send(observation);
+      })
+      .catch((err) => {
+        next(err);
+      });
+
+});
 
 module.exports = router;
