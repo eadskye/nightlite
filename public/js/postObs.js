@@ -48,5 +48,7 @@ $(document).ready(function() {
             contentType: 'application/json',
             data: newObs
         });
+
+        window.location.replace("map.html"); // redirect user to map page
     }); // end obsform submit
 }); // end doc ready

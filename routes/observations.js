@@ -41,7 +41,6 @@ router.get('/observations/:user_id', (req, res, next) => {
         return next();
       }
       res.send(result);
-
     })
     .catch((err) => {
       next(err);
@@ -89,6 +88,7 @@ router.post('/observations', ev(validations.post), (req, res, next) => {
     .insert(newObservation)
     .then(
       res.send('New observation post created')
+      // res.redirect('/map.html')
     )
     .catch((err) => {
       next(err);
