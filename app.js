@@ -38,10 +38,13 @@ app.use(express.static(path.join('public')));
 const users = require('./routes/users');
 const observations = require('./routes/observations');
 const comments = require('./routes/comments');
+const login = require('./routes/login');
+
 
 app.use(users);
 app.use(observations);
 app.use(comments);
+app.use(login);
 
 app.use((err, _req, res, _next) => {
   if (err.output && err.output.statusCode) {
