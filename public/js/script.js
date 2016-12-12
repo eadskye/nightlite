@@ -1,9 +1,13 @@
-// for (var i = 0; i < response.length; i++) {
-// var obj = {
-//     lat: -40,
-//     long: 40,
-// };
-// mapArr.push(obj);
+var toggleLayer;
+var tiled2;
+var tiled2Flag;
+
+$( document ).ready(function() {
+  $("#toggle-labels").on('click', function(event) {
+    console.log("Remove a layer");
+    toggleLayer(tiled2, tiled2Flag);
+  });
+});
 
 var observations;
 // Heroku is https, so we have to make the call making https
@@ -105,11 +109,12 @@ require([
     var grayBase = new ArcGISTiledMapServiceLayer("https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer/");
     map.addLayer(grayBase);
 
-    var tiled2 = new ArcGISTiledMapServiceLayer("https://tiles.arcgis.com/tiles/b3fMqPOmotX6SV4k/arcgis/rest/services/ArtificialSkyBrightness/MapServer/");
-    map.addLayer(tiled2);
-
-    var tiled1 = new ArcGISTiledMapServiceLayer("https://services.arcgisonline.com/arcgis/rest/services/Reference/World_Boundaries_and_Places/MapServer/");
+    var tiled1 = new ArcGISTiledMapServiceLayer("https://tiles.arcgis.com/tiles/b3fMqPOmotX6SV4k/arcgis/rest/services/ArtificialSkyBrightness/MapServer/");
     map.addLayer(tiled1);
+
+    tiled2 = new ArcGISTiledMapServiceLayer("https://services.arcgisonline.com/arcgis/rest/services/Reference/World_Boundaries_and_Places/MapServer/");
+    tiled2Flag = true;
+    map.addLayer(tiled2);
 
     map.on("load", initFunc);
     map.on("load", formatData);
@@ -241,10 +246,20 @@ require([
             map.graphics.add(observationArray[i]);
         }
     }
-
-    function removeLayer (layer){
-      //if (typeof layer === typeof MAPLAYERTYPE)
-        map.removeLayer(layer);
-    }
+    
+    (function(){
+       toggleLayer=function(layer, layerFlag){
+        if(layerFlag === true) {
+           map.removeLayer(layer);
+           tiled2Flag = false;
+           return;
+         }
+         if(layerFlag === false) {
+           map.addLayer(layer);
+           tiled2Flag = true;
+           return;
+         }
+       };
+    }());
 
 });
