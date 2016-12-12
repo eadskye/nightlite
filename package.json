@@ -4,8 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "test": "mocha"
+    "start": "node app.js",
+    "test": "mocha",
+    "knex": "knex",
+    "heroku-postbuild": "knex migrate:latest"
   },
   "repository": {
     "type": "git",
@@ -35,6 +37,10 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
-    "supertest": "^2.0.1"
+    "supertest": "^2.0.1",
+    "nodemon": "^1.11.0"
+  },
+  "engines": {
+    "node": "7.0.0"
   }
 }
