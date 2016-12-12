@@ -17,32 +17,32 @@ $(document).ready(function() {
   var numberOfStars =
 
 
-  stars.on('click', function(event) {
-                          var target = $(event.target);
-                          if (target !== $(event.currentTarget)) {
-                            numberOfStars = event.target.value;
-                            console.log(numberOfStars);
-                            return event.target.value;
-                          }
-                      });
+  // stars.on('click', function(event) {
+  //                         var target = $(event.target);
+  //                         if (target !== $(event.currentTarget)) {
+  //                           numberOfStars = event.target.value;
+  //                           console.log(numberOfStars);
+  //                           return event.target.value;
+  //                         }
+  //                     });
 
 //   $('#obsform').submit(function() {
 //   alert($(this).serialize());
 //   return false;
 // });
-
-submit.on('click', function() {
-
-var formData =      {
-      "user_id": "2",
-     "latitude": latitude.val(),
-     "longitude": longitude.val(),
-     "stars": numberOfStars,
-     "name": name.val(),
-     "description": description.val()
-};
-
-console.log(formData);
+// 
+// submit.on('click', function() {
+//
+// var formData =      {
+//       "user_id": "2",
+//      "latitude": latitude.val(),
+//      "longitude": longitude.val(),
+//      "stars": numberOfStars,
+//      "name": name.val(),
+//      "description": description.val()
+// };
+//
+// console.log(formData);
 
 
   $.ajax({
