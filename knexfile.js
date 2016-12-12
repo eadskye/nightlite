@@ -11,5 +11,9 @@ module.exports = {
     connection:'postgres://localhost/nightlite_test'
   },
 
-  production: {}
+//Hooks up the Heroku database
+  production: {
+  	  client: 'pg',
+  	  connection: process.env.DATABASE_URL
+  	}
 };
