@@ -19,8 +19,8 @@ var observations;
     $.ajax({
             dataType: 'json',
             // Comment in to hook up locally
-            // url: 'http://localhost:8000/observations',
-            url: 'https://nightlited.herokuapp.com/observations',
+            url: 'http://localhost:8000/observations',
+            // url: 'https://nightlited.herokuapp.com/observations',
             method: 'GET',
             cache: false,
         })
@@ -65,40 +65,6 @@ require([
     var observationArray = [];
 
     var pointArr = observations;
-
-    // var pointArr = [{  created_at:"2016-12-10T22:51:41.010Z",
-    //     description:"Ok, Devin kept shining a flashlight at me",
-    //     id:2,
-    //     latitude:"40.0150",
-    //     longitude:"-99.2705",
-    //     name:"Galvanize Balcony",
-    //     stars:2,
-    //     updated_at:"2016-12-10T22:51:41.010Z",
-    //     user_id:2,
-    //     Image: "<img src='http://davidzentz.com/blog/wp-content/uploads/2014/01/20131223-untitled-_DEZ6857-Edit1.jpg' style='height: 150px;'>"
-    // }, {
-    //     created_at:"2016-12-10T22:51:41.010Z",
-    //     description:"Ok, Devin kept shining a flashlight at me",
-    //     id:2,
-    //     latitude:"38.0150",
-    //     longitude:"-97.2705",
-    //     name:"Galvanize Balcony",
-    //     stars:2,
-    //     updated_at:"2016-12-10T22:51:41.010Z",
-    //     user_id:2,
-    //     Image: "<img src='http://davidzentz.com/blog/wp-content/uploads/2014/01/20131223-untitled-_DEZ6857-Edit1.jpg' style='height: 150px;'>"
-    // }, {
-    //     created_at:"2016-12-10T22:51:41.010Z",
-    //     description:"Ok, Devin kept shining a flashlight at me",
-    //     id:2,
-    //     latitude:"42.0150",
-    //     longitude:"-96.2705",
-    //     name:"Galvanize Balcony",
-    //     stars:2,
-    //     updated_at:"2016-12-10T22:51:41.010Z",
-    //     user_id:2,
-    //     Image: "<img src='http://davidzentz.com/blog/wp-content/uploads/2014/01/20131223-untitled-_DEZ6857-Edit1.jpg' style='height: 150px;'>"
-    // }];
 
     var map = new Map("map", {
         center: [long, lat],
@@ -222,7 +188,8 @@ require([
                 Rating: pointArr[i].stars,
                 Latitude: pointArr[i].latitude,
                 Longitude: pointArr[i].longitude,
-                Description: pointArr[i].description
+                Description: pointArr[i].description,
+                Username: pointArr[i].username
                     // Image: pointArr[i].Image
             };
 
