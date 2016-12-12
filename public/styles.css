@@ -306,9 +306,9 @@ p {
   letter-spacing: 0.0625em;
 }
 
-#search {
+/*#search {
   padding-bottom: 10px;
-}
+}*/
 
 #map {
   margin: 0 auto;
@@ -356,4 +356,14 @@ img {
 
 .image {
 text-align: center;
+}
+
+#searchAndLabels {
+  width: 750px;
+  display: inline-block;
+}
+#checkboxToggle {
+  display: inline-block;
+  padding-bottom: 10px;
+
 }
