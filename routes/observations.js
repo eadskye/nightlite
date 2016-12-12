@@ -62,6 +62,8 @@ router.post('/observations', ev(validations.post), (req, res, next) => {
     description: req.body.description
    };
 
+   console.log("ribbit");
+
   if(!newObservation.user_id){
     return next(boom.create(400, 'user_id must not be blank'));
   }
@@ -73,9 +75,9 @@ router.post('/observations', ev(validations.post), (req, res, next) => {
     return next(boom.create(400, 'longitude must not be blank'));
   }
 
-  if (!newObservation.stars) {
-    return next(boom.create(400, 'stars must not be blank'));
-  }
+  // if (!newObservation.stars) {
+  //   return next(boom.create(400, 'stars must not be blank'));
+  // }
 
   if (!newObservation.name) {
     return next(boom.create(400, 'name must not be blank'));
