@@ -6,7 +6,6 @@ var labelCheck = $("#toggle-labels");
 $( document ).ready(function() {
   labelCheck.on('click', function(event) {
     console.log("Remove a layer");
-    // if(labelCheck.is(":checked")) {
     toggleLayer(tiled2, tiled2Flag);
   //  }
   });
@@ -19,8 +18,8 @@ var observations;
     $.ajax({
             dataType: 'json',
             // Comment in to hook up locally
-            url: 'http://localhost:8000/observations',
-            // url: 'https://nightlited.herokuapp.com/observations',
+            // url: 'http://localhost:8000/observations',
+            url: 'https://nightlited.herokuapp.com/observations',
             method: 'GET',
             cache: false,
         })
