@@ -1,19 +1,20 @@
 "use strict";
 
 $(document).ready(function() {
-// Code to make stars work
+// Code add selected class to star when it is clicked on
   $('.rating input').change(function () {
   var $radio = $(this);
   $('.rating .selected').removeClass('selected');
   $radio.closest('label').addClass('selected');
-
-  const submit = $('#submit-button');
-
-  var name = $("#name");
-  var latitude = $("#latitude");
-  var longitude = $("#longitude");
-  var description = $("#description");
-  var stars = $("#stars");
+  });
+});
+  // const submit = $('#submit-button');
+  //
+  // var name = $("#name");
+  // var latitude = $("#latitude");
+  // var longitude = $("#longitude");
+  // var description = $("#description");
+  // var stars = $("#stars");
   // var numberOfStars =
 
 
@@ -72,4 +73,4 @@ $(document).ready(function() {
 //     })
 //     .fail(function(jqXHR, textStatus, errorThrown) {
 //         console.log("jxXHR : ", jqXHR, " - status : ", textStatus, " - error : ", errorThrown);
-    });
+    // });
