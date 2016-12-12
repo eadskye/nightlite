@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
-    "test": "mocha"
+    "test": "mocha",
+    "knex": "knex",
+    "heroku-postbuild": "knex migrate:latest"
   },
   "repository": {
     "type": "git",
@@ -36,5 +38,8 @@
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
     "supertest": "^2.0.1"
+  },
+  "engines": {
+    "node": "7.0.0"
   }
 }
