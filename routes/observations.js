@@ -14,18 +14,18 @@ const boom = require('boom');
 var obsGET;
 
 router.get('/observations', (req, res, next) => {
-    knex('observations')
-        .orderBy('name')
-        .then((results) => {
-            obsGET = JSON.stringify(results);
-            // console.log(obsGET);
-            // console.log(typeof obsGET);
-            res.send(obsGET);
-            res.send(results);
-        })
-        .catch((err) => {
-            next(err);
-        });
+  knex('observations')
+      .orderBy('name')
+      .then((results) => {
+          obsGET = JSON.stringify(results);
+          // console.log(obsGET);
+          // console.log(typeof obsGET);
+          res.send(obsGET);
+          res.send(results);
+      })
+      .catch((err) => {
+          next(err);
+      });
 });
 
 //TODO will get all of a users observations to update and delete

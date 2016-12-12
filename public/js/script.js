@@ -122,6 +122,7 @@ require([
     function initFunc(map) {
         if (navigator.geolocation) {
             console.log("observations", observations);
+            drawObservations(observations);
             navigator.geolocation.getCurrentPosition(zoomToLocation, locationError);
             watchId = navigator.geolocation.watchPosition(showLocation, locationError);
         } else {
