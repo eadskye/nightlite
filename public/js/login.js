@@ -1,7 +1,7 @@
 $(document).ready(function(){
   'use strict';
 
-  $('.button-collapse').sideNav();
+  // $('.button-collapse').sideNav();
 
   $('#login').on('click', function(event){
     event.preventDefault();
@@ -17,21 +17,39 @@ $(document).ready(function(){
     //   return Materialize.toast('Please include a password.', 3000);
     // }
 
-    const options = {
+    var login = {};
+    login.username = username;
+    login.password = password;
+
+    login = JSON.stringify(login);
+
+    console.log(login);
+
+    var $xhr = $.ajax({
       method: 'POST',
       url: '/login/',
       dataType: 'json',
       contentType: 'application/json',
-      data: JSON.stringify({ username, password })
-    };
+      data:
+    });
 
-    $.ajax(options)
-      .done(() => {
-        window.location.href = '/map.html';
-      })
-      .fail(($xhr) => {
-        Materialize.toast($xhr.responseText, 3000);
-      });
+
+
+    // const options = {
+    //   method: 'POST',
+    //   url: '/login/',
+    //   dataType: 'json',
+    //   contentType: 'application/json',
+    //   data: JSON.stringify({ username, password })
+    // };
+    //
+    // $.ajax(options)
+    //   .done(() => {
+    //     window.location.href = '/map.html';
+    //   })
+    //   .fail(($xhr) => {
+    //     Materialize.toast($xhr.responseText, 3000);
+    //   });
   });
 });
 //login.html
