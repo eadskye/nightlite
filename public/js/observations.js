@@ -2,15 +2,12 @@
 
 $(document).ready(function(){
   getObservations();
-  $("#submit-button").on('click', function(event){
-    event.preventDefault();
-    console.log('submit clicked');
-  });
+  
 
 function getObservations(data){
 $.ajax({
-  url: 'https://nightlited.herokuapp.com/observations',
-  // url:'http://localhost:8000/observations',
+  ///url: 'https://nightlited.herokuapp.com/observations',
+  url:'http://localhost:8000/observations',
   jsonp: "callback",
   data: data,
   type: 'get',

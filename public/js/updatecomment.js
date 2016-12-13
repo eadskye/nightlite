@@ -8,26 +8,26 @@
 //redraw the comments with the updated results
 
 $(document).ready(function(){
-  //getComments();
+  getComments();
   console.log('we are here');
 
 
 
-// function getComments(data){
-//   $.ajax({
-//     url:'http://localhost:8000/comments/1',
-//     jsonp: "callback",
-//     data: data,
-//     type: 'get',
-//     success: function (data){
-//       console.log(data);
-//       console.log('success');
-//       //drawObservations(data);
-//     },
-//     error: function(){
-//       console.log("error");
-//     }
-//   });
-// }
+function getComments(data){
+  $.ajax({
+    url:'http://localhost:8000/comments/1',
+    jsonp: "callback",
+    data: data,
+    type: 'get',
+    success: function (data){
+      console.log(data);
+      console.log('success');
+      //drawObservations(data);
+    },
+    error: function(){
+      console.log("error");
+    }
+  });
+}
 
 });
