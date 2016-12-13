@@ -69,34 +69,21 @@
             <!-- Login Form -->
             <form action="login" method="POST" class="col s12 m6">
 
-                <!-- Username -->
-                <div class="row">
-                    <div class="input-field  col s6 l5  white-text">
-                      <!--change input name from  username -->
+              <!-- Username -->
+             <div class="row">
+                 <div class="input-field  col s6 l5  white-text">
+                     <input id="loginuser" type="text" class="validate" name="loginuser">
+                     <label class="active" for="loginuser">Username</label>
+                 </div>
+             </div>
 
-                        <label for="loginuser">Username
-                          <input id="loginuser" type="text"
-                          name="loginuser">
-                        </label>
-                        <!-- <label class="active" for="loginuser">Username
-                          <input id="loginuser" type="text"
-                          name="loginuser">
-                        </label> -->
-                    </div>
-                </div>
-
-                <!-- Password -->
-                <div class="row">
-                    <div class="input-field  col s6 l5 white-text">
-
-                        <label for="userpassword">Password
-                          <input id="userpassword" type="password" name="userpassword">
-                        </label>
-                        <!-- <label class="active" for="userpassword">Password
-                          <input id="userpassword" type="password" name="userpassword">
-                        </label> -->
-                    </div>
-                </div>
+             <!-- Password -->
+             <div class="row">
+                 <div class="input-field  col s6 l5 white-text">
+                     <input id="userpassword" type="password" class="validate" name="userpassword">
+                     <label class="active" for="userpassword">Password</label>
+                 </div>
+             </div>
 
                 <!-- Submit Button -->
                 <div class="row">

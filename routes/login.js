@@ -1,21 +1,19 @@
 'use strict';
 
 const express = require('express');
-const app = express();
+// const app = express();
 const router = express.Router();
-// const ev = require('express-validation');
-// const validations = require('../validations/observations');
+
 const knex = require('../knex');
 
 // const {decamelizeKeys, camelizeKeys} = require('humps');
-// const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
 
 const bcrypt = require('bcrypt');
-// const jwt = require('jsonwebtoken');
-// const boom = require('boom');
 
-app.use(bodyParser.json());
+// const boom = require('boom');
+// app.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: false }));
 
 //existing users
 // router.post('/login',(req, res, next) =>{
@@ -43,6 +41,9 @@ app.use(bodyParser.json());
 //           //logging user's id
 //           // res.redirect('/');
 //         }
+//       })
+//       .catch((err)=>{
+//         next(err);
 //       });
 //
 // });
