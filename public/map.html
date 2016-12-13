@@ -14,7 +14,7 @@
     <!-- Map  -->
     <link rel="stylesheet" href="https://js.arcgis.com/3.18/esri/css/esri.css">
 
- <!-- CSS  -->
+    <!-- CSS  -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
@@ -48,20 +48,6 @@
         <div class="section">
             <div class="row"></div>
 
-            <!-- Zip Code Submit  -->
-            <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        <div id="input" class="input-field col s12 l6">
-                            <input placeholder="" id="zipcode" type="text" class="col s6 validate grey lighten-4 ">
-                            <button id="zipcode-btn" class="col s3 btn waves-effect waves-light blue lighten-2" type="submit" name="action">Explore
-                              </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <div class="divider"></div>
         </div>
     </div>
 
@@ -69,51 +55,80 @@
     <div onorientationchange="orientationChanged();">
         <div id="map">
 
-          <div id="searchAndLabels">
-            <div id="search"></div>
+            <div id="searchAndLabels">
+                <div id="search"></div>
 
 
-          </div>
-          <div id="checkboxToggle">
-            <input type="checkbox" checked="checked" id="toggle-labels" name="toggle-labels"/>
-            <label for="toggle-labels">Boundaries On</label>
-          </div>
+            </div>
+            <div id="checkboxToggle">
+                <input type="checkbox" checked="checked" id="toggle-labels" name="toggle-labels" />
+                <label for="toggle-labels">Boundaries On</label>
+            </div>
 
         </div>
     </div>
     <!-- MAP END -->
 
     <!-- Post Update Buttons -->
-    <div class="container">
+    <!-- <div class="container">
         <div class="section">
             <div class="row">
                 <div class="col s12">
-                    <button href="obs.html" id="postNew" class="btn waves-effect waves-light blue lighten-2"><a href= "obs.html">POST NEW OBSERVATION</button>
-                    <button href="update.html" id="updateObs" class="btn waves-effect waves-light blue lighten-2" type="submit" name="action"><a href= "update.html">UPDATE OBSERVATION</a></button>
-                    <!-- <button id="toggle-labels" class="btn waves-effect waves-light blue lighten-2">Toggle Borders</button> -->
+                    <a href="obs.html" id="postNew" class="btn waves-effect waves-light blue lighten-2">POST NEW OBSERVATION</a>
+                    <a href="update.html" id="updateObs" class="btn waves-effect waves-light blue lighten-2">UPDATE COMMENTS</a>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Comment Section Start-->
     <div class="container">
         <div class="section" id="information">
+          <div class="row">
+              <div class="col s12">
+                  <a href="obs.html" id="postNew" class="btn waves-effect waves-light blue lighten-2">POST NEW OBSERVATION</a>
+                  <a href="update.html" id="updateObs" class="btn waves-effect waves-light blue lighten-2">UPDATE COMMENTS</a>
+              </div>
+          </div>
             <div class="row">
                 <div class="col s12 m6 l6">
                     <h5 class="black-text">Information</h5>
-                    <div id="location" class="black-text">Location:</div>
-                    <div id="description" class="black-text">Description:</div>
-                    <div id="rating" class="black-text">Rating:</div>
-                    <div id="coordinates" class="black-text">Coordinates:</div>
-                    <div id="date" class="black-text">Date:</div>
-                    <div id="posted" class="black-text">Posted by:</div>
-                    <!-- add option to click the enter button to submit? or add a button? -->
+                    <div id="location" class="black-text">Location: </div>
+                    <div id="description" class="black-text">Description: </div>
+                    <div id="rating" class="black-text">Rating: </div>
+                    <div id="lat" class="black-text">Latitude: </div>
+                    <div id="long" class="black-text">Longitude: </div>
+                    <div id="date" class="black-text">Date: </div>
+                    <div id="posted" class="black-text">Posted by: </div>
                     <div class="input-field s6 m6 l6">
                         <input value="" id="comments" type="text" class="validate">
                         <label class="active black-text" for="comments">Comments:</label>
-                    </div>
 
+
+                        <!--   User enters comment -->
+                        <button id="make-comment" class="col s3 btn waves-effect waves-light blue lighten-1" type="submit" name="make-comment">Comment</button>
+
+                        <!-- <button id="view-comment" class="col s6 btn waves-effect waves-light blue lighten-1" type="cancel" name="cancel">View Comments</button> -->
+
+
+                        <!-- Modal Trigger -->
+                        <!-- <a id="comments-modal" class="modal-trigger waves-effect waves-light blue lighten-1" href="#modal1">Modal</a> -->
+
+                        <button id="comments-modal" class="white-text col s6 btn waves-effect waves-light blue lighten-1" type="submit" name="view-comment"><a id="comments-modal" class="white-text modal-trigger waves-effect waves-light blue lighten-1" href="#modal1">View Comments</a></button>
+
+                        <!-- Modal Structure -->
+                        <div id="modal1" class="modal modal-fixed-footer">
+                            <div class="modal-content">
+                                <h4>Comments</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ligula nunc, suscipit sed tellus eu, imperdiet fringilla dui. Etiam sapien metus, ultricies eu ligula eu, congue sagittis tortor. <br>
+                                  <br>Etiam tincidunt arcu ac dapibus bibendum. Nulla mattis a leo vel tincidunt. Duis suscipit nisi justo, vel ultrices lacus efficitur at. Sed a nunc viverra, efficitur nunc ac, semper urna. </p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -127,8 +142,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     <script src="js/init.js"></script>
     <script src="https://js.arcgis.com/3.18compact/"></script>
-    <script type = "text/javascript" src="js/script.js"></script>
-    <script type = "text/javascript" src="js/observations.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/observations.js"></script>
+      <script type="text/javascript" src="js/map.js"></script>
 
 </body>
 
