@@ -10,6 +10,9 @@
 $(document).ready(function(){
   getComments();
 
+
+
+
 function getComments(data){
   $.ajax({
     url:'http://localhost:8000/comments/users/1',
@@ -40,15 +43,60 @@ function drawComments(data){
               '<p class="black-text">' + data[i].comment + '</p>'+
               '<p class="black-text"> Added By:' + data[i].username + '</p>'+
               '<p class="black-text"> Updated At:' + data[i].updated_at + '</p>'+
-              '<button value=' + data[i].id + ' id="update'+ data[i].id + '"> Update </button>' +
-              '<button value=' + data[i].id + ' id="delete' + data[i].id + '"> Delete </button>' +
+              '<input id="input' + data[i].id + '" class="materialize-textarea" type="text">' +
+              '<button value=' + data[i].id + ' class="update"> Update </button>' +
+              '<button value=' + data[i].id + ' class="delete"> Delete </button>' +
             '</div>' +
           '</div>' +
           '<div class="col s2"></div>'
         );
       }
-  $('.modal').modal();
+
   $('#newcomments').append(results.join(''));
+  $('.update').click(function(){
+    var updatenum = $(this).val();
+    var sibling = $(this).parent().find('input').val();
+    console.log(sibling);
+
+    console.log(updatenum);
+  });
+
+
+  $('.delete').click(function(){
+    var deletenum = $(this).val();
+    console.log(deletenum);
+  });
   }
+
+function updateComment(id, data){
+    let commentid = id;
+    let commentdata = data;
+
+    $.ajax({
+      url:'http://localhost:8000/comments/' + commentid,
+      jsonp: "callback",
+      data: commentdata,
+      type: 'patch',
+      success: function (data){
+        console.log('success');
+        drawComments(data);
+      },
+      error: function(){
+        console.log("error");
+      }
+    });
+
+}
+
+function deleteComment(id){
+
+}
+
+
+
+
+
+
+
 
 });
