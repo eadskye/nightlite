@@ -8,6 +8,18 @@
      width: 100%;
  }*/
 
+ .comment-buttons {
+   opacity: 2;
+   font-family: 'Raleway', sans-serif;
+   font-weight: 700;
+   letter-spacing: 0.0625em;
+   opacity: 0.8;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   margin-top: 10px;
+      }
+
  #make-comment  {
    opacity: 2;
    font-family: 'Raleway', sans-serif;
@@ -126,7 +138,7 @@
   background-size: cover;
 }
 
-.obsBG {
+.obsBG  {
   background-image: url(imgs/mapbg.jpg);
   background-color: #000;
   background-repeat: no-repeat;
@@ -305,7 +317,7 @@ button {
  border-radius: 8px;
 }
 
-#updatepost {
+#post {
  margin-right: 8px;
  opacity: 0.8;
  font-family: 'Raleway', sans-serif;

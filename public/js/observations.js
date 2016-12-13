@@ -10,25 +10,25 @@ $(document).ready(function(){
 
 
 
-function getObservations(data){
-$.ajax({
-  url: 'https://nightlited.herokuapp.com/observations',
-  // url:'http://localhost:8000/observations',
-  jsonp: "callback",
-  data: data,
-  type: 'get',
-  success: function (data){
-    console.log(data);
-    console.log('success');
-    drawObservations(data);
-  },
-  error: function(){
-    console.log("error");
-  }
-});
-  //gets observation data
-  //draws on page
-}
+// function getObservations(data){
+// $.ajax({
+//   // url: 'https://nightlited.herokuapp.com/observations',
+//   url:'http://localhost:8000/observations',
+//   jsonp: "callback",
+//   data: data,
+//   type: 'get',
+//   success: function (data){
+//     console.log(data);
+//     console.log('success');
+//     drawObservations(data);
+//   },
+//   error: function(){
+//     console.log("error");
+//   }
+// });
+//   //gets observation data
+//   //draws on page
+// }
 
 
 function drawObservations(data){
