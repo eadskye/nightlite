@@ -32,24 +32,22 @@ function getComments(data){
 function drawComments(data){
   var i;
   var results = [];
+  console.log(data);
   $('#comments').empty();
   for (i=0 ; i<data.length ; i++){
     results.push(
       '<div class="col s8 comments">' +
           '<div class="card-panel white">' +
-      '<span class="black-text"> THIS IS SOME TEXT' +
-      '</span>' +
+      '<span class="black-text">"' + data[i].comment + '"</span>' +
       '<div class="row center">' +
-      '<a href="map.html" id="updatepost" class="comment-buttons btn waves-effect waves-light blue lighten-2">Update</a>' +
-      '<a href="map.html" id="deletepost" class="comment-buttons btn waves-effect waves-light blue lighten-2">Delete</a>' +
       '</div>' +
 
            '<a class="modal-trigger waves-effect waves-light btn" href="#modal1">Update</a>' +
-
+           '<a class="modal-trigger waves-effect waves-light btn" href="#modal1">Delete</a>' +
            '<div id="modal1" class="modal modal-fixed-footer">' +
              '<div class="modal-content">' +
                '<h4>Comments</h4>' +
-               '<p>A bunch of text</p>' +
+               '<p>' + data[i].comment + '</p>' +
              '</div>' +
              '<div class="modal-footer">' +
                '<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Save</a>' +
