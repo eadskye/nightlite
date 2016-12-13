@@ -1,20 +1,17 @@
+'use strict';
+
 $(document).ready(function(){
-  'use strict';
   // $('.button-collapse').sideNav();
 
-  $('#logout').click(function (e) {
-    $.post('login').then(function (response) {
-
-      console.log('clicked');
-      window.location = '/';
-    });
-  });
-
+  //create account
   $('#createaccount').on('click', function(event){
     event.preventDefault();
 
     let username = $('#loginuser').val().trim();
     let password = $('#userpassword').val();
+
+    console.log(username);
+    console.log(password);
 
     // if (!username) {
     //   return Materialize.toast('Please include a username', 3000);
@@ -22,8 +19,8 @@ $(document).ready(function(){
     // if (!password) {
     //   return Materialize.toast('Please include a password.', 3000);
     // }
-
     var login = {};
+
     login.username = username;
     login.password = password;
 
@@ -31,31 +28,55 @@ $(document).ready(function(){
 
     console.log(login);
 
-    var $xhr = $.ajax({
+    let $xhr = $.ajax({
       method: 'POST',
-      url: '/login/',
+      url:'http://localhost:8000/login/createaccount',
       dataType: 'json',
-      contentType: 'application/json'
+      contentType: 'application/json',
+      data: login
     });
 
+    $xhr.done(function(req) {
+      console.log("Account created, you are logged in");
+      console.log(req);
+    });
+    $xhr.fail(function() {
+      console.log('An error occurred, please try again');
+    });
+
+  });//end create account
 
 
-    // const options = {
-    //   method: 'POST',
-    //   url: '/login/',
-    //   dataType: 'json',
-    //   contentType: 'application/json',
-    //   data: JSON.stringify({ username, password })
-    // };
-    //
-    // $.ajax(options)
-    //   .done(() => {
-    //     window.location.href = '/map.html';
-    //   })
-    //   .fail(($xhr) => {
-    //     Materialize.toast($xhr.responseText, 3000);
-    //   });
+  // login to existing account
+  $('#createaccount').on('click', function(event){
+    event.preventDefault();
+
+    let username = $('#loginuser').val().trim();
+    let password = $('#userpassword').val();
+
+    console.log(username);
+    console.log(password);
+
   });
-});
+
+  $('#logout').on('click', function(event){
+    event.preventDefault();
+
+    let $xhr = $.ajax({
+      method: 'POST',
+      url:'http://localhost:8000/login/logout',
+      dataType: 'json',
+    });
+
+    $xhr.done(function() {
+      console.log("you are logged in");
+    });
+    $xhr.fail(function(err) {
+      console.log('please try logging in again');
+    });
+
+  });//end logout
+
+}); //end of doc
 //login.html
 //add <a href="/user.html">button code</a>
