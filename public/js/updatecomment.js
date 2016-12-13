@@ -9,8 +9,6 @@
 
 $(document).ready(function(){
   getComments();
-  console.log('getcomments');
-
 
 function getComments(data){
   $.ajax({
@@ -19,7 +17,6 @@ function getComments(data){
     data: data,
     type: 'get',
     success: function (data){
-      console.log(data);
       console.log('success');
       drawComments(data);
     },
@@ -34,32 +31,32 @@ function drawComments(data){
   var i;
   var results = [];
   console.log(data);
-  $('#comments').empty();
+  $('#newcomments').empty();
   for (i=0 ; i<data.length ; i++){
     results.push(
-
-      '<div class="col s12 m3">'+
-        '<div class="card small">'+
-
-          '<div class="card-action center">' +
-            '<p class="dogName">' + data[i].username + '</p>' +
-          '<a class="waves-effect waves-light btn modal-trigger" href="#modal' + data[i].id + '">' +
-            'More Info' +
-          '</a>' +
-            '<div id="modal' + data[i].id + '" class="modal">' +
-              '<div class="modal-content">'+
-                '<h4>' + data[i].username + '</h4>' +
-                '<p class="modaltext"> Description: ' + data[i].comments + '</p>' +
+          '<div class="col s2"></div>' +
+          '<div class="col s8">' +
+            '<div class="card-panel white">' +
+              '<p class="black-text">' + data[i].comment + '</p>'+
+              '<p class="black-text"> Added By:' + data[i].username + '</p>'+
+              '<p class="black-text"> Updated At:' + data[i].updated_at + '</p>'+
+              '<a class="modal-trigger waves-effect waves-light btn" href="#modal1">Update</a>' +
+              '<div id="modal1" class="modal modal-fixed-footer open" style="z-index: 1003; display: none; opacity: 0; transform: scaleX(0.7); top:327.976px;">' +
+                '<div class="modal-content">' +
+                  '<h4>Comments</h4>' +
+                  '<p>Modal Paragraph</p>' +
+                '</div>' +
+                '<div class="modal-footer">' +
+                  '<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"> SAVE </a>' +
+                '</div>' +
               '</div>' +
             '</div>' +
-          '</div>'+
-        '</div>'+
-      '</div>');
-
-  }
-  $('.modal1').modal();
-  $('#comments').append(results.join(''));
-
+          '</div>' +
+          '<div class="col s2"></div>'
+        );
+      }
+  $('.modal').modal();
+  $('#newcomments').append(results.join(''));
   }
 
 });
