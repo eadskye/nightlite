@@ -22,7 +22,11 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 
-    <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <!-- Cloudinary JavaScript for Image Handling -->
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript" defer></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/postObs.js"></script>
 
 </head>
 
@@ -128,13 +132,26 @@
                                               console.log(error, result);
                                               var imgUrl = result[0].secure_url;
                                               console.log(imgUrl);
+                                              // $.ajax({
+                                              //         dataType: 'json',
+                                              //         // Comment in to hook up locally
+                                              //         url: 'http://localhost:8000/observations',
+                                              //         // url: 'https://nightlited.herokuapp.com/observations',
+                                              //         method: 'POST',
+                                              //         cache: false,
+                                              //         data: imgUrl
+                                              //     })
+                                              //     .done(function(data) {
+                                              //         observations = data;
+                                              //     })
+                                              //     .fail(function(jqXHR, textStatus, errorThrown) {
+                                              //         console.log("jxXHR : ", jqXHR, " - status : ", textStatus, " - error : ", errorThrown);
+                                              //     });
+
                                             });
 
                                         }, false);
                                       </script>
-
-                                      <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
-
 
                                    </div>
 
@@ -174,7 +191,6 @@
     <!--  Scripts-->
     <script src="https://use.fontawesome.com/55219fed36.js"></script>
     <script src="js/init.js"></script>
-    <script src="js/postObs.js"></script>
 
 </body>
 

@@ -11,7 +11,7 @@ const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
 
 //get comments for a given observation id
-router.get('/comments/:obsid', (req, res, next) => {
+router.get('/comments/observation/:obsid', (req, res, next) => {
   let observationId = parseInt(req.params.obsid);
 
    knex.from('comments').leftJoin('observations', 'comments.id', 'observations.id')
