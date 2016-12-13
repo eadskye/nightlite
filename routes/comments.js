@@ -11,7 +11,7 @@ const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
 
 //get comments for a given user
-router.get('/comments/:userid', (req, res, next) => {
+router.get('/comments/users/:userid', (req, res, next) => {
   let userid = req.params.userid;
   console.log(userid);
 
@@ -45,7 +45,7 @@ router.post('/comments', ev(validations.post), (req, res, next) => {
       });
 
 });
-//patch comment by id
+//patch comment by commentid
 router.patch('/comments/:id', (req, res, next) => {
   var id = req.params.id;
   knex('comments')
