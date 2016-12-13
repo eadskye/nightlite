@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 const express = require('express');
 const router = express.Router();
@@ -8,27 +8,96 @@ const knex = require('../knex');
 const {decamelizeKeys, camelizeKeys} = require('humps');
 const bcrypt = require('bcrypt');
 
-//changes
 const bodyParser = require('body-parser');
 
-router.get('/comments', (req, res, next) => {
+//get comments for a given observation id
+router.get('/comments/:obsid', (req, res, next) => {
+  let observationId = parseInt(req.params.obsid);
 
+   knex.from('comments').leftJoin('observations', 'comments.id', 'observations.id')
+   .where({
+     observation_id: observationId
+   })
+  //.orderBy('updated_at', 'desc')
+  .then((results) => {
+    res.send(results);
+  })
+  .catch((err) => {
+    next(err);
+  });
 });
 
-router.get('/comments/:id', (req, res, next) => {
-
-});
-
+//TODO update observaton_id and user_id location from post request - is it in body or cookie??
 router.post('/comments', ev(validations.post), (req, res, next) => {
+  console.log(req.body);
+    knex('comments')
+      .insert({
+        user_id: req.body.user_id,
+        observation_id: req.body.observation_id,
+        comment: req.body.comment,
+        stars: req.body.stars
+      })
+      .then(
+        res.send('update comment')
+      )
+      .catch((err) => {
+        next(err);
+      });
 
 });
-
-router.patch('/comments', ev(validations.patch), (req, res, next) => {
-
+//patch comment by id
+router.patch('/comments/:id', (req, res, next) => {
+  var id = req.params.id;
+  knex('comments')
+  .where({
+    id: id
+  })
+  .first()
+  .then((comment) => {
+    if (!comment || !req.body.comment){
+      return next();
+    } return knex('comments')
+    .update({
+      comment: req.body.comment
+    }, '*')
+    .where({'id' : id});
+  })
+  .then((comments) => {
+    res.send(comments[0]);
+  })
+  .catch ((err) => {
+    next(err);
+  });
 });
 
-router.delete('/comments', ev(validations.delete), (req, res, next) => {
 
+//delete comment by id
+router.delete('/comments/:id', (req, res, next) => {
+  var id = req.params.id;
+  let comment;
+
+  knex('comments')
+  .where('id', id)
+  .first()
+  .then ((result) => {
+    if (!result) {
+      return next();
+    }
+  comment = result;
+
+  return knex('comments')
+    .del()
+    .where('id', id);
+  })
+  .then(() => {
+    delete comment.id;
+    res.send(comment);
+  })
+  .catch((err) => {
+    next(err);
+  });
 });
 
+
+//
 module.exports = router;

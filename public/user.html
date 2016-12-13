@@ -1,92 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Create Account</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <title>Create Account</title>
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="styles1.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="styles.css" type="text/css" rel="stylesheet" media="screen,projection">
 
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <!-- Font  -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway:400,500,600,700,800" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
-<div class="navbar-fixed">
-  <nav class="transparent" role="navigation">
-      <div class="nav-wrapper"><a id="logo-container" href="#" class="brand-logo">nightlite</a>
-        <div class="nav-wrapper">
 
-    </div>
-    </nav>
-    <div class="section no-pad-bot" id="index-banner">
-      <div class="container">
+<body class="userBG">
+    <div class="navbar-fixed">
+        <nav class="transparent" role="navigation">
+            <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">nightlite</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="learn.html">Learn</a></li>
+                </ul>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="map.html">Explore</a></li>
+                </ul>
 
-        <br><br>
-        <h4 class="header center white-text">Create Account</h4>
-        <div class="row center">
-          <h5 class="header col s12 light"></h5>
-        </div>
-        <div class="row center">
-          <!-- <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange"></a> -->
-        </div>
 
-    <div class="container">
-              <div class="transparent">
-              <div class="center">
-                  <div class="card-content white-text">
-                    <div class="row">
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a href="learn.html">Learn</a></li>
+                    <li><a href="map.html">Explore</a></li>
 
-      <form class="col s12">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s6">
-              <textarea id="createuser" class="materialize-textarea"></textarea>
-              <label for="createuser">Username</label>
+
+
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             </div>
-          </div>
+        </nav>
 
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s6">
-              <textarea id="createpass" class="materialize-textarea"></textarea>
-              <label for="createpass">Password</label>
+
+
+        <div class="section no-pad-bot" id="index-banner">
+            <div class="container">
+
+                <br><br>
+                <h4 class="header center white-text">Create Account</h4>
+                <div class="row center">
+                    <h5 class="header col s12 light"></h5>
+                </div>
+
+                <div class="container">
+                    <div class="transparent">
+                        <div class="row center">
+                            <div class="card-content white-text">
+
+                                <form class="col s12">
+
+                                    <div class="row center">
+                                        <div class="input-field col s6">
+                                            <textarea id="createuser" class="validate"></textarea>
+                                            <label class="active" for="createuser">Username</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row center">
+                                        <div class="input-field col s6">
+                                            <textarea id="createpass" type="password" class="validate"></textarea>
+                                            <label class="active" for="createpass">Password</label>
+                                        </div>
+                                    </div>
+
+
+
+                                </form>
+                            </div>
+
+
+
+
+
+
+                            <div class="row center">
+                                <a href="http://materializecss.com/getting-started.html" id="submit-button" class="btn waves-effect waves-light blue lighten-2">Submit</a>
+
+
+
+
+
+
+
+
+                                <!--  Scripts-->
+                                <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+                                <script src="js/materialize.js"></script>
+                                <script src="js/init.js"></script>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-
-
-
-    </form>
-
-
-
-
-      </form>
-
-
-    <div class="row center">
-      <a href="http://materializecss.com/getting-started.html" id="submit-button" class="btn-large waves-effect transparent">Submit</a>
-
+        </div>
     </div>
+    </div>
+    <div></div>
 
-
-
-
-
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
 </body>
 
 </html>
