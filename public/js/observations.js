@@ -5,10 +5,7 @@ $(document).ready(function(){
   $("#submit-button").on('click', function(event){
     event.preventDefault();
     console.log('submit clicked');
-    //getObservations();
   });
-
-
 
 function getObservations(data){
 $.ajax({
@@ -25,11 +22,9 @@ $.ajax({
     console.log("error");
   }
 });
-  //gets observation data
-  //draws on page
 }
 
-
+//draws the observations onto the bottom of the maps page
 function drawObservations(data){
   console.log(data);
   $('#information').empty();

@@ -11,10 +11,10 @@ const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
 
 //get comments for a given observation id
-router.get('/comments/:obsid', (req, res, next) => {
+router.get('/comments/:userid', (req, res, next) => {
   let observationId = parseInt(req.params.obsid);
 
-   knex.from('comments').leftJoin('observations', 'comments.id', 'observations.id')
+   knex.from('comments').leftJoin('users', 'comments.id', 'users.id')
    .where({
      observation_id: observationId
    })
