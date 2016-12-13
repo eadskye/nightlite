@@ -1,4 +1,5 @@
 'use strict';
+var obsID;
 
 $(document).ready(function(){
   getObservations();
@@ -9,6 +10,10 @@ $(document).ready(function(){
     // event.preventDefault();
     console.log(event.target);
     if ($(event.target).hasClass('commentsButton')) {
+      console.log(event.target.getAttribute('attr'));
+      obsID = event.target.getAttribute('attr');
+
+      getComments();
 
       $('#modal1').modal('open');
     }
@@ -46,7 +51,7 @@ $(document).ready(function(){
       // console.log('success');
       obsData = data;
       drawObservations(obsData);
-      getComments();
+      // getComments();
     },
     error: function(){
       console.log("error");
@@ -57,7 +62,7 @@ $(document).ready(function(){
   }
 
   function getComments(data){
-    var obsID = 2;
+    console.log("in HERE");
     $.ajax({
       // url: 'https://nightlited.herokuapp.com/observations',
       url:'http://localhost:8000/observations/comments/' + obsID,
@@ -65,16 +70,15 @@ $(document).ready(function(){
       data: data,
       type: 'get',
       success: function (data){
-        // console.log(data, "comments by ID");
+        console.log(data, "comments by ID");
         comments = data;
         // drawObservations(obsData);
+        $('#content').append(JSON.stringify(data));
       },
       error: function(){
         console.log("error");
       }
     });
-  //gets observation data
-  //draws on page
 }
 
 
