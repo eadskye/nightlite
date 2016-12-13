@@ -9,7 +9,8 @@ $(document).ready(function(){
 
 function getObservations(data){
 $.ajax({
-  url:'http://localhost:8000/observations',
+  url: 'https://nightlited.herokuapp.com/observations',
+  // url:'http://localhost:8000/observations',
   jsonp: "callback",
   data: data,
   type: 'get',
