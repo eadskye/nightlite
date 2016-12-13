@@ -5,6 +5,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
+const cookieSession = require('cookie-session');
 
 //switches to dev or test environments
 switch (app.get('env')) {
@@ -18,6 +19,14 @@ switch (app.get('env')) {
 
   default:
 }
+
+app.use(cookieSession({
+  name: 'session',
+  keys: ['supersecretkey']
+
+  // Cookie Options
+  // maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}));
 
 app.use(bodyParser.json());
 app.use(cookieParser());
