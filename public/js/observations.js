@@ -2,7 +2,7 @@
 
 $(document).ready(function(){
   getObservations();
-  
+
 
 function getObservations(data){
 $.ajax({
