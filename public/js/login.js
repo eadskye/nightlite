@@ -13,12 +13,13 @@ $(document).ready(function(){
     console.log(username);
     console.log(password);
 
-    // if (!username) {
-    //   return Materialize.toast('Please include a username', 3000);
-    // }
-    // if (!password) {
-    //   return Materialize.toast('Please include a password.', 3000);
-    // }
+    if (!username) {
+      return Materialize.toast('Please include a username', 3000);
+    }
+    if (!password) {
+      return Materialize.toast('Please include a password.', 3000);
+    }
+
     var login = {};
 
     login.username = username;
@@ -57,12 +58,13 @@ $(document).ready(function(){
     console.log(username);
     console.log(password);
 
-    // if (!username) {
-    //   return Materialize.toast('Please include a   username', 3000);
-    // }
-    // if (!password) {
-    //   return Materialize.toast('Please include a   password.', 3000);
-    // }
+    if (!username) {
+      return Materialize.toast('Please include a   username', 3000);
+    }
+    if (!password) {
+      return Materialize.toast('Please include a   password.', 3000);
+    }
+
     var login = {};
 
     login.username = username;
@@ -105,6 +107,7 @@ $(document).ready(function(){
     $xhr.fail(function(err) {
       console.log('please try logging in again');
     });
+    window.location = '/';
   });//end logout
 
 }); //end of doc

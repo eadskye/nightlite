@@ -17,7 +17,7 @@ router.use(bodyParser.urlencoded({ extended: false }));
 
 //new acct
 // is working and posting to db
-router.post('/login/createaccount/', (req,res,next) => {
+router.post('/login/createaccount', (req,res,next) => {
 
   let userName = req.body.username;
   let hashedPW = bcrypt.hashSync(req.body.password, 8);
@@ -40,7 +40,7 @@ router.post('/login/createaccount/', (req,res,next) => {
 
         console.log(req.session);
 
-        res.send(req.session);
+        res.redirect('/login');
 
       })
       .catch(function (err) {
@@ -73,21 +73,28 @@ router.post('/login/login',(req, res, next) =>{
         console.log(result);
         console.log("im here a");
         console.log(result.hashed_password);
+        console.log(result.username);
         console.log(hashedPW);
-        if (!result) {
+
           if (!result || !bcrypt.compareSync(hashedPW,result.hashed_password)) {
             console.log("error is here");
-          res.sendStatus(401);
+            res.sendStatus(401);
 
-        }else{
-          console.log("here now");
-          req.session.username = result[0].username;
-          console.log(req.session.username);
-          //logging user's id
-          res.redirect('/login.html');
-        }
+          }else{
+            console.log("here now");
+            req.session.id = result.id;
+            req.session.username = result.username;
+            req.session.isAdmin = result.admin;
+            req.session.created = result.created_at;
+
+            console.log(req.session.username);
+            //logging user's id
+            res.redirect('/login.html');
+          }
+
           res.send('im here');
-        }
+
+
       })
       .catch((err)=>{
         next(err);
@@ -97,9 +104,11 @@ router.post('/login/login',(req, res, next) =>{
 
 //logout
 router.post('/login/logout', (req, res, next) => {
+  console.log(req.session);
   req.session = null;
-  console.log('log out');
-  res.send('logged out');
+  console.log('log out/session cleared');
+  console.log(req.session);
+  res.send(req.session);
 });
 
 
