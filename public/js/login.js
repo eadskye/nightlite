@@ -1,9 +1,16 @@
 $(document).ready(function(){
   'use strict';
-
   // $('.button-collapse').sideNav();
 
-  $('#login').on('click', function(event){
+  $('#logout').click(function (e) {
+    $.post('login').then(function (response) {
+
+      console.log('clicked');
+      window.location = '/';
+    });
+  });
+
+  $('#createaccount').on('click', function(event){
     event.preventDefault();
 
     let username = $('#loginuser').val().trim();
@@ -12,7 +19,6 @@ $(document).ready(function(){
     // if (!username) {
     //   return Materialize.toast('Please include a username', 3000);
     // }
-    //
     // if (!password) {
     //   return Materialize.toast('Please include a password.', 3000);
     // }
@@ -29,8 +35,7 @@ $(document).ready(function(){
       method: 'POST',
       url: '/login/',
       dataType: 'json',
-      contentType: 'application/json',
-      data:
+      contentType: 'application/json'
     });
 
 
