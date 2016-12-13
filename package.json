@@ -23,6 +23,7 @@
     "bcrypt": "^1.0.1",
     "body-parser": "^1.15.2",
     "boom": "^4.2.0",
+    "cloudinary": "^1.4.6",
     "cookie-parser": "^1.4.3",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",

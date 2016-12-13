@@ -8,6 +8,7 @@
      width: 100%;
  }*/
 
+
  #make-comment  {
    opacity: 2;
    font-family: 'Raleway', sans-serif;
@@ -283,6 +284,15 @@ button {
  border-radius: 8px;
 }
 
+#upload_widget_opener {
+  opacity: 0.8;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.0625em;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
 
 #submit-button {
   opacity: 0.8;
