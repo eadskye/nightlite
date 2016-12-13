@@ -4,6 +4,8 @@ $(document).ready(function(){
   //    opacity: 0.6
   // });
 
-  $('.modal-trigger').leanModal();
+  // $('.modal-trigger').leanModal();
 
+  $('.modal').modal({
+  });
 });
