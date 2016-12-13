@@ -8,6 +8,41 @@
      width: 100%;
  }*/
 
+ #make-comment  {
+   opacity: 2;
+   font-family: 'Raleway', sans-serif;
+   font-weight: 700;
+   letter-spacing: 0.0625em;
+   opacity: 0.8;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+ }
+
+ #comments-modal {
+   opacity: 2;
+   margin-left: 13px;
+   font-family: 'Raleway', sans-serif;
+   font-weight: 700;
+   letter-spacing: 0.0625em;
+   opacity: 0.8;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+ }
+
+ #view-comment {
+   opacity: 2;
+   margin-left: 13px;
+   font-family: 'Raleway', sans-serif;
+   font-weight: 700;
+   letter-spacing: 0.0625em;
+   opacity: 0.8;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+ }
+
 .input-field label.active {
      color: #FFF;
      font-family: 'Raleway', sans-serif;
@@ -250,7 +285,7 @@ button {
 }
 
 
-#submit-button, #cancel-button {
+#submit-button {
   opacity: 0.8;
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
@@ -261,6 +296,7 @@ button {
 }
 
 #cancel-button {
+  margin-left: 8px;
  opacity: 0.8;
  font-family: 'Raleway', sans-serif;
  font-weight: 700;
@@ -325,9 +361,11 @@ p {
   margin-right: 15px;
 }
 
+
+
 #information {
   background-color: white;
-  opacity: 0.5;
+  /*opacity: 0.9;*/
   margin-top: 10px;
   padding: 20px;
 }
