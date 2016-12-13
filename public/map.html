@@ -18,9 +18,9 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
     <!-- Font  -->
-    <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway:400,500,600,700,800" rel="stylesheet">
-</head>
+
 
 <body class="mapBG">
     <!-- Navigation -->
@@ -79,9 +79,24 @@
                 </div>
             </div>
         </div>
-    </div> -->
 
-    <!-- Comment Section Start-->
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col s12 ">
+                  <script>require(["esri/map", "dojo/domReady!"], function(Map) {
+                var map = new Map("map", {
+                  center: [-118, 34.5],
+                  zoom: 8,
+                  basemap: "topo"
+                });
+              });</script>
+</div></div></div></div>
+
+
+
     <div class="container">
         <div class="section" id="information">
           <div class="row">
@@ -105,7 +120,7 @@
                         <label class="active black-text" for="comments">Comments:</label>
 
 
-                        <!--   User enters comment -->
+                         User enters comment -->
                         <button id="make-comment" class="col s3 btn waves-effect waves-light blue lighten-1" type="submit" name="make-comment">Comment</button>
 
                         <!-- <button id="view-comment" class="col s6 btn waves-effect waves-light blue lighten-1" type="cancel" name="cancel">View Comments</button> -->
@@ -147,6 +162,10 @@
       <script type="text/javascript" src="js/map.js"></script>
 
 
+<<<<<<< HEAD
+=======
+</body>
+>>>>>>> 78c30d3b4861524cbe690b33cacfaf2bc9985809
 
 <footer class="blue lighten-2">
     <div class="container">
