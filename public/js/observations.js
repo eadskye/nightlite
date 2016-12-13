@@ -3,7 +3,6 @@
 $(document).ready(function(){
   getObservations();
 
-
 function getObservations(data){
 $.ajax({
   ///url: 'https://nightlited.herokuapp.com/observations',
