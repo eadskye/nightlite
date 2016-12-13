@@ -9,7 +9,8 @@
 
 $(document).ready(function(){
   getComments();
-  console.log("get comments");
+  console.log('getcomments');
+
 
 function getComments(data){
   $.ajax({
@@ -36,37 +37,29 @@ function drawComments(data){
   $('#comments').empty();
   for (i=0 ; i<data.length ; i++){
     results.push(
-      '<div class="col s8 comments">' +
-          '<div class="card-panel white">' +
-      '<span class="black-text">"' + data[i].comment + '"</span>' +
-      '<div class="row center">' +
-      '</div>' +
 
-           '<a class="modal-trigger waves-effect waves-light btn" href="#modal1">Update</a>' +
-           '<a class="modal-trigger waves-effect waves-light btn" href="#modal1">Delete</a>' +
-           '<div id="modal1" class="modal modal-fixed-footer">' +
-             '<div class="modal-content">' +
-               '<h4>Comments</h4>' +
-               '<p>' + data[i].comment + '</p>' +
-             '</div>' +
-             '<div class="modal-footer">' +
-               '<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Save</a>' +
-             '</div>' +
-           '</div>' +
-        '</div>' +
-          '<div class="col s2 "></div>' +
-        '</div>' +
-      '</div>'
-  );
-}
+      '<div class="col s12 m3">'+
+        '<div class="card small">'+
+
+          '<div class="card-action center">' +
+            '<p class="dogName">' + data[i].username + '</p>' +
+          '<a class="waves-effect waves-light btn modal-trigger" href="#modal' + data[i].id + '">' +
+            'More Info' +
+          '</a>' +
+            '<div id="modal' + data[i].id + '" class="modal">' +
+              '<div class="modal-content">'+
+                '<h4>' + data[i].username + '</h4>' +
+                '<p class="modaltext"> Description: ' + data[i].comments + '</p>' +
+              '</div>' +
+            '</div>' +
+          '</div>'+
+        '</div>'+
+      '</div>');
+
+  }
   $('.modal1').modal();
-  $('.comments').append(results.join(''));
-}
+  $('#comments').append(results.join(''));
 
-$('#commentbutton').on('click', function(){
-  console.log("I'm clicked");
-  event.target.hide();
-});
-
+  }
 
 });
