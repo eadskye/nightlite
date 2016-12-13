@@ -54,41 +54,46 @@ router.post('/login/createaccount/', (req,res,next) => {
 });
 
 // existing users
-// router.post('/login',(req, res, next) =>{
-//
-//   let userName = req.body.loginuser;
-//   let password = req.body.userpassword;
-//   let path = req.body.action1;
-//
-//   console.log(userName);
-//   console.log(password);
-//   console.log(path);
-//
-//   if (!userName || !password) {
-//     res.sendStatus(400);
-//   }
-//
-//     knex('users')
-//       .where({username: userName})
-//       .first()
-//       .then((result) => {
-//         console.log(result);
-//         if (!result) {
-//           if (!result || !bcrypt.compareSync(password,result[0].password_hash)) {
-//           res.sendStatus(401);
-//         }else{
-//           req.session.username = result[0].username;
-//           console.log(req.session.username);
-//           //logging user's id
-//           res.redirect('/login.html');
-//         }
-//       }
-//       })
-//       .catch((err)=>{
-//         next(err);
-//       });
-//
-// });
+router.post('/login/login',(req, res, next) =>{
+
+  let userName = req.body.username;
+  let hashedPW = bcrypt.hashSync(req.body.password, 8);
+
+  console.log(userName);
+  console.log(hashedPW);
+
+  if (!userName || !hashedPW) {
+    res.sendStatus(400);
+  }
+
+    knex('users')
+      .where({username: userName})
+      .first()
+      .then((result) => {
+        console.log(result);
+        console.log("im here a");
+        console.log(result.hashed_password);
+        console.log(hashedPW);
+        if (!result) {
+          if (!result || !bcrypt.compareSync(hashedPW,result.hashed_password)) {
+            console.log("error is here");
+          res.sendStatus(401);
+
+        }else{
+          console.log("here now");
+          req.session.username = result[0].username;
+          console.log(req.session.username);
+          //logging user's id
+          res.redirect('/login.html');
+        }
+          res.send('im here');
+        }
+      })
+      .catch((err)=>{
+        next(err);
+      });
+
+});
 
 //logout
 router.post('/login/logout', (req, res, next) => {
