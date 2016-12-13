@@ -76,7 +76,7 @@ $(document).ready(function(){
 
     let $xhr = $.ajax({
       method: 'POST',
-      url:'http://localhost:8000/login/login',
+      url:'http://localhost:8000/login/existinglogin',
       dataType: 'json',
       contentType: 'application/json',
       data: login

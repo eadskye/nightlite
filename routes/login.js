@@ -40,7 +40,7 @@ router.post('/login/createaccount', (req,res,next) => {
 
         console.log(req.session);
 
-        res.redirect('/login');
+        res.redirect('/login.html');
 
       })
       .catch(function (err) {
@@ -54,10 +54,11 @@ router.post('/login/createaccount', (req,res,next) => {
 });
 
 // existing users
-router.post('/login/login',(req, res, next) =>{
+router.post('/login/existinglogin',(req, res, next) =>{
 
   let userName = req.body.username;
-  let hashedPW = bcrypt.hashSync(req.body.password, 8);
+  let hashedPW = req.body.password;
+  // let hashedPW = bcrypt.hashSync(req.body.password, 8);
 
   console.log(userName);
   console.log(hashedPW);
