@@ -3,8 +3,6 @@ var obsID;
 
 $(document).ready(function(){
   getObservations();
-  getComments();
-  // drawObservations(obsData);
 
   $(".information").on('click', function(event){
     // event.preventDefault();
@@ -47,18 +45,13 @@ $(document).ready(function(){
     data: data,
     type: 'get',
     success: function (data){
-      // console.log(data, "OBSERVATIONS");
-      // console.log('success');
       obsData = data;
       drawObservations(obsData);
-      // getComments();
     },
     error: function(){
       console.log("error");
     }
   });
-    //gets observation data
-    //draws on page
   }
 
   function getComments(data){
@@ -72,11 +65,35 @@ $(document).ready(function(){
       success: function (data){
         console.log(data, "comments by ID");
         comments = data;
-        // drawObservations(obsData);
-        $('#content').append(JSON.stringify(data));
+        $('#content').empty();
+
+// displays no comments if there are none to display
+        if (data.length === 0) {
+          $('#content').append(
+            '<h5 class="black-text">No comments to display.</h5>'
+          );
+        }
+
+// loop through the length of the comments and append them to the modal
+        for (var i = 0; i < data.length; i++) {
+
+        var cdate = data[i].updated_at;
+        cdate = cdate.substring(0, 10);
+
+        $('#content').append(
+        '<h5 class="black-text">' + data[i].name +'</h5>' +
+        '<div class="black-text">Comment: ' + data[i].comment + '</div>' +
+        '<div class="black-text">Rating: ' + data[i].stars + '</div>' +
+        '<div class="black-text">Coordinates:  Latitude:  ' + data[i].latitude + ' Longitude:  ' + data[i].longitude + '</div>' +
+        '<div class="black-text">Date: ' + cdate + '</div>' +
+        '<div class="black-text">Posted by: ' + data[i].username + '</div>' +
+        '<div class="id black-text">ID: ' + data[i].id + '</div>'
+        );
+       }
       },
       error: function(){
         console.log("error");
+
       }
     });
 }
