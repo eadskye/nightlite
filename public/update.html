@@ -4,12 +4,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
-    <title>NightLite</title>
+    <title>nightlite</title>
 
     <!-- Materialize CSS CDN -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+
     <!-- CSS -->
     <link href="styles.css" type="text/css" rel="stylesheet" media="screen,projection">
 
@@ -21,20 +21,26 @@
 <body class="updateBG">
   <!-- Navigation -->
   <nav class="transparent" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">nightlite</a>
-      <ul class="right hide-on-med-and-down">
-          <li><a href="login.html">Login</a></li>
-      </ul>
-      <ul class="right hide-on-med-and-down">
-          <li><a href="learn.html">Learn</a></li>
-      </ul>
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="index.html" class="logo"><img src="imgs/nitelightLogo.png"/></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a class="logout" href="index.html">Logout</a></li>
+        </ul>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="login.html">Login</a></li>
+        </ul>
+        <ul class="right hide-on-med-and-down">
+       <li><a href="learn.html">Explore</a></li>
+   </ul>
       <ul id="nav-mobile" class="side-nav">
           <li><a href="login.html">Login</a></li>
+          <li><a class="logout" href="index.html">Logout</a></li>
           <li><a href="learn.html">Learn</a></li>
           </ul>
           <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
       </div>
   </nav>
+
   <div class="section no-pad-bot" id="userpost">
     <div class="container">
         <div class="row">
