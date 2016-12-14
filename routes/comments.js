@@ -10,15 +10,15 @@ const bcrypt = require('bcrypt');
 
 const bodyParser = require('body-parser');
 
-//get comments for a given user
-router.get('/comments/users/:userid', (req, res, next) => {
-  let userid = req.params.userid;
-  console.log(userid);
+//get comments for a given observation id
+router.get('/comments/:obsid', (req, res, next) => {
+  let observationId = parseInt(req.params.obsid);
 
-   knex.from('comments').leftJoin('users', 'comments.id', 'users.id')
+   knex.from('comments').leftJoin('observations', 'comments.id', 'observations.id')
    .where({
-     'user_id': userid})
-  .select(['comments.id', 'comments.user_id', 'comments.comment', 'comments.stars', 'comments.created_at', 'comments.updated_at', 'username', 'admin'])
+     observation_id: observationId
+   })
+  //.orderBy('updated_at', 'desc')
   .then((results) => {
     res.send(results);
   })
@@ -45,9 +45,8 @@ router.post('/comments', ev(validations.post), (req, res, next) => {
       });
 
 });
-//patch comment by commentid
+//patch comment by id
 router.patch('/comments/:id', (req, res, next) => {
-  console.log(req.body.comment);
   var id = req.params.id;
   knex('comments')
   .where({
@@ -64,7 +63,7 @@ router.patch('/comments/:id', (req, res, next) => {
     .where({'id' : id});
   })
   .then((comments) => {
-    res.send(comments);
+    res.send(comments[0]);
   })
   .catch ((err) => {
     next(err);
