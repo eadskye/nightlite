@@ -76,7 +76,7 @@ function getComments(data) {
     console.log("in HERE");
     console.log(obsID);
     $.ajax({
-        url: 'https://nightlited.herokuapp.com/observations/comments' + obsID,
+        url: 'https://nightlited.herokuapp.com/observations/comments/' + obsID,
         // url: 'http://localhost:8000/observations/comments/' + obsID,
         jsonp: "callback",
         data: data,

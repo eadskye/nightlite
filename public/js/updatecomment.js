@@ -85,7 +85,7 @@ $(document).ready(function() {
             dataType: 'json',
             type: 'PATCH',
             // url: 'http://localhost:8000/comments/' + commentid
-            url: 'https://nightlited.herokuapp.com/comments' + commentid
+            url: 'https://nightlited.herokuapp.com/comments/' + commentid
 
         };
 
@@ -105,7 +105,7 @@ $(document).ready(function() {
             contentType: 'application/json',
             type: 'DELETE',
             // url: 'http://localhost:8000/comments/' + id
-            url: 'https://nightlited.herokuapp.com/comments' + id
+            url: 'https://nightlited.herokuapp.com/comments/' + id
 
         };
 
