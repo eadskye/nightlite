@@ -9,18 +9,18 @@ exports.seed = function(knex, Promise) {
         knex('observations').insert({
           id: 1,
           user_id: 1,
-          latitude: 41.2664,
-          longitude: -105.3591,
+          latitude: 38.8339,
+          longitude: -104.8214,
           stars: 4,
-          name: 'Wyoming Star Spot',
-          description: 'This spot was awesome'
+          name: 'Garden of the Gods',
+          description: 'This spot was awesome, and a lot of fun hiking.'
         }),
 
         knex('observations').insert({
           id: 2,
           user_id: 2,
-          latitude: 40.0168,
-          longitude: -105.2791,
+          latitude: 40.0150,
+          longitude: -105.2705,
           stars: 2,
           name: 'Galvanize Balcony',
           description: 'Ok, Devin kept shining a flashlight at me'
@@ -29,28 +29,28 @@ exports.seed = function(knex, Promise) {
         knex('observations').insert({
           id: 3,
           user_id: 3,
-          latitude: 39.7483,
-          longitude: -105.2403,
-          stars: 4,
-          name: 'Golden Lookout Mountain',
-          description: 'It was awesome. I love stars!'
+          latitude: 37.4694,
+          longitude: -105.8700,
+          stars: 5,
+          name: 'UFO Watchtower  Alamosa, CO',
+          description: 'I loved it here, such a great view of the skies!'
         }),
 
         knex('observations').insert({
           id: 4,
           user_id: 3,
-          latitude: 48.2831,
-          longitude: -92.8856,
+          latitude: 36.1128,
+          longitude: -113.9961,
           stars: 5,
-          name: 'Rural Minnesota',
-          description: 'Sure is dark here.'
+          name: 'Grand Canyon',
+          description: 'Spent a long time hiking to our spot, but the views were so worth it!  Definitely reccommended!'
         }),
 
         knex('observations').insert({
           id: 5,
           user_id: 3,
-          latitude: 53.8719,
-          longitude: -9.1222,
+          latitude: 53.9808,
+          longitude: -9.1132,
           stars: 2,
           name: 'Foxford, Ireland',
           description: 'Too cloudy here for stars!'
