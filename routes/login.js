@@ -27,14 +27,20 @@ router.post('/login/createaccount', (req,res,next) => {
       }, '*')
       .then(function (result) {
 
-        req.session.id = result[0].id;
-        req.session.username = result[0].username;
-        req.session.isAdmin = result[0].admin;
-        req.session.created = result[0].created_at;
+        //result is an array
+        req.session.user = result;
 
-        console.log(req.session);
+        // console.log(req.user);
+        // console.log("user before, session after");
+        //
+        // req.session.id = result[0].id;
+        // req.session.username = result[0].username;
+        // req.session.isAdmin = result[0].admin;
+        // req.session.created = result[0].created_at;
 
-        res.send(req.session);
+        console.log(req.session.user);
+
+        res.send(req.session.user);
         // console.log("req sent");
 
       })
@@ -75,17 +81,22 @@ router.post('/login/existinglogin',(req, res, next) =>{
             // console.log("error is here");
             res.sendStatus(401);
           }else{
+
+            //result is an array
+            req.session.user = result;
             // console.log("else");
-            req.session.id = result.id;
-            req.session.username = result.username;
-            req.session.isAdmin = result.admin;
-            req.session.created = result.created_at;
+            // req.session.id = result.id;
+            // req.session.username = result.username;
+            // req.session.isAdmin = result.admin;
+            // req.session.created = result.created_at;
+            //
+            // console.log(req.session.username);
 
-            console.log(req.session.username);
+            console.log(req.session.user);
 
-            res.send(req.session);
+            res.send(req.session.user);
           }
-          // res.send('im here');
+
       })
       .catch((err)=>{
         next(err);

@@ -22,10 +22,10 @@ switch (app.get('env')) {
 
 app.use(cookieSession({
   name: 'session',
-  keys: ['supersecretkey']
+  keys: ['5b9ba0b9ddbd81f7a092c7150d2c5d9fa83ccbcc914fb79d3802baa21286efbb']
 
   // Cookie Options
-  // maxAge: 24 * 60 * 60 * 1000 // 24 hours
+  // maxAge: 2 * 60 * 60 * 1000 // 2hrs=(2hrs * 60 mins * 60 secs * milliseconds)
 }));
 
 app.use(bodyParser.json());

@@ -13,6 +13,15 @@ const boom = require('boom');
 
 var obsGET;
 
+//if not logged in, no access
+router.use(function (req,res,next) {
+  if (!req.session) {
+    res.sendStatus(401);
+  } else {
+    next();
+  }
+});
+
 //get comments for a given observation id
 router.get('/observations/comments/:obsid', (req, res, next) => {
   let observationId = parseInt(req.params.obsid);
@@ -71,7 +80,15 @@ router.get('/observations/:user_id', (req, res, next) => {
 
 //TODO validaton code router.post('/observations', ev(validations.post), (req, res, next) => {
 
-router.post('/observations', ev(validations.post), (req, res, next) => {
+router.post('/observations', (req, res, next) => {
+
+  let username = null;
+
+  if(req.session.user){
+    username = req.session.user;
+  }
+  console.log('username');
+  console.log(username);
 
   const newObservation = {
     user_id: req.body.user_id,
