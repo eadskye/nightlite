@@ -1,0 +1,3412 @@
+    1  zsh
+    2  open .zshrc
+    3  echo $EDITOR
+    4  atom ~/.zshrc
+    5  echo $EDITOR
+    6  brew install git
+    7  git --version
+    8  git config --global user.name 'YOUR FULL NAME'
+    9  git --version
+   10  git config --global user.name 'Elizabeth Davis'
+   11  git config --global user.email 'YOUR EMAIL ADDRESS'
+   12  $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+   13  # Creates a new ssh key, using the provided email as a label
+   14  Generating public/private rsa key pair.
+   15  ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+   16  ls -al~/.ssh
+   17  ls -al ~/.ssh
+   18  ssh-keygen -t rsa -b 4096 -C "eadskye@gmail.com"
+   19  eval "$(ssh-agent -s)"
+   20  ssh-add ~/.ssh/id_rsa
+   21  pbcopy < ~/.ssh/id_rsa.pub
+   22  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC5p8mTDygJ1Nfthiv85mma9M2cW62V0AyNIMGQYi0+N/DKD7CeCP2tHgVnXxpOnDddpR1hnL5yM8gioe91URcUkt4PM/scCNx9rPQWIi1oJg7P/UKsx0x4JjlmuPqtojqwjCgLQ2yXdQlorAJj6gt0EshQKJMIBxnYW1hFtc3ObNRb83kvWfwH0tKomHEkOLV5gHUs5cdFCFKNOu8TDjh8oxE2HDuRK6mYrpL5qBeDJr3W86X31Sb6FEQi+ltH0q9lpHRAaaIRTdW/0sWOT4fvQIO+52BcaI5PSl0KyiYeGXxQ4qRy5WVXUNPmCpQhLthG0OvlMopA3dQJJQ2Yuheya1r3+KkDlrZsxz7cCOGKXYajLZrGp26GcyKgy1Fin9uFlvMjGFFtsBK/7/41DvA/3xrFmuVIAibD7kqo8Icd9IMerEs+5uw6yy5WX+8fseCN9h8pbmlODWDMmeuyC2LhXO3ukEc8NSjcyb2M+ExrG832p6rDoSPA/JIwAhPhE5+Wm4kqGqWoSWokQfvhG7dDwsXCQybEWrT6re1E9ThEn821wtAFRVVpiiX84RwM/1z3pSMr1hJjQXjmSXzhvp+ISDepLZ19fMHvKklKw7o9JNJ+LNxkPOzirP0fH4e5pGBCDmhTlpwr3x9Lf/O1wCKX+VyS9mEts8XVM1vrt/woTQ== eadskye@gmail.com
+   23  pbcopy < ~/.ssh/id_rsa.pub
+   24  gpg --list-secret-keys --keyid-format LONG
+   25  ssh -T git@github.com
+   26  curl -fsSL https://git.io/vKZJ8 | sh
+   27  brew install node
+   28  node -v
+   29  1+2
+   30  node
+   31  zsh
+   32  whoami
+   33  groups
+   34  pwd
+   35  ls
+   36  ls -l
+   37  ls -hl
+   38  ls -hal
+   39  man ls
+   40  open .
+   41  pwd
+   42  ~echo
+   43  echo
+   44  echo ~
+   45  brew install tree
+   46  tree -L 1
+   47  cd /
+   48  pwd
+   49  cd ~
+   50  pwd
+   51  cd../
+   52  pwd
+   53  cd ../
+   54  pwd
+   55  cd /
+   56  cd ..
+   57  ls -l ~/Documents/../
+   58  cd ~/Library/cd ~/
+   59  cd ~/Projects\n
+   60  mkdir notebook
+   61  cd ~
+   62  cd ~/Projects
+   63  mkdir notebook
+   64  cd ~/notebook
+   65  ls
+   66  ls -la
+   67  touch notes.txt
+   68  cat notes.txt
+   69  rm notes.txt\n\n
+   70  history
+   71  history > notes.txt
+   72  ls
+   73  cat notes.txt
+   74  cat
+   75  ls
+   76  notes.txt
+   77  notebook
+   78  notes.txt
+   79  ls
+   80  \thistory > notes.txt
+   81  less
+   82  less notes.txt
+   83  sort
+   84  cd ~/Projects
+   85  mkdir notebook
+   86  cd ~/notebook
+   87  ls -la
+   88  ls
+   89  touch notes.txt
+   90  ls notes.txt
+   91  cat notes.txt
+   92  rm notes.txt
+   93  history
+   94  history > notes.txt
+   95  ls
+   96  cat notes.txt
+   97  less notes.txt
+   98  cd ~/Projects
+   99  mkdir notebook
+  100  touch notes.txt
+  101  ls notes.txt
+  102  cat notes.txt
+  103  rm notes.txt
+  104  history
+  105  history > notes.txt
+  106  cat notes.txt
+  107  /cd
+  108  less notes.txt
+  109  ls -l
+  110  history
+  111  history | grep cd
+  112  ls -l
+  113  cat instructions
+  114  zsh
+  115  cat instructions
+  116  pwd
+  117  ls
+  118  -clmystery
+  119  clmystery
+  120  Downloads$ ls
+  121  /Downloads$ ls
+  122  ls
+  123  clmystery-master
+  124  documents
+  125  clmystery-master
+  126  cat instructions
+  127  'nano cheatsheet.md'
+  128  nano cheatsheet.md
+  129  nvm install stable
+  130  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
+  131  nvm install stable
+  132  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
+  133  nvm install stable
+  134  nvm --version
+  135  ls
+  136  cat instructions
+  137  cat hint1
+  138  cl
+  139  cat solution
+  140  head
+  141  nancheatsheet.md
+  142  nanocheatsheet.md
+  143  cat
+  144  nano cheatsheet.md
+  145  /files$ nano address.txt
+  146  head -n 20 people
+  147  echo $EDITOR
+  148  cat clmystery
+  149  cat instructions
+  150  instructions
+  151  cat instructions
+  152  zsh
+  153  cat instructions
+  154  cat clmystery
+  155  /Users/elizabethdavis/Documents/clmystery-master 
+  156  cat instructions
+  157  cat mystery
+  158  ls
+  159  ls -l
+  160  cat hint1
+  161  head -n20 people
+  162  cat head -n 20 people
+  163  -n 20 people
+  164  cat hint2
+  165  grep "CLUE"
+  166  grep "CLUE" crimescene
+  167  grep "CLUE"
+  168  hint3
+  169  cat hint3
+  170  head people
+  171  head 'people'
+  172  ls
+  173  hint4
+  174  cat hint4
+  175  cat hint5
+  176  cat hint6
+  177  cd head
+  178  grep "Annabel" people
+  179  cat hint7
+  180  cat hint8
+  181  cat hint9
+  182  cat hint1
+  183  tree -L 1
+  184  cat instructions
+  185  cat mystery
+  186  tree -L 1
+  187  cat encoded
+  188  head people
+  189  head mystery people
+  190  cat mystery
+  191  head mystery
+  192  head -n20 mystery people
+  193  head -n20 mystery
+  194  head -n20 people
+  195  head -n20 mystery people
+  196  head n20 mystery people
+  197  head -n20 mystery people
+  198  pwd
+  199  head -n20 clmystery people
+  200  head -n20 clmystery-master people
+  201  ".."
+  202  head -n20 mystery people
+  203  ".."
+  204  cd downloads
+  205  ".."
+  206  ..
+  207  ls
+  208  cd user
+  209  cd Users
+  210  ls
+  211  cd elizabethdavis
+  212  ls
+  213  cd Downloads
+  214  ls
+  215  head -n20 mystery people
+  216  cd clmystery-master
+  217  ls
+  218  cd mystery
+  219  ls
+  220  cd people
+  221  head -n20 people
+  222  head people
+  223  people ls
+  224  cd people
+  225  ls people
+  226  head people
+  227  cat crimescene
+  228  cat hint2
+  229  ".."
+  230  ..
+  231  pwd
+  232  ".."
+  233  ..
+  234  ls
+  235  cd mysterymaster
+  236  ".."
+  237  cd Users
+  238  ".."
+  239  ls
+  240  cd Users
+  241  hint3
+  242  ..
+  243  ".."
+  244  ls
+  245  cd Users
+  246  cd elizabethdavis
+  247  ls
+  248  cd Downloads
+  249  ls
+  250  cd clmyster-master
+  251  ls
+  252  hint3
+  253  cat hint3
+  254  cd mystery-master
+  255  ls
+  256  cd ls mystery-master
+  257  cd clmystery-master
+  258  cat hint3
+  259  ls
+  260  cd mystery
+  261  ls
+  262  head people
+  263  head vehicles
+  264  head -n20 mystery vehicles
+  265  cat hint4
+  266  ".."
+  267  cat hint4
+  268  cd mystery
+  269  ls
+  270  grep "Annabel" people
+  271  head vehicles
+  272  head -n20 vehicles
+  273  greb "Jianbo" people
+  274  grep "Jianbo" people
+  275  grep "Norbert" people
+  276  ".."
+  277  cat hint5
+  278  head -n327 streets/Westminster Avenue, | tail _n 1
+  279  head -n 327 streets/Westminster_Avenue | tail -n 1
+  280  head -n 214 streets/Norumbega_Street | tail -n 1
+  281  ls
+  282  cd mystery
+  283  ls
+  284  head -n 327 streets/Westminster_Avenue | tail -n 1
+  285  head -n 214 streets/Norumbega_Street | tail -n 1
+  286  ".."
+  287  cat hint6
+  288  ls
+  289  cd mystery
+  290  grep "Yellow" vehicles
+  291  ".."
+  292  cat hint7
+  293  grep -A 5 "T3YU" mystery/vehicles
+  294  grep -A 5 "EZ21" mystery/vehicles
+  295  ".."
+  296  ls
+  297  cd clmystery-master
+  298  cat hint7
+  299  cat hint8
+  300  cat Fitness_Galaxy AAA Untied_MileagePlus | grep -c  "Norbert Feldwehr"
+  301  cd mystery
+  302  cat Fitness_Galaxy AAA Untied_MileagePlus | grep -c  "Norbert Feldwehr"
+  303  ls
+  304  cd people
+  305  head people
+  306  head vehicles
+  307  mystery head -n20 vehicles
+  308  head -n20 vehicles
+  309  echo "John Doe" | md5 | grep -if /dev/stdin encode
+  310  echo "Jianbo Megannem" | md5 | grep -if /dev/stdin encode’ 
+  311  echo "Jianbo Megannem" | md5 | grep -if /dev/stdin encoded
+  312  cat hint1
+  313  ".."
+  314  hint1
+  315  ".."
+  316  cat hint1
+  317  cd clmystery-master
+  318  cat hint1
+  319  cd mystery
+  320  head -n 20 people
+  321  ls
+  322  head -n20 vehicles
+  323  grep "CLUE" *
+  324  ls
+  325  ls *
+  326  ls 
+  327  ls *
+  328  ls */*
+  329  grep "CLUE" */*
+  330  grep "CLUE" *
+  331  cd ../
+  332  ls
+  333  grep "CLUE" *
+  334  help
+  335  man help
+  336  man find
+  337  grep -R "CLUE" 
+  338  grep -R "CLUE"  *
+  339  pwd
+  340  grep "Annabel" crimescene
+  341  grep "Annabel" *
+  342  grep -R "Annabel" *
+  343  ".."
+  344  cd clmystery-master
+  345  cat hint1
+  346  cd mystery
+  347  head -n20 people
+  348  cat people
+  349  head -n 1 people
+  350  head -n 100 people
+  351  tail -n 100 people
+  352  vi people
+  353  cat people
+  354  vi people
+  355  grep "Annabelle" people
+  356  grep "Annabel" people
+  357  ls
+  358  cat crimescene
+  359  ls
+  360  cd ./
+  361  cd ../
+  362  ls
+  363  cat instructions
+  364  ls
+  365  cd mystery
+  366  ls
+  367  cd Downloads
+  368  ls
+  369  cd clmystery-master
+  370  ls -lrt
+  371  ls
+  372  ls -l
+  373  cd mystery
+  374  ls -lrt
+  375  grep "CLUE"
+  376  grep "CLUE" *
+  377  grep "Delta SkyMiles" *
+  378  grep -R "Delta SkyMiles" *
+  379  grep -R "AAA" *
+  380  cat interviews/interview-290346
+  381  grep -R "Annabel" *
+  382  grep -R "New Zealand" *
+  383  cat interviews/interview-94126412
+  384  grep -R "CLUE" *
+  385  grep -R "AAA" *
+  386  cat interviews/interview-290346
+  387  grep -R "Bostock" *
+  388  cat interviews/interview-290346
+  389  grep -R "CLUE" *
+  390  grep -R "CLUE" .
+  391  grep -R "CLUE" */*
+  392  grep -R "wallet" *
+  393  ls
+  394  cd streets
+  395  ls
+  396  cat Lynde_Street
+  397  cd ../
+  398  ls
+  399  grep -R "CLUE" */*
+  400  grep -R "CLUE" *
+  401  grep -R "Annabel" */*
+  402  ls
+  403  ls ../
+  404  vi ../hint1
+  405  vi ../hint2
+  406  vi ../hint3
+  407  grep -R "Annabel" */*
+  408  cat memberships/AAA
+  409  grep -R "Annabel" */*
+  410  cd ../
+  411  grep -R "Annabel" */*
+  412  grep -R "CLUE" *
+  413  grep -R "Annabel" */*
+  414  grep -R "Annabel" && "blond" *
+  415  man grep
+  416  grep -R "Annabel.*blond" *
+  417  grep -R "Annabel|blond" *
+  418  grep -R "Annabel.*license" *
+  419  grep -R "Annabel.*car" *
+  420  grep -R "Annabel.*F" *
+  421  grep -R "Annabel.*New" *
+  422  grep -R "Annabel.*foreign" *
+  423  grep -R "Annabel.*murder" *
+  424  grep -R "Annabel.*AAA" *
+  425  grep -R "CLUE" *
+  426  ls
+  427  ls mystery
+  428  ls memberships
+  429  ls mystery/memberships
+  430  grep -R "bostok" *
+  431  grep -R "bostock" */
+  432  grep -R "bostock" *
+  433  grep -R "AAA" *
+  434  cat mystery/interviews/interview-290346
+  435  grep -R "Bostock" *
+  436  grep -R "Bostock.*Annabel" *
+  437  grep -R "Bostock.*wallet" *
+  438  grep -R "Bostock.*AAA" *
+  439  grep -R "Senders Court" *
+  440  grep -R "Tomasz Gkountoulas" *
+  441  grep -R "6'" *
+  442  grep -R "6'.*M" *
+  443  head -n 20  mystery/vehicles
+  444  grep -R "CLUE" *
+  445  grep -R "Tomasz Gkountoulas" *
+  446  vi mystery/vehicles
+  447  grep -R "88663WR" *
+  448  grep -R "Green.*Jaguar" *
+  449  grep -R "Senders Court" *
+  450  vi hint3
+  451  cd ../
+  452  vi hint3
+  453  vi hint4
+  454  grep -R "Annabel" *
+  455  grep -R "Annabel Sun" *
+  456  grep -R "Annabel Church" *
+  457  vi mystery/memberships/REI
+  458  vi hint5
+  459  head -n 173 streets/Mattapan_Street | tail -n 1
+  460  ls
+  461  cd mystery
+  462  head -n 173 streets/Mattapan_Street | tail -n 1
+  463  head -n 173 streets/Mattapan_Street | tail -n 10
+  464  vi hint5
+  465  head -n 179 streets/Buckingham_Place | tail -n 1
+  466  ls
+  467  cat interviews/interview-699607
+  468  grep -R "blue Honda" *
+  469  grep -R "Blue.*Honda" *
+  470  grep -R "Honda" *
+  471  cat interviews/interview-699607
+  472  grep -R "L337" *
+  473  vi vehicles
+  474  man grep 
+  475  vi hint6
+  476  vi hint7
+  477  grep -A "L337" *
+  478  grep -RA "L337" *
+  479  vi hint7
+  480  grep -R -A 5 "L337" *
+  481  grep -R "Jacqui Maher" *
+  482  vi hint8
+  483  cat Fitness_Galaxy AAA United_MileagePlus | grep "Jeremy Bowers"
+  484  ls
+  485  cat Fitness_Galaxy AAA United_MileagePlus | grep -c "Jeremy Bowers"
+  486  cat crimescene people | grep -c "Jeremy Bowers"
+  487  cat crimescene people | grep  "Jeremy Bowers"
+  488  head -n 179 streets/Dunstable_Road | tail -n 1
+  489  head -n 284 streets/Dunstable_Road | tail -n 1
+  490  cat crimescene people | grep  "Joe Germuska"
+  491  head -n 275 streets/Plainfield_Street | tail -n 1
+  492  cat interviews/interview-29741223
+  493  cat interviews/interview-9620713
+  494  echo "Jeremy Bowers" | md5 | grep -if /dev/stdin encoded 
+  495  ls
+  496  ls -a
+  497  echo "Jeremy Bowers" | md5 | grep -if /dev/stdin encoded 
+  498  ls
+  499  ".."
+  500  ls
+  501  cd solution
+  502  cat solution
+  503  echo "Jeremy Bowers" | $(command -v md5 || command -v md5sum) | grep -qif /dev/stdin encoded
+  504  echo "Jeremy Bowers" | $(command -v md5 || command -v md5sum) | grep -qif /dev/stdin encode
+  505  ls
+  506  cd mystery
+  507  echo "Jeremy Bowers" | $(command -v md5 || command -v md5sum) | grep -qif /dev/stdin encoded
+  508  echo “Jeremy Bowers" | $(command -v md5 || command -v md5sum) | grep -qif /dev/stdin encoded && echo CORRECT\! GREAT WORK, GUMSHOE. || echo SORRY, TRY AGAIN.\n\n".."
+  509  ".."
+  510  echo “Jeremy Bowers" | $(command -v md5 || command -v md5sum) | grep -qif /dev/stdin encoded && echo CORRECT\! GREAT WORK, GUMSHOE. || echo SORRY, TRY AGAIN.\n\n\n\n\n\n
+  511  echo “Jeremy Bowers" | $(command -v md5 || command -v md5sum) | grep -qif /dev/stdin encoded && echo CORRECT\! GREAT WORK, GUMSHOE. || echo SORRY, TRY AGAIN.\nls
+  512  ls
+  513  echo "Jeremy Bowers" | $(command -v md5 || command -v md5sum) | grep -qif/dev/stdin encoded && echo CORRECT\! GREAT WORK, GUMSHOE. || echo SORRY, TRY AGAIN.
+  514  echo “Jeremy Bowers" | $(command -v md5 || command -v md5sum) | grep -qif /dev/stdin encoded && echo CORRECT\! GREAT WORK, GUMSHOE. || echo SORRY, TRY AGAIN.
+  515  echo "Jeremy Bowers" | $(command -v md5 || command -v md5sum) | grep -qif/dev/stdin encoded && echo CORRECT\! GREAT WORK, GUMSHOE. || echo SORRY, TRY AGAIN.
+  516  CORRECT! GREAT WORK, GUMSHOE.
+  517  cat hint8
+  518  ls
+  519  cat solution
+  520  cat instructions
+  521  cat hint1
+  522  ls
+  523  npm install --global surge
+  524  ls
+  525  surge
+  526  cd /Users/sintaxi/Documents/mypage
+  527  file:///Users/elizabethdavis/Documents/mypage/index.html
+  528  echo "lizdavispersonalsite.surge.sh" > CNAME
+  529  surge
+  530  echo "lizdavispersonalpage.surge.sh" > CNAME
+  531  surge
+  532  cat instructions
+  533  ls
+  534  cd Downloads
+  535  ls
+  536  cd clmystery-master
+  537  ls
+  538  cat instructions
+  539  cat hint2
+  540  grep -R  "CLUE" * 
+  541  grep -R "Annabel" *
+  542  ls
+  543  cd mystery
+  544  ls
+  545  grep "Annabel" memberships
+  546  grep "Annabel Church" interviews
+  547  grep "Annabel"
+  548  grep -R "Annabel" interviews
+  549  cat interviews
+  550  cd interviews
+  551  grep "Annabel" interviews
+  552  ".."
+  553  grep -R "Annabel" mystery interviews
+  554  grep "Annabel" people
+  555  grep "Annabel" interviews
+  556  ".."
+  557  hint3
+  558  cat hint3
+  559  cat hint4
+  560  grep "Annabel" interviews
+  561  cd mystery
+  562  grep "Annabel" interviews
+  563  cd interviews
+  564  grep "Annabel"
+  565  grep "Annabel" *
+  566  ".."
+  567  cat hint5
+  568  head -n 170 streets/Buckingham_Place | tail -n 1
+  569  head -n 179 streets/Buckingham_Place | tail -n 1
+  570  cd mystery
+  571  head -n 179 streets/Buckingham_Place | tail -n 1
+  572  cd 699607
+  573  cd INTERVIEW #699607
+  574  cat hint6
+  575  ".."
+  576  cat hint6
+  577  cat hint5
+  578  cd mystery
+  579  cd interview
+  580  cd interviews
+  581  cat #699607
+  582  cat 699607
+  583  699607
+  584  vi 699607
+  585  ls
+  586  interview-699607
+  587  cat interview-699607
+  588  ".."
+  589  cat hint6
+  590  grep "L337" vehicles
+  591  cd mystery
+  592  grep "L337" vehicles
+  593  ".."
+  594  cat hint6
+  595  cat hint7
+  596  grep -A 5 "L337" mystery/vehicles
+  597  cat hint7
+  598  cat hint8
+  599  cd mystery
+  600  cat Fitness_Galaxy AAA United_MileagePlus | grep "Jeremy Bowers" | wc -l
+  601  cd interviews
+  602  grep "Jeremy Bowers" interviews
+  603  ".."
+  604  grep "Jeremy Bowers" mystery/streets
+  605  ls
+  606  grep -R  "Jeremy Bowers" *
+  607  head -n 284 streets/Dunstable_Road | tail -n 1
+  608  ls
+  609  cd interviews
+  610  cat interview-9620713
+  611  ls
+  612  cd Downloads
+  613  ls
+  614  ".."
+  615  brew install node
+  616  # Atom
+  617  set -x EDITOR 'atom -w'
+  618  #Atom
+  619  set -x EDITOR 'atom -w'
+  620  echo $EDITOR
+  621  echo $PATH
+  622  npm install --global javascripting
+  623  javascripting
+  624  mkdir javascripting
+  625  cd javascripting
+  626  touch introduction.js
+  627  javascripting verify practice1.js
+  628  javascripting verify introduction.js
+  629  ls introduction.js
+  630  javascripting verify introduction.js
+  631  javascripting run
+  632  javascripting run ls introduction.js
+  633  javascripting introduction.js
+  634  touch introduction.js
+  635  javascripting verify introduction.js
+  636  ls introduction.js
+  637  javascripting verify introduction.js
+  638  pwd
+  639  ls
+  640  javascripting verify introduction.js
+  641  javascripting
+  642  pwd
+  643  atom introduction.js
+  644  javascripting verify introduction.js
+  645  javascripting
+  646  javascripting verify introduction.js
+  647  javascripting
+  648  atom variable.js
+  649  verify variable.js
+  650  javascripting verify variable.js
+  651  create-repository
+  652  npm install create-repository -g
+  653  create-repository
+  654  git init
+  655  create-repository
+  656  mkdir
+  657  mkdir gitexercise
+  658  ls
+  659  cdgitexercise
+  660  cd git exercise
+  661  pwd
+  662  ld gitexercise
+  663  ls
+  664  git init
+  665  git init Git Remote
+  666  ls
+  667  rm -r gitexercise
+  668  ls
+  669  git init Git Remote
+  670  ls
+  671  mkdir Git Remote
+  672  ls
+  673  git init Git Remote
+  674  ls
+  675  git status
+  676  ls
+  677  cd remote
+  678  cd Remote
+  679  ls
+  680  newfile
+  681  touch newfile
+  682  ls
+  683  ls Remote
+  684  ".."
+  685  ls
+  686  cd Remote
+  687  ls
+  688  newfile status
+  689  status newfile
+  690  ".."
+  691  cd Remote
+  692  git status
+  693  cd Remote
+  694  ls
+  695  git status newfile
+  696  git add -a newfile
+  697  git add .newfile
+  698  ls
+  699  git add newfile
+  700  ls
+  701  git status newfile
+  702  git commit -m "newfile"
+  703  git status newfile
+  704  git push origin master newfile
+  705  git push origin master
+  706  ls
+  707  git status newfile
+  708  git push newfile master
+  709  git push origin newfile
+  710  git push origin "newfile"
+  711  rm newfile
+  712  ls
+  713  rm -r remote git
+  714  ls
+  715  ".."
+  716  ls
+  717  ls -la
+  718  rm -r Remote
+  719  ls
+  720  q
+  721  lsquit
+  722  quit
+  723  cd
+  724  ".."
+  725  cd
+  726  pwd
+  727  q git
+  728  ".."
+  729  ls
+  730  zsh
+  731  pwd
+  732  ls
+  733  cd Users
+  734  ls
+  735  pwd
+  736  ls
+  737  cd elizabethdavis
+  738  ls
+  739  ".."
+  740  ls
+  741  elizabethdavis
+  742  ~
+  743  ~quit
+  744  ~
+  745  ls
+  746  mkdir gitPractice
+  747  ls
+  748  touch newfile
+  749  ls
+  750  cd gitPractice
+  751  ls
+  752  status gitPractice
+  753  git status gitPractice
+  754  touch gitPractice newfile
+  755  ls
+  756  stauts gitPractice newfile
+  757  git status gitPractice newfile
+  758  git add -a
+  759  git add .newfile
+  760  ls
+  761  git status gitPractice newfile
+  762  git add newfile
+  763  ls
+  764  git status gitPractice newfile
+  765  ".."
+  766  ls
+  767  cd elizabethdavis
+  768  ls
+  769  cd downloads
+  770  ls
+  771  npm install --global surge
+  772  ls
+  773  ".."
+  774  ls
+  775  cd documents
+  776  ls
+  777  cd mypage
+  778  ls
+  779  grep "SURGE"
+  780  git quit
+  781  no
+  782  git quit
+  783  ~git quit
+  784  git help
+  785  surge
+  786  pwd
+  787  rem -r.git
+  788  rm -r .git
+  789  cd
+  790  ls
+  791  surge.sh
+  792  surge
+  793  ls
+  794  rm -r gitPractice
+  795  ls
+  796  rm -r newfile
+  797  ls
+  798  cd Documents
+  799  ls
+  800  mkdir
+  801  mkdir gitrepo
+  802  ls
+  803  git init
+  804  touch newfile
+  805  ls
+  806  rm -r newfile
+  807  ls
+  808  cd gitrepo
+  809  touch newfile
+  810  ls
+  811  git status newfile
+  812  git add .newfile
+  813  ls 
+  814  git status newfile
+  815  git add newfile
+  816  ls
+  817  git status newfile
+  818  git commit -m "newfile"
+  819  git status newfile
+  820  git remote add origin https://github.com/eadskye/gitPractice.git
+  821  ls
+  822  git status newfile
+  823  ls
+  824  ".."
+  825  ls
+  826  cd gitrepo
+  827  git status newfile
+  828  .gitignore
+  829  git ignore
+  830  git status --ignored
+  831  git status gitrepo
+  832  git status newfile
+  833  git commit -m
+  834  cat gitrepo
+  835  ls
+  836  cat newfile
+  837  cd newfile
+  838  ls
+  839  rm -r newfile
+  840  ls
+  841  ls gitrepo
+  842  rm -r gitrepo
+  843  ls
+  844  ".."
+  845  ls
+  846  rm -r gitrepo
+  847  ls
+  848  ~
+  849  pwd
+  850  ls
+  851  cd Documents
+  852  mkdir gitrepo
+  853  ls
+  854  cd gitrepo
+  855  touch newfile
+  856  ls
+  857  gitstatus newfile
+  858  git status newfile
+  859  git add newfile
+  860  git status newfile
+  861  git commit -m "Initialize file"
+  862  ".."
+  863  rm -r newfile
+  864  cd gitrepo
+  865  rm -r newfile
+  866  ls
+  867  ".."
+  868  rm -r gitrepo
+  869  ls
+  870  q
+  871  pwd
+  872  cd elizabethdavis
+  873  cd Users
+  874  ls
+  875  cd Documents
+  876  ~
+  877  ls
+  878  pwd
+  879  cd Documents
+  880  pwd
+  881  rm -r .git
+  882  ls
+  883  mkdir myProject
+  884  cd myProject
+  885  git init
+  886  touch README.md
+  887  git status
+  888  git status README.md
+  889  git add README.md
+  890  git status README.md
+  891  git commit -m "Initial commit"
+  892  git remote add origin git@github.com{eadskye}/{README}.git
+  893  git push -u origin master
+  894  echo "# mygitpractice">> README.md
+  895  git status
+  896  git add README.md
+  897  git status
+  898  git commit -a
+  899  ls
+  900  git status
+  901  git commit -m "Initial commit"
+  902  git status
+  903  git remote add origin https://github.com/eadskye/mygitpractice.git
+  904  git push -u origin master
+  905  git log -graph
+  906  ".."
+  907  git log -graph
+  908  ls -la
+  909  rm -r .git
+  910  ls
+  911  ls -la
+  912  ls
+  913  cd myProject
+  914  ".."
+  915  rm -r myProject
+  916  ls
+  917  cd myProject
+  918  ls
+  919  rm -r myProject
+  920  git status
+  921  ls
+  922  ".."
+  923  status git
+  924  git status
+  925  ls
+  926  ls -la
+  927  rm - r .git
+  928  rm -r .git
+  929  ls
+  930  la -ls
+  931  mkdir Project
+  932  cd Project
+  933  git init
+  934  touch readme.md
+  935  git status readme.md
+  936  git add readme.md
+  937  git status
+  938  git commit -m "Initial commit"
+  939  git remote add origin https://github.com/eadskye/mypractice.git
+  940  git push -u origin master
+  941  pwd
+  942  ".."
+  943  ls
+  944  cd Project
+  945  ".."
+  946  rm -r Project
+  947  ls
+  948  rm -r myProject
+  949  ls
+  950  mkdir mypractice
+  951  ls
+  952  cd mypractice
+  953  git init
+  954  touch readme.md
+  955  git status
+  956  git add readme.md
+  957  git status
+  958  git commit -m "Initial commit"
+  959  git remote add origin https://github.com/eadskye/myrepo.git
+  960  git push -u origin master
+  961  ".."
+  962  ;s
+  963  ls
+  964  mkdir practicegit
+  965  cdpracticegit
+  966  cd practicegit
+  967  git init
+  968  touch readme.md
+  969  git status
+  970  git add readme.md
+  971  git status
+  972  git commit -m "Initial commit"
+  973  git remote add origin https://github.com/eadskye/repopractice.git
+  974  git push -u origin master
+  975  javascripting
+  976  javascripting verify strings.js
+  977  javascripting
+  978  javascripting verify string-length.js
+  979  ls
+  980  javascripting run
+  981  javascripting print
+  982  javascripting verify string-length.js
+  983  javascripting verify string-length
+  984  javascripting verify string-length.js
+  985  javascripting
+  986  javascripting verify string-length.js
+  987  pwd
+  988  ls -al
+  989  mv *.js javascripting/
+  990  cd javascripting
+  991  ls
+  992  javascripting verify string-length.js
+  993  atom .
+  994  javascripting
+  995  javascripting verify string-length.js
+  996  javascripting
+  997  javascripting verify revising-strings.js
+  998  javascripting
+  999  javascripting verify numbers.js
+ 1000  javascripting
+ 1001  javascripting verify rounding-numbers.js
+ 1002  javascripting print
+ 1003  javascripting verify rounding-numbers.js
+ 1004  javascripting print
+ 1005  javascripting verify rounding-numbers.js
+ 1006  javascripting
+ 1007  javascripting verify number-to-string.js
+ 1008  javascripting
+ 1009  javascripting verify if-statement.js
+ 1010  javascripting
+ 1011  javascripting verify for-loop.js
+ 1012  javascripting
+ 1013  javascripting verify arrays.js
+ 1014  javascripting
+ 1015  javascripting verify array-filtering.js
+ 1016  javascripting
+ 1017  ".."
+ 1018  pwd
+ 1019  node 10:5.js
+ 1020  cd Documents
+ 1021  node javascriptpractice.js
+ 1022  node romanpractice.js
+ 1023  node romanpracice.js
+ 1024  node romanpractice.js
+ 1025  javascripting
+ 1026  javascripting verify array-filtering.js
+ 1027  node array-filtering.js
+ 1028  ls
+ 1029  javascripting
+ 1030  ls
+ 1031  javascripting verify array-filtering.js
+ 1032  cd javascripting
+ 1033  ls
+ 1034  javascripting
+ 1035  ls
+ 1036  ".."
+ 1037  ;s
+ 1038  ls
+ 1039  cd javascripting
+ 1040  javascripting verify array-filtering.js
+ 1041  javascripting
+ 1042  javascripting verify accessing-array-values.js
+ 1043  javascripting
+ 1044  javascripting verify accessing-array-values.js
+ 1045  javascripting
+ 1046  javascripting verify looping-througho-arrays.js
+ 1047  javascripting verify looping-through-arrays.js
+ 1048  node looping-through-arrays.js
+ 1049  ".."
+ 1050  ls
+ 1051  cd Documents
+ 1052  node cfu.js
+ 1053  node cooler.js
+ 1054  ls
+ 1055  ".."
+ 1056  ls
+ 1057  cd Documents
+ 1058  ls
+ 1059  cd wd-javascript-fundamentals
+ 1060  ls
+ 1061  cd part1
+ 1062  ls
+ 1063  cat assignment.js
+ 1064  ls
+ 1065  ".."
+ 1066  cd Documents
+ 1067  node pr.js
+ 1068  node assignment.js
+ 1069  ls
+ 1070  pwd
+ 1071  cd wd-javascript-fundamentals.js
+ 1072  cd workspace
+ 1073  wd-javascript-fundamentals
+ 1074  ls
+ 1075  cd part1
+ 1076  ls
+ 1077  cat assignment.js
+ 1078  atom .
+ 1079  ".."
+ 1080  atom .
+ 1081  ..
+ 1082  ls
+ 1083  cd javascripting
+ 1084  ls
+ 1085  ..
+ 1086  ls
+ 1087  cd shared
+ 1088  ls
+ 1089  ..
+ 1090  cd elizabethdavis
+ 1091  ls
+ 1092  cd git
+ 1093  ls
+ 1094  ..
+ 1095  cd notebook
+ 1096  ls
+ 1097  cd public
+ 1098  ..
+ 1099  cd public
+ 1100  ls
+ 1101  ..
+ 1102  cd library
+ 1103  ls
+ 1104  cd webkit
+ 1105  ls
+ 1106  ..
+ 1107  ls
+ 1108  ..
+ 1109  ls
+ 1110  cd documents
+ 1111  ls
+ 1112  ..
+ 1113  cd documents
+ 1114  atom .
+ 1115  pwd
+ 1116  ls
+ 1117  cd Documents
+ 1118  ls
+ 1119  cd wd-javascript-fundamentals
+ 1120  ls
+ 1121  cd part1
+ 1122  ls
+ 1123  cat assignment.js
+ 1124  ls
+ 1125  node assignment.js
+ 1126  node test.js
+ 1127  ls
+ 1128  ..
+ 1129  ls
+ 1130  node test.js
+ 1131  ls
+ 1132  cd part1
+ 1133  node assignemt.js
+ 1134  node assignment.test.js
+ 1135  open
+ 1136  open assignment.html
+ 1137  node assignment.js
+ 1138  clear
+ 1139  node assignment.js
+ 1140  git add .
+ 1141  git commit -m "finished part1 "
+ 1142  git push origin master
+ 1143  open assignment.html
+ 1144  node assignment.js
+ 1145  ls
+ 1146  ..
+ 1147  ls
+ 1148  part2
+ 1149  ls
+ 1150  assignment.js
+ 1151  cat assignment.js
+ 1152  atom .
+ 1153  node assignment.js
+ 1154  node assignment.js..
+ 1155  ..
+ 1156  ls
+ 1157  cd part1
+ 1158  node assignment.js
+ 1159  git commit -m "Second commit"
+ 1160  git status
+ 1161  ..
+ 1162  ls
+ 1163  cd part 1
+ 1164  cd part1
+ 1165  git commit
+ 1166  git remote add origin
+ 1167  git push -u origin master
+ 1168  ls
+ 1169  git commit -m "Second"
+ 1170  git remote add origin
+ 1171  git push -u origin master
+ 1172  ls
+ 1173  git commit -m "Add existing file" # 
+ 1174  git commit assignment.js
+ 1175  git commit -m "second version"
+ 1176  git push origin master
+ 1177  git status
+ 1178  git add part1
+ 1179  ls
+ 1180  git add assignment.js
+ 1181  ls
+ 1182  git status
+ 1183  git push origin master
+ 1184  git status
+ 1185  git add assignment.js
+ 1186  git status
+ 1187  git commit -m "updated"
+ 1188  git push origin master
+ 1189  git status
+ 1190  ls
+ 1191  ..
+ 1192  ls
+ 1193  cd part2
+ 1194  ls
+ 1195  cat assignment.js
+ 1196  node assignment.js
+ 1197  ..
+ 1198  ls
+ 1199  ..
+ 1200  ls
+ 1201  cd Downloads
+ 1202  ls
+ 1203  ..
+ 1204  ls
+ 1205  cd Documents
+ 1206  ls
+ 1207  cd html-intro
+ 1208  ls
+ 1209  cd images
+ 1210  ls
+ 1211  cat unstyled.png
+ 1212  1;2c1;2c1;2cls
+ 1213  ..
+ 1214  ls
+ 1215  cd html-intro
+ 1216  ls
+ 1217  cd images
+ 1218  ..
+ 1219  touch cities.html
+ 1220  atom .
+ 1221  git commit
+ 1222  git commit -m "first commit"
+ 1223  git add cities.html
+ 1224  git status
+ 1225  git commit -m "Initial commit"
+ 1226  git status
+ 1227  git remote add origin
+ 1228  git status
+ 1229  ls
+ 1230  git status
+ 1231  git add cities.html
+ 1232  git status
+ 1233  git push
+ 1234  git status
+ 1235  git push u-origin master
+ 1236  ls
+ 1237  cat cities.html
+ 1238  git add cities.html
+ 1239  git status
+ 1240  git add cities.html
+ 1241  git status
+ 1242  git remote add origin
+ 1243  git status
+ 1244  git push
+ 1245  ls
+ 1246  git add .
+ 1247  git status
+ 1248  git init
+ 1249  git add cities.html
+ 1250  git status
+ 1251  git commit -m "Update"
+ 1252  git remote add origin
+ 1253  git push -u origin master
+ 1254  git push origin master
+ 1255  git add cities.html
+ 1256  git status
+ 1257  gitstatus
+ 1258  git status
+ 1259  git add .
+ 1260  git status
+ 1261  git commit -m "updated"
+ 1262  git push origin master
+ 1263  ..
+ 1264  ls
+ 1265  html-intro
+ 1266  ..
+ 1267  git clone https://github.com/eadskye/html-intro.git
+ 1268  git status
+ 1269  cd html-intro
+ 1270  git status
+ 1271  git add .
+ 1272  git status
+ 1273  git commit -m "updated"
+ 1274  git push origin master
+ 1275  https://github.com/eadskye/semantic-html-exercise.git
+ 1276  ..
+ 1277  ls
+ 1278  ..
+ 1279  ls
+ 1280  cd Documents
+ 1281  ls
+ 1282  cd html-intro
+ 1283  ls
+ 1284  ..
+ 1285  cd git
+ 1286  ls
+ 1287  ..
+ 1288  ls
+ 1289  elizabethdavis
+ 1290  ls
+ 1291  cd Documents
+ 1292  ls
+ 1293  cd semantic-html-exercise
+ 1294  atom .
+ 1295  pwd
+ 1296  ls
+ 1297  cd Documents
+ 1298  ls
+ 1299  cd semantic-html-exercise
+ 1300  git status
+ 1301  git add
+ 1302  ..
+ 1303  git add semantic-html-exercise
+ 1304  cd semantic-html-exercise
+ 1305  ls
+ 1306  git add index.html
+ 1307  git status
+ 1308  git commit -m "index commit"
+ 1309  git push origin master
+ 1310  ..
+ 1311  ls
+ 1312  cd cities
+ 1313  git status
+ 1314  git init
+ 1315  git commit -m "html intro"
+ 1316  git remote add origin
+ 1317  git push origin master
+ 1318  git status
+ 1319  git add .
+ 1320  git status
+ 1321  git remote add origin https://github.com/eadskye/repopractice.git
+ 1322  git status
+ 1323  git push -u origin master
+ 1324  git push origin master
+ 1325  git commit
+ 1326  git push
+ 1327  git add .
+ 1328  git status
+ 1329  git push origin master
+ 1330  ..
+ 1331  ls
+ 1332  cd html-intro
+ 1333  ls
+ 1334  git status
+ 1335  git commit -a
+ 1336  git commit -m "updated"
+ 1337  git add
+ 1338  git add cities.html
+ 1339  git status
+ 1340  git commit -m "updated"
+ 1341  git remote add origin
+ 1342  git status
+ 1343  git push origin master
+ 1344  ..
+ 1345  ls
+ 1346  cd wd-javascript-fundamentals
+ 1347  ls
+ 1348  cd part2
+ 1349  node part2
+ 1350  ..
+ 1351  surge
+ 1352  ..
+ 1353  ls
+ 1354  elizabethdavis
+ 1355  ls
+ 1356  cd Documents
+ 1357  mkdir Alphabet
+ 1358  ls
+ 1359  cd Alphabet
+ 1360  git init
+ 1361  git remote add upstream git@github.com:gSchool/g26-challenges-so-far.git
+ 1362  git status
+ 1363  atom .
+ 1364  git checkout master
+ 1365  git pull upstream master
+ 1366  atom .
+ 1367  ..
+ 1368  ls
+ 1369  alphabet
+ 1370  node verify..
+ 1371  ..
+ 1372  ls
+ 1373  cd alphabet
+ 1374  node verify w2-f-replace-with-alphabet-position.js
+ 1375  ..
+ 1376  ls
+ 1377  ..
+ 1378  ls
+ 1379  cd Documents
+ 1380  ls
+ 1381  https://github.com/eadskye/g36_lesson_notes.git
+ 1382  git add .
+ 1383  cat github practice.mov
+ 1384  ..
+ 1385  cd Downloads
+ 1386  ls
+ 1387  ..
+ 1388  ls
+ 1389  cd Documents
+ 1390  ls
+ 1391  git status
+ 1392  ls
+ 1393  git clone https://github.com/gSchool/css-layout-exercises.git
+ 1394  ls
+ 1395  cd css-layout-exercises
+ 1396  ls
+ 1397  cd 1
+ 1398  ls
+ 1399  atom .
+ 1400  cat 2
+ 1401  2
+ 1402  ls
+ 1403  css-layout-exercises
+ 1404  ls
+ 1405  cd 2
+ 1406  atom .
+ 1407  ..
+ 1408  cd 3
+ 1409  atom .
+ 1410  cd 4
+ 1411  ..
+ 1412  cd 4
+ 1413  atom .
+ 1414  ..
+ 1415  5 git
+ 1416  cd 5
+ 1417  ls
+ 1418  ..
+ 1419  $ open index.html
+ 1420  ..
+ 1421  ls
+ 1422  git clone https://github.com/eadskye/css-exercises.git
+ 1423  ls
+ 1424  cd css-exercises
+ 1425  ls
+ 1426  cd 000-Selectors
+ 1427  ls
+ 1428  atom .
+ 1429  ..
+ 1430  ls
+ 1431  wd-javascript-fundamentals
+ 1432  ls
+ 1433  cd part2
+ 1434  node verify assignment.js
+ 1435  ls
+ 1436  node verify assignment.js
+ 1437  cat assignment.js
+ 1438  node verify assignment.js
+ 1439  ..
+ 1440  ls
+ 1441  cd Documents
+ 1442  ls
+ 1443  cd-wd-javascript-fundamentals
+ 1444  cd wd-javascript-fundamentals
+ 1445  ls
+ 1446  node verify assignment.js
+ 1447  cd part2
+ 1448  ls
+ 1449  node verify assignment.js
+ 1450  atom .
+ 1451  node verify assignment.js
+ 1452  ..
+ 1453  ls
+ 1454  ..
+ 1455  ls
+ 1456  cd Applications
+ 1457  ls
+ 1458  ..
+ 1459  cd Documents
+ 1460  ls
+ 1461  ..
+ 1462  ls
+ 1463  cd Documents
+ 1464  ls
+ 1465  node verify fizzbuzz.js
+ 1466  cat fizzbuzz.js
+ 1467  node verify fizzbuzz.js
+ 1468  node
+ 1469  ls
+ 1470  node-verify fizzbuzz.js
+ 1471  ..
+ 1472  ls
+ 1473  cd Documents
+ 1474  ls
+ 1475  git add https://github.com/eadskye/js-dom-tests.git
+ 1476  git status
+ 1477  ls
+ 1478  git add .
+ 1479  git add https://github.com/eadskye/js-dom-tests.git
+ 1480  ls
+ 1481  ..
+ 1482  ls
+ 1483  cd Git
+ 1484  ls
+ 1485  ..
+ 1486  cd Downloads
+ 1487  ls
+ 1488  ..
+ 1489  ls
+ 1490  cd Documents
+ 1491  ls
+ 1492  git add https://github.com/eadskye/js-dom-tests.git
+ 1493  git add . https://github.com/eadskye/js-dom-tests.git
+ 1494  git clone https://github.com/eadskye/js-dom-tests.git
+ 1495  ls
+ 1496  cd js-dom-tests
+ 1497  atom .
+ 1498  ..
+ 1499  ls
+ 1500  css-layout-exercises
+ 1501  atom .
+ 1502  ..
+ 1503  ls
+ 1504  la
+ 1505  cd wd-javascript-fundamentals
+ 1506  ls
+ 1507  cd part2
+ 1508  atom .
+ 1509  git push origin master
+ 1510  git status
+ 1511  git commit -m "updated"
+ 1512  git status
+ 1513  git add assignment.js
+ 1514  git status
+ 1515  git commit -m "updated"
+ 1516  git push origin master
+ 1517  ..
+ 1518  ls
+ 1519  cd css-layout-exercises
+ 1520  atom .
+ 1521  ..
+ 1522  ls
+ 1523  ls -la
+ 1524  git clone https://github.com/eadskye/warmups.git
+ 1525  ls
+ 1526  cd warmups
+ 1527  ls
+ 1528  cd w02
+ 1529  ls
+ 1530  w2-f-replace-with-alphabet-position
+ 1531  atom .
+ 1532  node-verify w2-f-replace-with-alphabet-position.js
+ 1533  node verify w2-f-replace-with-alphabet-position.js
+ 1534  pwd
+ 1535  cd Documents
+ 1536  ls
+ 1537  cd DOM practice
+ 1538  DOM practice
+ 1539  DOM_practice
+ 1540  ls
+ 1541  atom index.html; atom script.js
+ 1542  open index.html
+ 1543  ..
+ 1544  ls
+ 1545  css-layout-exercises
+ 1546  atom .
+ 1547  ..
+ 1548  cd Documents
+ 1549  ls
+ 1550  git clone https://github.com/eadskye/stoplight-event-exercise.git
+ 1551  ls
+ 1552  cd stoplight-event-exercises
+ 1553  cd stoplight-event-exercise
+ 1554  ls
+ 1555  atom .
+ 1556  ..
+ 1557  ls
+ 1558  git clone https://github.com/gSchool/pixel-art-maker.git
+ 1559  ls
+ 1560  cd pixel-art-maker
+ 1561  atom .
+ 1562  ..
+ 1563  css-layout-exercises
+ 1564  atom .
+ 1565  pwd
+ 1566  cd
+ 1567  cd Documents
+ 1568  rm liz
+ 1569  mkdir liz
+ 1570  pwd
+ 1571  cd liz
+ 1572  pwd
+ 1573  cd ../
+ 1574  ls
+ 1575  cd css-layout-exercises
+ 1576  ls
+ 1577  cp -rf 1 ../liz
+ 1578  cd ../liz
+ 1579  ls
+ 1580  cd 1
+ 1581  ls
+ 1582  pwd
+ 1583  ..
+ 1584  ls
+ 1585  cd css-layout-exercises
+ 1586  ls
+ 1587  cd 1
+ 1588  atom .
+ 1589  ..
+ 1590  atom .
+ 1591  git status
+ 1592  git commit -m "initial commit"
+ 1593  git add
+ 1594  git add 2/index.html
+ 1595  git status
+ 1596  git add css-layout-exercises
+ 1597  ls
+ 1598  cd 1
+ 1599  ls
+ 1600  git add index.html
+ 1601  git status
+ 1602  git commit -m "updated"
+ 1603  git status
+ 1604  git push
+ 1605  git remote add origin
+ 1606  git push origin master
+ 1607  git stats
+ 1608  git status
+ 1609  git add https://github.com/eadskye/css-layout-exercises
+ 1610  git clone https://github.com/gSchool/pixel-art-maker.git
+ 1611  ..
+ 1612  https://github.com/eadskye/css-layout-exercises.git
+ 1613  git add .
+ 1614  git status
+ 1615  git commit -m "layouts"
+ 1616  git push origin css-layout-exercises
+ 1617  git push origin master
+ 1618  git remote add origin https://github.com/gSchool/css-layout-exercises.git
+ 1619  git push origin master
+ 1620  ..
+ 1621  ls
+ 1622  cd stoplight-event-exercises
+ 1623  cd stoplight-event-exercise
+ 1624  git add .
+ 1625  git status
+ 1626  git commit -m "initial commit"
+ 1627  git push origin master
+ 1628  git add .
+ 1629  git status
+ 1630  git commit -m "initial"
+ 1631  git push origin master
+ 1632  ..
+ 1633  ls
+ 1634  css-layout-exercises
+ 1635  git clone
+ 1636  git clone https://github.com/gSchool/pixel-art-maker.git
+ 1637  git add .
+ 1638  git commit -m "initial commit"
+ 1639  git push origin master
+ 1640  ..
+ 1641  ls
+ 1642  git clone https://github.com/gSchool/galvanize-delivers.git
+ 1643  ls
+ 1644  cd galvanize delivers
+ 1645  cd galvanize-delivers
+ 1646  atom .
+ 1647  ..
+ 1648  cd pixel-art-maker
+ 1649  ls
+ 1650  atom .
+ 1651  ..
+ 1652  ls
+ 1653  cd galvanize-delivers
+ 1654  atom .
+ 1655  ..
+ 1656  ls
+ 1657  pwd
+ 1658  ..
+ 1659  cd Downloads
+ 1660  ls
+ 1661  cat parallax-template.zip
+ 1662  1;2c1;2c1;2c1;2c1;2c1;2c1;2c1;2c1;2c1;2c1;2c1;2c1;2c1;2c..
+ 1663  pwd
+ 1664  ls
+ 1665  cd Downloads
+ 1666  ls
+ 1667  cd parallax-template
+ 1668  atom .
+ 1669  ..
+ 1670  cd Documents
+ 1671  ls
+ 1672  node-verify warmup.js
+ 1673  node verify warmup.js
+ 1674  verify warmup.js
+ 1675  node verify
+ 1676  node warmup.js verify
+ 1677  ls
+ 1678  cd html-forms
+ 1679  git clone https://github.com/eadskye/html-forms.git
+ 1680  ls
+ 1681  cd html-forms
+ 1682  ls
+ 1683  atom .
+ 1684  add all
+ 1685  git status
+ 1686  git add 
+ 1687  git add .
+ 1688  git status
+ 1689  git commit -m "initial commit"
+ 1690  git push origin master
+ 1691  git push
+ 1692  git push html-forms.git
+ 1693  git status
+ 1694  git push
+ 1695  git push origin master
+ 1696  open example_02.html
+ 1697  git add 
+ 1698  git add .
+ 1699  git status
+ 1700  git commit -m "example 2"
+ 1701  gcmsg "add hidden fields"
+ 1702  git push origin master
+ 1703  git add .
+ 1704  gcmsg "add checkboxes and labels"
+ 1705  git push
+ 1706  git add .
+ 1707  gcmsg "complete challenge 2"
+ 1708  git push
+ 1709  open example_03
+ 1710  open example_03.html
+ 1711  gaa
+ 1712  gcmsg "add size form field and radio buttons"
+ 1713  git push
+ 1714  gaa
+ 1715  gcmsg "add color buttons and submit button"
+ 1716  git push
+ 1717  open example_04
+ 1718  open example_04.html
+ 1719  gaa
+ 1720  gcmsg "add select boxes with options"
+ 1721  open example_05.html
+ 1722  ..
+ 1723  mkdir myform
+ 1724  ls
+ 1725  cd myform
+ 1726  atom .
+ 1727  ..
+ 1728  ls
+ 1729  cd css-layout-exercises
+ 1730  git add .
+ 1731  git commit -m "work on up to 6 layouts"
+ 1732  git push origin master
+ 1733  git push
+ 1734  git clone https://github.com/eadskye/css-layout-exercises.git
+ 1735  git add .
+ 1736  git commit -m "work on up to 6 layouts"
+ 1737  git push origin master
+ 1738  git push
+ 1739  git status
+ 1740  git pull
+ 1741  git checkout
+ 1742  advice.status hints
+ 1743  git advice.status
+ 1744  git help
+ 1745  git reset
+ 1746  ls
+ 1747  ..
+ 1748  ls
+ 1749  cd css-layout-exercises
+ 1750  ls
+ 1751  git status
+ 1752  cd 1
+ 1753  git add .
+ 1754  git status
+ 1755  git commit -m "updated"
+ 1756  git push
+ 1757  ..
+ 1758  git clone --bare https://github.com/eadskye/css-layout-exercises.git
+ 1759  cd css-layout-exercises.git
+ 1760  git push --mirror https://github.com/eadskye/css-layout-exercises.git
+ 1761  git push --mirror
+ 1762  git status
+ 1763  ..
+ 1764  ls
+ 1765  css-layout-exercises
+ 1766  ls
+ 1767  cd css-layout-exercises.git
+ 1768  ls
+ 1769  cd
+ 1770  pwd
+ 1771  cd elizabethdavis
+ 1772  ..
+ 1773  ls
+ 1774  elizabethdavis
+ 1775  ls
+ 1776  cd Documents
+ 1777  ls
+ 1778  cd css-layout-exercises
+ 1779  git status
+ 1780  git add
+ 1781  git add .
+ 1782  ls
+ 1783  git status
+ 1784  git commit -m "updated wireframes"
+ 1785  git push
+ 1786  git push origin master
+ 1787  git status
+ 1788  ..
+ 1789  ls
+ 1790  cd pixel-art-maker
+ 1791  atom .
+ 1792  ls
+ 1793  node pixel.js verify
+ 1794  ..
+ 1795  ls
+ 1796  cd warmups
+ 1797  ls
+ 1798  node array_sorting.js verify
+ 1799  node array_sorting.js 
+ 1800  ..
+ 1801  npm install jquery
+ 1802  ls
+ 1803  cd Document
+ 1804  cd Documents
+ 1805  ls
+ 1806  cd css-layout-exercises
+ 1807  git status
+ 1808  git push
+ 1809  git remote -v
+ 1810  git remote add origin https://github.com/eadskye/css-layout-exercises.git
+ 1811  git remote remove origin
+ 1812  git remote add origin https://github.com/eadskye/css-layout-exercises.git
+ 1813  git remote -v
+ 1814  git status
+ 1815  ls -al
+ 1816  css-layout-exercises
+ 1817  git remote -v
+ 1818  ls
+ 1819  pwd
+ 1820  git status
+ 1821  ls -al
+ 1822  ../
+ 1823  ls -al
+ 1824  pixel-art-maker
+ 1825  git remote -v
+ 1826  ../
+ 1827  atom .
+ 1828  history
+ 1829  ls
+ 1830  rm -rf pixel-art-maker
+ 1831  ls
+ 1832  rm -rf css-layout-exercises
+ 1833  ls
+ 1834  css-layout-exercises.git
+ 1835  ls
+ 1836  ..
+ 1837  ls -al
+ 1838  cd .git
+ 1839  ls
+ 1840  ../
+ 1841  ls
+ 1842  rm -rf css-layout-exercises.git
+ 1843  ls
+ 1844  pwd
+ 1845  git remote -v
+ 1846  git status
+ 1847  git add -A
+ 1848  git commit -m "remove unneeded files"
+ 1849  git status
+ 1850  git push origin master
+ 1851  pwd
+ 1852  git remote -v
+ 1853  history
+ 1854  ..
+ 1855  ls
+ 1856  cd galvanize-delivers
+ 1857  atom .
+ 1858  ls
+ 1859  ..
+ 1860  ls
+ 1861  git clone https://github.com/eadskye/boxes-jQuery-playground.git
+ 1862  ls
+ 1863  cd boxes-jQuery-playground
+ 1864  ls
+ 1865  atom .
+ 1866  ..
+ 1867  ls
+ 1868  git clone https://github.com/eadskye/js-dom-tests.git
+ 1869  ls
+ 1870  cd js-dom-tests
+ 1871  atom .
+ 1872  ls
+ 1873  cd Documents
+ 1874  ls
+ 1875  node warmup1.js verify
+ 1876  node warmup1.js
+ 1877  git clone https://github.com/eadskye/jquery-calculator.git
+ 1878  ls
+ 1879  cd jquery-calculator
+ 1880  atom .
+ 1881  git add .
+ 1882  git commit -m "initial commit"
+ 1883  git push origin master
+ 1884  ..
+ 1885  ls
+ 1886  cd html-forms
+ 1887  ls
+ 1888  ..
+ 1889  cd html-forms
+ 1890  atom .
+ 1891  ..
+ 1892  cd j-query calculator
+ 1893  git add .
+ 1894  ls
+ 1895  cd j-query-calculator
+ 1896  git clone j-query calculator
+ 1897  cd jquery-calculator
+ 1898  ls
+ 1899  git status
+ 1900  git add . 
+ 1901  git commit -m "first 3 objectives"
+ 1902  git commit origin master
+ 1903  git push origin master
+ 1904  ..
+ 1905  ls
+ 1906  cd DOM_practice
+ 1907  atom .
+ 1908  ..
+ 1909  DOM practice
+ 1910  cd DOM practice
+ 1911  cd DOM\ practice
+ 1912  atom .
+ 1913  ..
+ 1914  ls
+ 1915  git clone https://github.com/eadskye/ccf-data-structures.git
+ 1916  ls
+ 1917  cd ccf-data-strutures
+ 1918  cd ccf-data-structures
+ 1919  ls
+ 1920  atom .
+ 1921  ..
+ 1922  ls
+ 1923  cd html-forms
+ 1924  git add .
+ 1925  git status
+ 1926  git commit -m "finished part 5"
+ 1927  git push origin master
+ 1928  ..
+ 1929  ls
+ 1930  cd galvanize-delivers
+ 1931  atom .
+ 1932  ls
+ 1933  open READ.md
+ 1934  open README.md
+ 1935  ls
+ 1936  cd Documents
+ 1937  ls
+ 1938  cd galvanize-delivers
+ 1939  git add .
+ 1940  git commit -m "first page"
+ 1941  git push origin master
+ 1942  git clone https://github.com/eadskye/galvanize-delivers.git
+ 1943  git add .
+ 1944  git commit -m "first page"
+ 1945  git push origin master
+ 1946  ..
+ 1947  ping google.com
+ 1948  traceroute google.com
+ 1949  curl google
+ 1950  curl google.com
+ 1951  curl -8
+ 1952  curl google.com
+ 1953  node warmup1.js verify
+ 1954  git clone https://github.com/eadskye/wd-ajax-hero.git
+ 1955  ls
+ 1956  cd wd-ajax-hero
+ 1957  atom .
+ 1958  ..
+ 1959  git clone https://github.com/eadskye/function-tests.git
+ 1960  cd function-tests
+ 1961  atom .
+ 1962  ..
+ 1963  ls
+ 1964  git clone https://github.com/eadskye/localstorage-exercises.git
+ 1965  ls
+ 1966  cd localstorage-exercises
+ 1967  atom .
+ 1968  ls
+ 1969  cd 01-get-set
+ 1970  ls
+ 1971  atom .
+ 1972  clear
+ 1973  ..
+ 1974  node scope.js verify
+ 1975  clear
+ 1976  node scope.js verify
+ 1977  clear
+ 1978  atom .
+ 1979  ls
+ 1980  cd wd-ajax-hero
+ 1981  atom .
+ 1982  ..
+ 1983  ls
+ 1984  clear
+ 1985  ls
+ 1986  cd galvanize-delivers
+ 1987  ls
+ 1988  git status
+ 1989  git push
+ 1990  pwd
+ 1991  node scope.js verify
+ 1992  ls
+ 1993  cd Documents
+ 1994  ls
+ 1995  mkdir Q1_project
+ 1996  ls
+ 1997  cd Q1_project
+ 1998  touch index.html
+ 1999  git init
+ 2000  ..
+ 2001  ls
+ 2002  cd galvanize-delivers
+ 2003  atom .
+ 2004  ls
+ 2005  ..
+ 2006  ls
+ 2007  cd Q1_project
+ 2008  atom .
+ 2009  rm -rf
+ 2010  rf -rm
+ 2011  ..
+ 2012  rm -f Q1-project
+ 2013  ls
+ 2014  rm -r Q1_practice
+ 2015  rm -r Q1_project
+ 2016  ls
+ 2017  s
+ 2018  ls
+ 2019  cd factal
+ 2020  cd fractal
+ 2021  cd documents
+ 2022  ls
+ 2023  cd fractal
+ 2024  git init
+ 2025  git commit -m "initial commit"
+ 2026  git push origin master
+ 2027  git status
+ 2028  git add
+ 2029  git add fractal.js
+ 2030  git add index.html
+ 2031  git add Q_1writeup.pages
+ 2032  git add Q1_writeup.pages
+ 2033  git status
+ 2034  git push origin master
+ 2035  git remote add origin
+ 2036  git push origin master
+ 2037  git push
+ 2038  git status
+ 2039  git push
+ 2040  git remote add git@github.com/eadskye
+ 2041  git status
+ 2042  git push
+ 2043  git push fractal.js
+ 2044  git push --set-upstream fractal.js master
+ 2045  git remote add origin git@github.com
+ 2046  git status
+ 2047  git remote add origin git@github.com{eadskye}/{fractal.js}.git
+ 2048  git status
+ 2049  git psh
+ 2050  git push
+ 2051  git push --set-upstream origin master
+ 2052  git push -u origin master
+ 2053  git checkout master
+ 2054  git status
+ 2055  git push -u origin master
+ 2056  git push
+ 2057  git push --set-upstream origin master
+ 2058  git push origin master
+ 2059  git remote add origin
+ 2060  git status
+ 2061  git add .
+ 2062  git status
+ 2063  git commit -m"2nd"
+ 2064  git push
+ 2065  git push -u
+ 2066  git remote show origin
+ 2067  git remote add origin git@github.com{eadskye}/{README}.git
+ 2068  git status
+ 2069  git push
+ 2070  ls
+ 2071  git remote -v
+ 2072  git remote add origin https://github.com/eadskye/fractal.git
+ 2073  git remote -v
+ 2074  git remote delete origin
+ 2075  git remote remove origin
+ 2076  git remote add origin git@github.com{eadskye}/{README}.git
+ 2077  git remote remove origin
+ 2078  git remote add origin git remote add origin https://github.com/eadskye/fractal.git
+ 2079  git remote add origin https://github.com/eadskye/fractal.git
+ 2080  git remote -v
+ 2081  git status
+ 2082  ls
+ 2083  gaa
+ 2084  git log
+ 2085  git push -u origin master
+ 2086  surge
+ 2087  atom .
+ 2088  git add
+ 2089  git status
+ 2090  git commit -m "added buttons but lost canvas"
+ 2091  git push
+ 2092  clear
+ 2093  mkdir q1p
+ 2094  rm -rf q1p
+ 2095  ls
+ 2096  rm -rf projectq1
+ 2097  ..
+ 2098  mkdir q1p
+ 2099  cd
+ 2100  ls
+ 2101  cd documents
+ 2102  ls
+ 2103  clear
+ 2104  ls
+ 2105  clear
+ 2106  cd q1p
+ 2107  touch index.html
+ 2108  touch script.js
+ 2109  atom .
+ 2110  cd Docuements
+ 2111  cd documents
+ 2112  cd fractal
+ 2113  git status
+ 2114  git add .
+ 2115  git commit -m "got fractal canvas to work"
+ 2116  git push origin master
+ 2117  surge 
+ 2118  git add .
+ 2119  git status
+ 2120  ls
+ 2121  git push
+ 2122  git commit -m "updated format, broke the buttons"
+ 2123  git push origin master
+ 2124  git status
+ 2125  ggr -5
+ 2126  git diff
+ 2127  git status
+ 2128  surge
+ 2129  npm install simplehttpserver -g
+ 2130  simplehttpserver
+ 2131  pwd
+ 2132  simplehttpserver
+ 2133  ls
+ 2134  cd Documents
+ 2135  ls
+ 2136  cd fractal
+ 2137  ls
+ 2138  git add .
+ 2139  git stauts
+ 2140  git status
+ 2141  git commit -m "got api working"
+ 2142  git push origin master
+ 2143  surge
+ 2144  git add .
+ 2145  git status
+ 2146  git commit -m "got buttons working"
+ 2147  git push origin master
+ 2148  surge
+ 2149  simplehttpserver
+ 2150  git add .
+ 2151  git status
+ 2152  git commit -m "api quote is working"
+ 2153  git push origin master
+ 2154  surge
+ 2155  git add .
+ 2156  git commit -m"made quote randomize"
+ 2157  git push origin master
+ 2158  surge
+ 2159  ..
+ 2160  ls
+ 2161  cd function-tests
+ 2162  atom .
+ 2163  ..
+ 2164  cd js-dom-tests
+ 2165  ls
+ 2166  atom .
+ 2167  ..
+ 2168  cd fractal
+ 2169  atom .
+ 2170  cd Documents
+ 2171  cd fractal
+ 2172  git add .
+ 2173  git commit -m"added about page"
+ 2174  git push origin master
+ 2175  surge
+ 2176  ..
+ 2177  ls
+ 2178  cd mypage
+ 2179  atom .
+ 2180  cd documents
+ 2181  cd fractal
+ 2182  git add .
+ 2183  git commit -m"added links"
+ 2184  git push origin master
+ 2185  surge
+ 2186  documents
+ 2187  ls
+ 2188  cd fractal
+ 2189  git add .
+ 2190  git commit -m"added window scaling function"
+ 2191  git push origin master
+ 2192  surge
+ 2193  suge
+ 2194  surge
+ 2195  cd documents
+ 2196  mkdir map
+ 2197  touch map.html
+ 2198  touch map.js
+ 2199  cd map
+ 2200  atom .
+ 2201  ..
+ 2202  rm -map.html
+ 2203  cd fractal
+ 2204  ls
+ 2205  git add .
+ 2206  git commit -m"added self assessment"
+ 2207  git push origin master
+ 2208  ..
+ 2209  brew update
+ 2210  ..
+ 2211  brew outdated
+ 2212  brew upgrade node
+ 2213  brew cleanup
+ 2214  cd documents
+ 2215  ls
+ 2216  cd elizabethdavis
+ 2217  cd documents
+ 2218  touch ~/Desktop/readPaths.js
+ 2219  atom ~/Desktop/readPaths.js
+ 2220  node ~/Desktop/readPaths.js
+ 2221  node
+ 2222  touch ~/Desktop/addition.js
+ 2223  atom ~/Desktop/addition.js
+ 2224  node ~/Desktop/addition.js
+ 2225  touch ~/Desktop/syncIO.js
+ 2226  atom ~/Desktop/syncIO.js
+ 2227  node ~/Desktop/syncIO.js
+ 2228  touch ~/Desktop/asyncIO.js
+ 2229  atom ~/Desktop/asyncIO.js
+ 2230  node ~/Desktop/asyncIO.js
+ 2231  mkdir party
+ 2232  cd party
+ 2233  echo '[]' > guests.json
+ 2234  touch guests.js
+ 2235  git init
+ 2236  git add .
+ 2237  git commit -m"initial commit"
+ 2238  atom .
+ 2239  node guests.js
+ 2240  git add .
+ 2241  git commit -m 'Add the basic scaffold'
+ 2242  node guests.js
+ 2243  node guests.js read
+ 2244  git add .
+ 2245  git commit -m 'Add the read subcommand'
+ 2246  node guests.js
+ 2247  node guests.js create
+ 2248  node guests.js create Mary
+ 2249  node guests.js read
+ 2250  node guests.js create Don
+ 2251  node guests.js read
+ 2252  git add .
+ 2253  git commit -m 'Add the create subcommand'
+ 2254  git push origin master
+ 2255  git push
+ 2256  git remote add origin
+ 2257  git status
+ 2258  ..
+ 2259  cd
+ 2260  ls
+ 2261  cd documents
+ 2262  ls
+ 2263  git clone https://github.com/eadskye/node-filesystem-fundamentals.git
+ 2264  ls
+ 2265  cd node-filesystem-fundamentals
+ 2266  ls
+ 2267  atom .
+ 2268  clear
+ 2269  ..
+ 2270  git clone https://github.com/eadskye/node-filesystem-fundamentals.git
+ 2271  https://github.com/eadskye/fs-pet-shop.git
+ 2272  git clone https://github.com/eadskye/fs-pet-shop.git
+ 2273  cd fs-pet-shop
+ 2274  atom .
+ 2275  ```shell\ncd path/to/project\nnpm install\n```
+ 2276  npm install
+ 2277  ls
+ 2278  cd node_modules
+ 2279  ls
+ 2280  ..
+ 2281  ls
+ 2282  cat package.json
+ 2283  nodemon
+ 2284  npm install
+ 2285  atom .
+ 2286  npm install
+ 2287  ```shell\necho 'node_modules' >> .gitignore\n```
+ 2288  touch `.eslintrc.js`
+ 2289  ```shell\ntouch `.eslintrc.js`\n```
+ 2290  ..
+ 2291  npm install nodemon -g
+ 2292  cd documents
+ 2293  mkdir nodemon
+ 2294  npm init
+ 2295  cd nodemon
+ 2296  atom .
+ 2297  ..
+ 2298  mkdir no_demon
+ 2299  cd no_demon
+ 2300  npm init
+ 2301  atom .
+ 2302  ..
+ 2303  clear
+ 2304  git clone https://github.com/KFoster-Marks/node_modules
+ 2305  cd node_modules
+ 2306  atom .
+ 2307  node exports.add = function(a, b) {
+ 2308  node ~/Desktop/readPaths.js
+ 2309  node main.js
+ 2310  ..
+ 2311  node pets.js
+ 2312  ls
+ 2313  cd fs-pet-shop
+ 2314  ls
+ 2315  node pets.js
+ 2316  cd path/to/project
+ 2317  shell
+ 2318  ```\nshell\ncd path/to/project\nnpm install\n```
+ 2319  ```shell\necho 'node_modules' >> .gitignore\n```
+ 2320  ```shell\ntouch pets.js\n```
+ 2321  ls
+ 2322  ```\nshell\ntouch .eslintrc.js\n```
+ 2323  ls
+ 2324  touch .eslintrc.js
+ 2325  echo 'node_modules' >> .gitignore
+ 2326  node pets.js
+ 2327  Usage: node pets.js [read | create | update | destroy]
+ 2328  node pets.js read
+ 2329  ls
+ 2330  ..
+ 2331  mkdir arrows
+ 2332  cd arrows
+ 2333  atom .
+ 2334  clear
+ 2335  ..
+ 2336  mkdir -p ~/workspace/playground/node/http
+ 2337  cd ~/workspace/playground/node/http
+ 2338  touch helloServer.js
+ 2339  atom .
+ 2340  node helloServer.js
+ 2341  brew update
+ 2342  brew install httpie
+ 2343  http GET localhost:8000/
+ 2344  claer
+ 2345  clear
+ 2346  pwd
+ 2347  cd documents
+ 2348  ls
+ 2349  cd fs-pet-shop
+ 2350  ls
+ 2351  atom .
+ 2352  node pets.js
+ 2353  Usage: node pets.js [read | create | update | destroy]
+ 2354  node pets.js
+ 2355  /Users/elizabethdavis/Downloads/clmystery-master/mystery/streets/Wentworth_Street ; exit;
+ 2356  ..
+ 2357  clear
+ 2358  mkdir rest
+ 2359  cd rest
+ 2360  touch server.js
+ 2361  mkdir public
+ 2362  cd public
+ 2363  touch index.html
+ 2364  ..
+ 2365  ls
+ 2366  npm init
+ 2367  npm install
+ 2368  npm install --save express
+ 2369  atom .
+ 2370  clear
+ 2371  nodemon
+ 2372  http GET localhost:8080
+ 2373  http GET localhost:8080/superheroes
+ 2374  nodemon
+ 2375  http GET localhost:8080
+ 2376  ls
+ 2377  node app.js
+ 2378  npm install --save morgan body-parser
+ 2379  node app.js
+ 2380  nodemon
+ 2381  ..
+ 2382  cd
+ 2383  ls
+ 2384  cd documents
+ 2385  ls
+ 2386  cd fs-pet-shop
+ 2387  ls
+ 2388  nodemon app.js
+ 2389  npm init
+ 2390  npm install --save express
+ 2391  nodemon app.js
+ 2392  git checkout -v newBranch
+ 2393  git checkout -b newBranch
+ 2394  git checkout master
+ 2395  git add .
+ 2396  git commit -m"first commit for express server"
+ 2397  git push origin master
+ 2398  git checkout expressServer
+ 2399  ls
+ 2400  git checkout newBranch
+ 2401  ls
+ 2402  git checkout master
+ 2403  nodemon expressServer.js
+ 2404  git add .
+ 2405  git commit -m 'Send individual guest records from the database'
+ 2406  git checkout master
+ 2407  git merge express
+ 2408  git status
+ 2409  git add .
+ 2410  git commit -m "send individual guest records from database"
+ 2411  git push origin master
+ 2412  git status
+ 2413  git checkout newBranch
+ 2414  git status
+ 2415  git checkout master
+ 2416  git merge newBranch
+ 2417  git push origin master
+ 2418  git checkout newBranch
+ 2419  git merge master
+ 2420  git push origin newBranch
+ 2421  nodemon expressServer.js
+ 2422  npm install body-parser
+ 2423  nodemon expressServer.js
+ 2424  git add .
+ 2425  git commit -"installed body parser and finished function"
+ 2426  git commit -m"installed body parser, created error if else statement"
+ 2427  git push branch master
+ 2428  git push branch origin
+ 2429  git push origin master
+ 2430  git merge master
+ 2431  nodemon pets.js
+ 2432  ls
+ 2433  node pets.js
+ 2434  ls
+ 2435  ..
+ 2436  ls
+ 2437  cd warmups
+ 2438  ls
+ 2439  cd HTML-CSS
+ 2440  ls
+ 2441  cd ridetransfort.md
+ 2442  ..
+ 2443  psql
+ 2444  brew install postgres
+ 2445  psql
+ 2446  brew update
+ 2447  brew services start postgres
+ 2448  psql
+ 2449  createdb `whoami`
+ 2450  psql
+ 2451  touch atom . liz_migration.sql
+ 2452  touch liz_migration.sql
+ 2453  atom liz_migration.sql
+ 2454  psql liz -f liz_migration.sql
+ 2455  psql movie_junkies_dev -f migration.sql
+ 2456  psql movie_junkies_test -f liz_migration.sql
+ 2457  \c apartmentlab
+ 2458  psql
+ 2459  pwd
+ 2460  cd documents
+ 2461  git clone 
+ 2462  Stephen Hanzlik[9:27 AM]  
+ 2463  https://github.com/StephenHanzlik/WednesdayWarmup-
+ 2464  ls
+ 2465  git clone 
+ 2466  Stephen Hanzlik[9:27 AM]  
+ 2467  git clone https://github.com/StephenHanzlik/WednesdayWarmup-.git
+ 2468  cd WednesdayWarmup
+ 2469  ls
+ 2470  cd WednesdayWarmup-
+ 2471  atom .
+ 2472  pwd
+ 2473  cd documents
+ 2474  cd WednesdayWarmup-
+ 2475  git add .
+ 2476  git commit -m "set up materialize html file starter template"
+ 2477  git push origin master
+ 2478  git status
+ 2479  git commit -m "set up materialize html file starter template"
+ 2480  git add .
+ 2481  git status
+ 2482  git push origin master
+ 2483  git fetch
+ 2484  git push origin master
+ 2485  git status
+ 2486  git log
+ 2487  ls
+ 2488  ls -al
+ 2489  cat wedWarmup.html
+ 2490  cat wedWarmup.js
+ 2491  git add .
+ 2492  git commit -m "added materialize starter template"
+ 2493  git push origin master
+ 2494  git push
+ 2495  gaa
+ 2496  git commit -m "navbar changes, body changes"
+ 2497  git push
+ 2498  git push origin master
+ 2499  git pull
+ 2500  git status
+ 2501  git push
+ 2502  git pull
+ 2503  git gaa
+ 2504  gaa
+ 2505  git commit -m"changed colors for button and footer"
+ 2506  git push
+ 2507  git status
+ 2508  git pull
+ 2509  git push
+ 2510  git pull
+ 2511  git fetch
+ 2512  git pull
+ 2513  gaa
+ 2514  git commit -m"change bg color"
+ 2515  git push
+ 2516  git pull
+ 2517  git push
+ 2518  git pull
+ 2519  git gaa
+ 2520  gaa
+ 2521  git commit -m "styling button, footer"
+ 2522  git push
+ 2523  git pull
+ 2524  git push
+ 2525  git gaa
+ 2526  gaa
+ 2527  git commit -m "changed card color"
+ 2528  git push
+ 2529  ..
+ 2530  ls
+ 2531  cd warmups
+ 2532  ls
+ 2533  cd DOM
+ 2534  ls
+ 2535  cat rock-paper-scissors
+ 2536  cat rock-paper-scissors.md
+ 2537  atom .
+ 2538  ..
+ 2539  git clone https://github.com/eadskye/rockPaperWarmup.git
+ 2540  atom .
+ 2541  rm -rf
+ 2542  rf -rm
+ 2543  rm
+ 2544  ..
+ 2545  cd warmups
+ 2546  cd DOM
+ 2547  ls
+ 2548  git push
+ 2549  gaa
+ 2550  git commit -m "styled sheet"
+ 2551  git pull
+ 2552  git push
+ 2553  ..
+ 2554  createdb geo_dev
+ 2555  curl -fsSL https://git.io/voDXr | psql geo_dev
+ 2556  psql geo_dev
+ 2557  cd documents
+ 2558  git clone https://github.com/eadskye/crushing_knex.git
+ 2559  ls
+ 2560  cd crushing_knex
+ 2561  atom .
+ 2562  cd desktop
+ 2563  ..
+ 2564  cd documents
+ 2565  mkdir trail_conditions
+ 2566  cd trail_conditions
+ 2567  git init
+ 2568  npm init
+ 2569  npm install --save pg knex
+ 2570  atom .
+ 2571  touch .gitignore
+ 2572  touch knexfile.js
+ 2573  clear
+ 2574  createdb trail_conditions
+ 2575  psql trail_conditions
+ 2576  knex migrate:make trails
+ 2577  npm install -g knex
+ 2578  knex migrate:make trails
+ 2579  clear
+ 2580  knex migrate:latest
+ 2581  psql trail_conditions
+ 2582  knex seed:make trails
+ 2583  knex seed:run
+ 2584  knex migrate:latest
+ 2585  \dt
+ 2586  knex seed:run
+ 2587  knex seed:make runners
+ 2588  knex migrate:make conditions
+ 2589  knex migrate:make runners
+ 2590  knex seed:conditions
+ 2591  dropdb trail_conditions
+ 2592  \dt
+ 2593  knex migrate:latest
+ 2594  createdb trail_conditions
+ 2595  knex migrate: latest
+ 2596  knex migrate:latest
+ 2597  seed:make conditions
+ 2598  knex seed: make conditions
+ 2599  seed:make conditions
+ 2600  knex seed: run
+ 2601  knex seed:run
+ 2602  ..
+ 2603  cd
+ 2604  ls
+ 2605  cd documents
+ 2606  ls
+ 2607  cd warmups
+ 2608  ls
+ 2609  cd Knex Seeds
+ 2610  ls
+ 2611  cd Knex Seeds
+ 2612  cd Knex\ Seeds
+ 2613  atom .
+ 2614  npm init
+ 2615  npm install --save pg knex
+ 2616  touch .gitignore
+ 2617  touch .knexfile.js
+ 2618  createdb concert_attendees
+ 2619  knex migrate: make concerts
+ 2620  \dt
+ 2621  knex migrate:latest
+ 2622  npm install -g knex
+ 2623  knex migrate:make attendees
+ 2624  ls
+ 2625  ..
+ 2626  mkdir concert_attendees
+ 2627  cd 
+ 2628  cd concert_attendees
+ 2629  ls
+ 2630  cd documents
+ 2631  cd concert_attendees
+ 2632  git init
+ 2633  npm init
+ 2634  npm install --save pg knex
+ 2635  atom .
+ 2636  touch .gitignore
+ 2637  touch knexfile.js
+ 2638  createdb concert_attendance
+ 2639  knex migrate: make concerts
+ 2640  knex migrate:make concerts
+ 2641  knex migrate:latest
+ 2642  knex seed:make concerts
+ 2643  knex migrate:make attendees
+ 2644  knex seed:make attendees
+ 2645  select * from concerts
+ 2646  psql concert_attendance
+ 2647  psql concert_attendees
+ 2648  knex seed:latest
+ 2649  knex seed:run
+ 2650  git status
+ 2651  git commit -m"created seeds"
+ 2652  git push origin master
+ 2653  git push
+ 2654  git status
+ 2655  git add .
+ 2656  git status
+ 2657  git rm --cached concert_attendees
+ 2658  knex migrate:latest
+ 2659  ls
+ 2660  ls -la
+ 2661  knex migrate:rollback
+ 2662  knex migrate:latest
+ 2663  git log
+ 2664  git branch
+ 2665  git rm -r --cached node_modules
+ 2666  git status
+ 2667  git add
+ 2668  git add .
+ 2669  git status
+ 2670  git rm -r --cached node_modules
+ 2671  git status
+ 2672  git add .
+ 2673  git status
+ 2674  git commit -m "finished seed files"
+ 2675  git push origin master
+ 2676  git remote add origin https://github.com/eadskye/concert_attendees.git
+ 2677  git push -u origin master
+ 2678  ..
+ 2679  git clone https://github.com/eadskye/gitForTeams.git
+ 2680  cd gitForTeams
+ 2681  atom .
+ 2682  ..
+ 2683  git clone https://github.com/joyceky/gitForTeams.git
+ 2684  cd gitForTeams
+ 2685  git pull origin master
+ 2686  git checkout -b styles
+ 2687  atom .
+ 2688  git pull origin master
+ 2689  atom .
+ 2690  ls
+ 2691  atom .
+ 2692  git add .
+ 2693  git status
+ 2694  git commit -m "add css styling"
+ 2695  git push origin master
+ 2696  git push origin styles
+ 2697  git status
+ 2698  ls
+ 2699  git mergetool
+ 2700  git pull origin master
+ 2701  git push origin styles
+ 2702  git status
+ 2703  git commit 
+ 2704  gaa
+ 2705  git commit
+ 2706  git status
+ 2707  gaa
+ 2708  gcmsg "added css"
+ 2709  git commit
+ 2710  git push origin styles
+ 2711  git checkout master
+ 2712  git pull origin master
+ 2713  git merge styles
+ 2714  git push origin master
+ 2715  git pull origin master
+ 2716  git status
+ 2717  atom .
+ 2718  ..
+ 2719  git clone https://github.com/eadskye/knex_express_loop.git
+ 2720  cd knex_express_loop
+ 2721  atom .
+ 2722  git checkout -b http_server
+ 2723  npm install --save express body-parser morgan
+ 2724  createdb loop
+ 2725  knex migrate:latest
+ 2726  npm install knex
+ 2727  createdb loop
+ 2728  knex migrate:latest
+ 2729  mpn install pg --save
+ 2730  npm install pg --save
+ 2731  knex migrate:latest
+ 2732  knex migrate:seed run
+ 2733  http POST localhost:3000 name "Grabthar"
+ 2734  http POST localhost:3000 name "Licht"
+ 2735  http GET localhost:3000 name "Licht"
+ 2736  http GET localhost:3000/artist
+ 2737  http POST localhost:3000/artist name=Thor
+ 2738  nodemon server.js
+ 2739  http POST localhost:3000/artist name=Thor
+ 2740  router.post('/artists', (req, res, next) => {
+ 2741  http POST localhost:3000/artist name=Thor
+ 2742  knex seed:run
+ 2743  http POST localhost:3000/artist name=Thor
+ 2744  http POST localhost:3000/artists name=Thor
+ 2745  http POST localhost:3000/artists name=Loki
+ 2746  gaa
+ 2747  git commit -m "made seed files work"
+ 2748  git push origin master
+ 2749  git push
+ 2750  git status
+ 2751  git commit
+ 2752  git add .
+ 2753  git status
+ 2754  git push --set-upstream origin http_server
+ 2755  git push origin master
+ 2756  ..
+ 2757  ls
+ 2758  git clone https://github.com/eadskye/galvanize-bookshelf.git
+ 2759  ls
+ 2760  cd galvanize-bookshelf
+ 2761  atom .
+ 2762  ```shell\ncd galvanize-bookshelf\nnpm install\n```
+ 2763  ```shell\ncreatedb bookshelf_dev\ncreatedb bookshelf_test\n```
+ 2764  ```shell\natom .\n```
+ 2765  bash -c 'echo "JWT_SECRET="$(openssl rand -hex 64)' > .env
+ 2766  npm test test/part1.migrations.test.js
+ 2767  ./node_modules/.bin/knex migrate:currentVersion
+ 2768  knex seed:make books
+ 2769  knex migrate:make books
+ 2770  npm install -g knex
+ 2771  npm test test/part1.migrations.test.js
+ 2772  npm test test/part1.seeds.test.js
+ 2773  knex seed:run
+ 2774  psql bookshelf_dev
+ 2775  knex migrate:make books
+ 2776  knex seed:make boods
+ 2777  psql bookshelf_dev
+ 2778  knex migrate:latest
+ 2779  psql
+ 2780  psql bookshelf_dev
+ 2781  npm test test/part1.seeds.test.js
+ 2782  npm test test/part1.migrations.test.js
+ 2783  npm test test/part2.routes.test.js
+ 2784  knex seed:make 02books.js
+ 2785  knex seed:run
+ 2786  npm test test/part2.routes.test.js
+ 2787  git add .
+ 2788  git commit -m "exercises 1 and 2"
+ 2789  git push origin master
+ 2790  npm test test/part3.migrations.test.js
+ 2791  knex migrate:make migration_users
+ 2792  knex migrate:make_users
+ 2793  knex migrate:make users
+ 2794  npm test test/part3.migrations.test.js
+ 2795  knex migrate:latest
+ 2796  npm test test/part3.migrations.test.js
+ 2797  knex seed:make seeds
+ 2798  npm test test/part3.migrations.test.js
+ 2799  npm test test/part3.seeds.test.js
+ 2800  npm test test/part3.migrations.test.js
+ 2801  npm test test/part3.seeds.test.js
+ 2802  npm test test/part3.routes.test.js
+ 2803  npm test test/part3.seeds.test.js
+ 2804  npm test test/part3.migrations.test.js
+ 2805  npm test test/part3.seeds.test.js
+ 2806  npm test test/part3.routes.test.js
+ 2807  npm test test/part3.migrations.test.js
+ 2808  psql
+ 2809  npm test test/part3.migrations.test.js
+ 2810  knex migrate:rollback --env test
+ 2811  npm test test/part3.migrations.test.js
+ 2812  knex migration:make favorites
+ 2813  knex migrate:make favorites
+ 2814  git add .
+ 2815  git commit -m "part 3"
+ 2816  git push origin master
+ 2817  npm test test/part4.migrations.test.js
+ 2818  knex migrate:rollback --env test
+ 2819  npm test test/part4.migrations.test.js
+ 2820  knex migrate:latest
+ 2821  npm test test/part4.migrations.test.js
+ 2822  knex migrate:rollback
+ 2823  npm test test/part4.migrations.test.js
+ 2824  knex migrate:latest
+ 2825  npm test test/part4.migrations.test.js
+ 2826  knex seed:run
+ 2827  npm test test/part4.migrations.test.js
+ 2828  knex migrate:rollback
+ 2829  knex migrate:latest
+ 2830  knex migrate:rollback
+ 2831  knex migrate:latest
+ 2832  psql bookshelf_test
+ 2833  knex seed:run
+ 2834  knex migrate:latest
+ 2835  npm test test/part4.migrations.test.js
+ 2836  knex seed:run
+ 2837  psql bookshelf_test
+ 2838  knex migrate:latest
+ 2839  knex migrate:rollback
+ 2840  knex migrate:latest
+ 2841  npm test test/part4.migrations.test.js
+ 2842  git add .
+ 2843  git commit -m "part 4 migrations"
+ 2844  git push origin master
+ 2845  npm test test/part4.migrations.test.js
+ 2846  npm test test/part4.seeds.test.js
+ 2847  ..
+ 2848  npm install -g jasmine
+ 2849  git clone https://github.com/eadskye/js-methods-this-constructors.git
+ 2850  ls
+ 2851  cd js-methods-this-constructors
+ 2852  atom .
+ 2853  cd js-methods-this-constructors
+ 2854  jasmine
+ 2855  ..
+ 2856  git clone https://github.com/eadskye/wd-promise-fundamentals.git
+ 2857  cd wd-promise-fundamentals
+ 2858  atom .
+ 2859  npm install
+ 2860  npm test test/1_new_promise.test.js
+ 2861  node wd-promise-fundamentals
+ 2862  npm test test/1_new_promise.test.js
+ 2863  ..
+ 2864  ls
+ 2865  cd js-methods-this-constructors
+ 2866  atom .
+ 2867  jasmine
+ 2868  npm install -g jasmine
+ 2869  jasmine
+ 2870  ..
+ 2871  git clone https://github.com/eadskye/js-unit-testing.git
+ 2872  cd js-unit-testing
+ 2873  atom .
+ 2874  npm init -y
+ 2875  echo 'node_modules'>>.gitignore
+ 2876  npm install -g mocha
+ 2877  npm install --save-dev chai
+ 2878  touch main.js
+ 2879  mkdir test
+ 2880  cd test
+ 2881  touch test.js
+ 2882  npm test
+ 2883  mocha
+ 2884  mocha -w
+ 2885  yarn
+ 2886  npm test
+ 2887  ..
+ 2888  mkdir js-integration-testing
+ 2889  cd js-integration-testing
+ 2890  git init
+ 2891  npm init -y
+ 2892  echo 'node_modules'>>.gitignore
+ 2893  npm install --save-dev chai mocha supertest
+ 2894  npm install --save express morgan knex pg body-parser cookie-parser dotenv
+ 2895  touch app.js
+ 2896  touch knexfile.js
+ 2897  touch knex.js
+ 2898  atom .
+ 2899  mkdir test
+ 2900  cd test 
+ 2901  touch puppiesSpec.js
+ 2902  ..
+ 2903  \n
+ 2904  ..
+ 2905  cd galvanize bookshelf
+ 2906  pwd
+ 2907  cd documents
+ 2908  cd galvanize-bookshelf
+ 2909  ls
+ 2910  cd 336q2
+ 2911  cd g36q2
+ 2912  l
+ 2913  cd galvanize-bookshelf
+ 2914  git checkout -b validations
+ 2915  npm install --save express-validation joi
+ 2916  mkdir validations
+ 2917  touch validations/authors.js
+ 2918  touch validations/books.js
+ 2919  touch validations/session.js
+ 2920  touch validations/users.js
+ 2921  atom .
+ 2922  npm test test/part4.routes.favorites.test.js
+ 2923  pwd
+ 2924  cd galvanize-bookshelf
+ 2925  cd g36q2
+ 2926  cd documents
+ 2927  cd g36q2
+ 2928  cd galvanize-bookshelf
+ 2929  npm test test/part4.routes.favorites.test.js
+ 2930  git checkout -b heroku
+ 2931  heroku create eadskye-galvanize-bookshelf
+ 2932  node -v
+ 2933  heroku addons:create heroku-postgresql:hobby-dev
+ 2934  heroku --version
+ 2935  chmod 0600 /Users/elizabethdavis/.netrc
+ 2936  heroku --version
+ 2937  heroku login
+ 2938  heroku create
+ 2939  git add .
+ 2940  git status
+ 2941  git commit -m"finished part 4, and heroku deployment"
+ 2942  git push origin master
+ 2943  git status
+ 2944  git push
+ 2945  git push --set-upstream origin heroku
+ 2946  git push origin master
+ 2947  git status
+ 2948  heroku create eadskye-galvanize-bookshelf
+ 2949  heroku addons:create heroku-postgresql:hobby-dev
+ 2950  heroku addons:open heroku-postgresql
+ 2951  echo 'web: node server.js' > Procfile
+ 2952  atom .
+ 2953  echo 'web: node server.js' > Procfile
+ 2954  heroku config:set JWT_SECRET=2e081f999e3e942668eb82cf1966d95caca56ae5104f1aa66e2b9ee10177a4d4d8544ba9a4fbdcd1633e4e59f445c4a8c0f15bd2359588e9b778df13689e2d59
+ 2955  heroku config:set PGSSLMODE=require
+ 2956  git add .
+ 2957  git commit -m "heroku deployment"
+ 2958  git push origin master
+ 2959  git checkout master git merge heroku
+ 2960  git checkout master
+ 2961  git merge heroku
+ 2962  git branch -d heroku
+ 2963  git branch -D heroku
+ 2964  heroku logs --tail
+ 2965  git push heroku master
+ 2966  heroku apps:info
+ 2967  heroku pg:info
+ 2968  heroku run npm run knex seed:run
+ 2969  git push heroku master
+ 2970  git status
+ 2971  git add . 
+ 2972  git commit -m "deployment"
+ 2973  git push heroku master
+ 2974  knex migrate:latest
+ 2975  git status
+ 2976  git checkout --galvanize-bookshelf
+ 2977  git status
+ 2978  git push
+ 2979  git status
+ 2980  git push heroku master
+ 2981  knex migrate:latest
+ 2982  npm bugs galvanize-bookshelf
+ 2983  ls
+ 2984  cd
+ 2985  ls -a
+ 2986  vi .netrc
+ 2987  ls
+ 2988  ls -a
+ 2989  echo "# nightlite" >> README.md
+ 2990  ..
+ 2991  cd documents
+ 2992  ls
+ 2993  cd elizabethdavis
+ 2994  cd documents
+ 2995  echo "# nightlite" >> README.md
+ 2996  git init
+ 2997  git add README.md
+ 2998  git commit -m "first commit"
+ 2999  git remote add origin https://github.com/eadskye/nightlite.git
+ 3000  git push -u origin master
+ 3001  ls
+ 3002  atom .
+ 3003  cd g36q2
+ 3004  ls
+ 3005  ..
+ 3006  ls
+ 3007  cd nightlight
+ 3008  git clone https://github.com/eadskye/nightlite.git
+ 3009  ls
+ 3010  cd nightlight
+ 3011  cd nightlite
+ 3012  ls
+ 3013  rm profile.html
+ 3014  ls
+ 3015  touch update.htnl
+ 3016  ls
+ 3017  rm update htnl
+ 3018  rm update.htnl
+ 3019  touch update.html
+ 3020  git add .
+ 3021  git commit -m "add files"
+ 3022  git push origin master
+ 3023  ls
+ 3024  git pull
+ 3025  atom .
+ 3026  git pull
+ 3027  git pull origin master
+ 3028  git pull
+ 3029  git checkout -indexhtml
+ 3030  git checkout indexhtml
+ 3031  atom .
+ 3032  createdb nightlite_dev
+ 3033  createdb nightlite_test
+ 3034  git add .
+ 3035  git commit -m "first draft index html page, with background image"
+ 3036  git push
+ 3037  git add .
+ 3038  git commit -m "buttons transparent"
+ 3039  git push
+ 3040  pwd
+ 3041  cd documents
+ 3042  ls
+ 3043  cd g36q1
+ 3044  ls
+ 3045  cd myProject
+ 3046  ls
+ 3047  ..
+ 3048  cd Project
+ 3049  ls
+ 3050  la
+ 3051  ..
+ 3052  git add .
+ 3053  git commit -m "first draft of update page"
+ 3054  git push
+ 3055  git pull
+ 3056  git pull origin master
+ 3057  git commit
+ 3058  git checkout master
+ 3059  git pull
+ 3060  git checkout indexhtml
+ 3061  git pull
+ 3062  atom .
+ 3063  pwd
+ 3064  cd documents
+ 3065  ls
+ 3066  cd nightlite
+ 3067  cd nightlight
+ 3068  ls
+ 3069  cd nightlite
+ 3070  ls
+ 3071  atom .
+ 3072  ls
+ 3073  atom .
+ 3074  shell
+ 3075  zhs
+ 3076  zsh
+ 3077  atom .
+ 3078  pwd
+ 3079  cd documents
+ 3080  ls
+ 3081  cd nightlight
+ 3082  cd nightlite
+ 3083  ls
+ 3084  atom .
+ 3085  git checkout master
+ 3086  atom .
+ 3087  git checkout indexhtml
+ 3088  atom .
+ 3089  git pull origin master
+ 3090  atom .
+ 3091  git add . 
+ 3092  git commit -m "update and html files"
+ 3093  git push
+ 3094  git checkout master
+ 3095  git pull
+ 3096  atom .
+ 3097  npm install material-design-icons
+ 3098  git pull
+ 3099  git pull origin master
+ 3100  git add .
+ 3101  git checkout indexhtml
+ 3102  git checkout html
+ 3103  checkout newhtl
+ 3104  git checkout newhtml
+ 3105  git checkout indexhtml
+ 3106  git checkout newhtml
+ 3107  git pull
+ 3108  git checkout newhtml
+ 3109  git add .
+ 3110  git commit 
+ 3111  git checkout newhtml
+ 3112  git commit -m "create new branch"
+ 3113  git checkout newhtml
+ 3114  git add .
+ 3115  git commit -m "created login page, create account page, add observation page, user page with many features"
+ 3116  git push
+ 3117  git pull origin master
+ 3118  git add . 
+ 3119  git commit -m "trying again for branch"
+ 3120  git push
+ 3121  git revert
+ 3122  git show
+ 3123  git status
+ 3124  git reset --hard
+ 3125  atom .
+ 3126  git reset --hard 8bf598cf4f28d11df1d197bff2fd652540dc77b4
+ 3127  atom .
+ 3128  git add . 
+ 3129  git commit -m "login, create user, add post, change/delete post pages with many features\n"
+ 3130  git push
+ 3131  git add .
+ 3132  git commit -m "styling forms, bear with me"
+ 3133  git push
+ 3134  git pull origin
+ 3135  git pull origin master
+ 3136  atom .
+ 3137  git pull origin master
+ 3138  nodemon
+ 3139  npm install
+ 3140  nodemon
+ 3141  git pull origin master
+ 3142  git pull
+ 3143  git pull origin master
+ 3144  atom .
+ 3145  git pull origin master
+ 3146  git add .
+ 3147  git commit -m "fixed buttons"
+ 3148  git push
+ 3149  git add .
+ 3150  git commit -m "added login page id"
+ 3151  git push
+ 3152  git pull origin master
+ 3153  nodemon
+ 3154  psql nightlife_dev
+ 3155  psql nightlite_dev
+ 3156  knex migrate:latest
+ 3157  knex seed:run
+ 3158  nodemon
+ 3159  npm install --save pg knex
+ 3160  nodemon
+ 3161  psql nightlite
+ 3162  psql nightlite_dev
+ 3163  nodemon
+ 3164  git add .
+ 3165  git commit -"fixed buttons on maps page"
+ 3166  git commit -m"fixed buttons on maps page"
+ 3167  git push
+ 3168  git pull origin master
+ 3169  atom .
+ 3170  nodemon
+ 3171  atom .
+ 3172  nodemon
+ 3173  git pull origin master
+ 3174  git add . 
+ 3175  git commit 
+ 3176  git add . 
+ 3177  git commit -m "no changes, attempting to merge"
+ 3178  git pull origin master
+ 3179  git stash
+ 3180  git pull origin master
+ 3181  git add . 
+ 3182  git push
+ 3183  git pull origin master
+ 3184  git add .
+ 3185  git commit -m "commited changes obs"
+ 3186  git push
+ 3187  git pull
+ 3188  git pull origin master
+ 3189  git push
+ 3190  nodemon
+ 3191  git status
+ 3192  git add .
+ 3193  git commit -m "corrected merge conflict"
+ 3194  git push
+ 3195  git status
+ 3196  git pull origin master
+ 3197  nodemon
+ 3198  git status
+ 3199  git push
+ 3200  git status
+ 3201  git add .
+ 3202  git commit -m "update change to my comments"
+ 3203  git push
+ 3204  git status
+ 3205  git pull origin master
+ 3206  git status
+ 3207  atom .
+ 3208  nodemon
+ 3209  git status
+ 3210  git push
+ 3211  git status
+ 3212  git push origin master
+ 3213  git add . 
+ 3214  git commit -m "new html branch"
+ 3215  git push origin master
+ 3216  git push
+ 3217  git status
+ 3218  git push origin newhtml
+ 3219  git pull origin master
+ 3220  git status
+ 3221  nodemon
+ 3222  git checkout master
+ 3223  git stash
+ 3224  git checkout master
+ 3225  git checkout newlizhtml
+ 3226  git checkout -newlizhtml
+ 3227  git checkout -b newlizhtml
+ 3228  git pull origin master
+ 3229  git pull
+ 3230  atom .
+ 3231  git pull origin master
+ 3232  git add .
+ 3233  git commit -m "merge conflict files"
+ 3234  git push
+ 3235  git push --set-upstream origin newlizhtml
+ 3236  git pull origin master
+ 3237  nodemon
+ 3238  git checkout master
+ 3239  git checkout -b stylingmonday
+ 3240  nodemon
+ 3241  git pull origin master
+ 3242  nodemon
+ 3243  atom .
+ 3244  git log
+ 3245  git status
+ 3246  git diff
+ 3247  git status
+ 3248  git add -A
+ 3249  git commit -m "unknown change"
+ 3250  git checkout stylingmonday 
+ 3251  git checkout newhtml
+ 3252  git log
+ 3253  git pull origin master
+ 3254  git push origin newhtml
+ 3255  nodemon
+ 3256  git pull origin master
+ 3257  git status
+ 3258  git push
+ 3259  git status
+ 3260  git pull
+ 3261  git pull origin master
+ 3262  atom .
+ 3263  git pull origin master
+ 3264  git pull
+ 3265  git pull origin master
+ 3266  git status
+ 3267  git pull
+ 3268  git pull origin master
+ 3269  nodemon
+ 3270  git pull origin master
+ 3271  git pull
+ 3272  git pull origin master
+ 3273  nodemon
+ 3274  git pull
+ 3275  git pull origin master
+ 3276  git stash
+ 3277  git pull origin master
+ 3278  nodemon
+ 3279  git pull
+ 3280  git pull origin master
+ 3281  atom .
+ 3282  nodemon
+ 3283  git pull origin master
+ 3284  nodemon
+ 3285  git checkout master
+ 3286  git add .
+ 3287  git commit -m"trying to get modals to work"
+ 3288  git push
+ 3289  git checkout master
+ 3290  git pull
+ 3291  git checkout newhtml
+ 3292  git log
+ 3293  git checkout -b newhtml
+ 3294  git checkout newhtml
+ 3295  atom .
+ 3296  git log
+ 3297  git status
+ 3298  git add .
+ 3299  git commit -m "address merge conflicts"
+ 3300  git push
+ 3301  git checkout new html
+ 3302  git checkout newhtml
+ 3303  git pull origin master
+ 3304  git pull
+ 3305  git status
+ 3306  atom .
+ 3307  git status
+ 3308  git commit -m "fixed merge conflicts"
+ 3309  git add . 
+ 3310  git commit -m "fix merge conflicts"
+ 3311  git push
+ 3312  git pull origin master
+ 3313  git pull
+ 3314  git pull origin master
+ 3315  atom .
+ 3316  nodemon
+ 3317  git pull origin master
+ 3318  git pull
+ 3319  git pull origin master
+ 3320  atom .
+ 3321  nodemon
+ 3322  git pull
+ 3323  git pull origin master
+ 3324  git stash
+ 3325  git pull origin master
+ 3326  git add .
+ 3327  git commit -m "fixed merge conflict"
+ 3328  git push origin newhtml
+ 3329  git pull origin master
+ 3330  git checkout master
+ 3331  git pull
+ 3332  git pull origin master
+ 3333  nodemon
+ 3334  npm install
+ 3335  nodemon
+ 3336  git checkout -b seedcomments
+ 3337  git stash
+ 3338  git checkout -b seedcomments
+ 3339  git checkout seedcomments
+ 3340  git pull
+ 3341  git pull origin master
+ 3342  nodemon
+ 3343  knex seed:run
+ 3344  nodemon
+ 3345  git add .
+ 3346  git commit -m "added seeded comments to each observation"
+ 3347  git push
+ 3348  git push origin seedcomments
+ 3349  git pull
+ 3350  git pull origin master
+ 3351  git pull
+ 3352  git pull origin master
+ 3353  nodemon
+ 3354  knex seed:run
+ 3355  nodemon
+ 3356  atom .
+ 3357  git add .
+ 3358  git commit -m "seed file corrections"
+ 3359  git push seedcomments
+ 3360  git push origin seedcomments
+ 3361  git pull origin master
+ 3362  knex seed:run
+ 3363  nodemon
+ 3364  atom .
+ 3365  nodemon
+ 3366  knex seed:run
+ 3367  git add .
+ 3368  git commit -m "fixed brendan comments"
+ 3369  git push
+ 3370  git push origin seedcomments
+ 3371  git pull origin master
+ 3372  git pull
+ 3373  git push origin seedcomments
+ 3374  git status
+ 3375  git add .
+ 3376  git commit -m "fixed brendan's comments"
+ 3377  git push origin seedcomments
+ 3378  git pull origin master
+ 3379  git pull
+ 3380  git status
+ 3381  git pull origin master
+ 3382  knex seed:run
+ 3383  nodemon
+ 3384  git checkout master
+ 3385  git add .
+ 3386  git commit -m "final last changes to this file"
+ 3387  git push origin seedcomments
+ 3388  git checkout master
+ 3389  git checkout seedcomments
+ 3390  git pull origin master
+ 3391  git checkout master
+ 3392  git pull
+ 3393  git checkout -b lizheroku
+ 3394  heroku create eadskye-nightlite
+ 3395  node -v
+ 3396  heroku addons:create heroku-postgresql:hobby-dev
+ 3397  echo 'web: node server.js' > Procfile
+ 3398  heroku config:set
+ 3399  heroku config:set PGSSLMODE=require
+ 3400  git add .
+ 3401  git commit -m "prepare heroku deployment"
+ 3402  git checkout master git merge heroku
+ 3403  git push origin lizheroku
+ 3404  heroku logs --tail
+ 3405* git push heroku lizheroku:master
+ 3406* git log
+ 3407  git add .
+ 3408  git status
+ 3409  git commit -m "procfile change"
+ 3410  git push origin lizheroku
+ 3411  git push heroku lizheroku:master
+ 3412  heroku run npm run knex seed:run
