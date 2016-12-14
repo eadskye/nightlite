@@ -10,9 +10,6 @@
 $(document).ready(function(){
   getComments();
 
-
-
-
 function getComments(data){
   $.ajax({
     url:'http://localhost:8000/comments/users/1',
@@ -28,7 +25,6 @@ function getComments(data){
     }
   });
 }
-
 
 function drawComments(data){
   var i;
