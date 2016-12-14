@@ -97,7 +97,17 @@ function getComments(data) {
                 $('#content').append(
                     '<h5 class="black-text">' + data[i].name + '</h5>' +
                     '<div class="black-text">Comment:  ' + data[i].comment + '</div>' +
-                    '<div class="black-text">Rating:  ' + data[i].stars + '</div>' +
+                    //'<div class="black-text">Rating:  ' + data[i].stars + '</div>' +
+
+                    '<label for="stars">Star Rating</label>' +
+                    '<div class="rating" id="stars">' +
+                        '<label><input type="radio" name="stars" value="5" title="5 stars"> 5</label>' +
+                        '<label><input type="radio" name="stars" value="4" title="4 stars"> 4</label>' +
+                        '<label><input type="radio" name="stars" value="3" title="3 stars"> 3</label>' +
+                        '<label><input type="radio" name="stars" value="2" title="2 stars"> 2</label>' +
+                        '<label><input type="radio" name="stars" value="1" title="1 star"> 1</label>' +
+                    '</div>' +
+
                     '<div class="black-text">Coordinates:  Latitude:  ' + data[i].latitude + ' Longitude:  ' + data[i].longitude + '</div>' +
                     '<div class="black-text">Date:  ' + cdate + '</div>' +
                     '<div class="black-text">Posted by:  ' + data[i].username + '</div>'
@@ -127,7 +137,17 @@ function drawObservations(data) {
             '<h5 class="bold black-text">' + data[i].name + '</h5>' +
             '<div class="bold black-text">Location:  ' + data[i].name + '</div>' +
             '<div class="bold black-text">Description:  ' + data[i].description + '</div>' +
-            '<div class="bold black-text">Rating:  ' + data[i].stars + '</div>' +
+            // '<div class="bold black-text">Rating:  ' + data[i].stars + '</div>' +
+
+            '<label for="stars">Star Rating</label>' +
+            '<div class="rating" id="stars">' +
+                '<label><input type="radio" name="stars" value="5" title="5 stars"> 5</label>' +
+                '<label><input type="radio" name="stars" value="4" title="4 stars"> 4</label>' +
+                '<label><input type="radio" name="stars" value="3" title="3 stars"> 3</label>' +
+                '<label><input type="radio" name="stars" value="2" title="2 stars"> 2</label>' +
+                '<label><input type="radio" name="stars" value="1" title="1 star"> 1</label>' +
+            '</div>' +
+
             '<div class="bold black-text">Coordinates:  Latitude:  ' + data[i].latitude + '  Longitude:  ' + data[i].longitude + '</div>' +
             '<div class="bold black-text">Date:  ' + date + '</div>' +
             '<div class="black-text">Posted by:  ' + data[i].username + '</div>' +
