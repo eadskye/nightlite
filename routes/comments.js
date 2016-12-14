@@ -27,6 +27,23 @@ router.get('/comments/users/:userid', (req, res, next) => {
   });
 });
 
+//get comments for a given observation id
+router.get('/comments/obs/:obsid', (req, res, next) => {
+  let observationId = parseInt(req.params.obsid);
+
+   knex.from('comments').leftJoin('observations', 'comments.id', 'observations.id')
+   .where({
+     observation_id: observationId
+   })
+  //.orderBy('updated_at', 'desc')
+  .then((results) => {
+    res.send(results);
+  })
+  .catch((err) => {
+    next(err);
+  });
+});
+
 //TODO update observaton_id and user_id location from post request - is it in body or cookie??
 router.post('/comments', ev(validations.post), (req, res, next) => {
   console.log(req.body);
