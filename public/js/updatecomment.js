@@ -12,16 +12,18 @@ $(document).ready(function(){
 
 function getComments(data){
   $.ajax({
-    url:'http://localhost:8000/comments/users/1',
+    url:'http://localhost:8000/comments/users',
     jsonp: "callback",
     data: data,
     type: 'get',
     success: function (data){
       console.log('success');
+      console.log(data);
       drawComments(data);
     },
     error: function(){
-      console.log("error");
+      Materialize.toast('Please login to gain access', 3000);
+      console.log('error line 26');
     }
   });
 }
@@ -33,18 +35,21 @@ function drawComments(data){
   $('#newcomments').empty();
   for (i=0 ; i<data.length ; i++){
     results.push(
+        '<div class="row">' +
           '<div class="col s2"></div>' +
           '<div class="col s8">' +
             '<div class="card-panel white">' +
-              '<p class="black-text">' + data[i].comment + '</p>'+
-              '<p class="black-text"> Added By:' + data[i].username + '</p>'+
-              '<p class="black-text"> Updated At:' + data[i].updated_at + '</p>'+
+              '<p class="black-text">"' + data[i].comment + '"</p>'+
+              '<p class="black-text"> Star Rating: ' + data[i].stars + '</p>'+
+              '<p class="black-text"> Added By: ' + data[i].username + '</p>'+
+              '<p class="black-text"> Updated At: ' + moment(data[i].updated_at).format('MMM-D-YYYY') + '</p>'+
               '<input id="input' + data[i].id + '" class="materialize-textarea" type="text">' +
               '<button value=' + data[i].id + ' class="update"> Update </button>' +
               '<button value=' + data[i].id + ' class="delete"> Delete </button>' +
             '</div>' +
           '</div>' +
-          '<div class="col s2"></div>'
+          '<div class="col s2"></div>' +
+        '</div>'
         );
       }
 
