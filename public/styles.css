@@ -8,6 +8,13 @@
      width: 100%;
  }*/
 
+ #logo {
+   max-width:300px;
+   position: relative;
+   padding-top: 25px;
+
+ }
+
  .logo img{
      margin-left: 15px;
      vertical-align: top;
