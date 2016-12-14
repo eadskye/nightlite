@@ -10,8 +10,24 @@ const bcrypt = require('bcrypt');
 
 const bodyParser = require('body-parser');
 
+router.get('/comments/users/:userid', (req, res, next) => {
+  let userid = req.params.userid;
+  console.log(userid);
+
+   knex.from('comments').leftJoin('users', 'comments.id', 'users.id')
+   .where({
+     'user_id': userid})
+  .select(['comments.id', 'comments.user_id', 'comments.comment', 'comments.stars', 'comments.created_at', 'comments.updated_at', 'username', 'admin'])
+  .then((results) => {
+    res.send(results);
+  })
+  .catch((err) => {
+    next(err);
+  });
+});
+
 //get comments for a given observation id
-router.get('/comments/:obsid', (req, res, next) => {
+router.get('/comments/obs/:obsid', (req, res, next) => {
   let observationId = parseInt(req.params.obsid);
 
    knex.from('comments').leftJoin('observations', 'comments.id', 'observations.id')

@@ -12,7 +12,7 @@ $(document).ready(function(){
 
 function getComments(data){
   $.ajax({
-    url:'http://localhost:8000/comments/users/1',
+    url:'http://localhost:8000/comments/users/2',
     jsonp: "callback",
     data: data,
     type: 'get',
