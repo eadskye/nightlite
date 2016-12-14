@@ -13,6 +13,23 @@ const boom = require('boom');
 
 var obsGET;
 
+//get comments for a given observation id
+router.get('/observations/comments/:obsid', (req, res, next) => {
+  let observationId = parseInt(req.params.obsid);
+
+   knex.from('comments').leftJoin('observations', 'comments.id', 'observations.id')
+   .where({
+     observation_id: observationId
+   })
+  //.orderBy('updated_at', 'desc')
+  .then((results) => {
+    res.send(results);
+  })
+  .catch((err) => {
+    next(err);
+  });
+});
+
 //get observations with username for observation cards on map page
 router.get('/observations', (req, res, next) => {
   knex.from('observations').leftJoin('users', 'observations.id', 'users.id')

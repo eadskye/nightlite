@@ -32,17 +32,26 @@
                 <ul class="right hide-on-med-and-down">
 
                 </ul>
+
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="login.html" class="logout" >Logout</a></li>
+                </ul>
+
                 <ul class="right hide-on-med-and-down">
                     <li><a href="learn.html">Learn</a></li>
                 </ul>
+
                 <ul class="right hide-on-med-and-down">
                     <li><a href="map.html">Explore</a></li>
                 </ul>
+
+
 
                 <ul id="nav-mobile" class="side-nav">
 
                     <li><a href="learn.html">Learn</a></li>
                     <li><a href="map.html">Explore</a></li>
+                    <li><a class="logout" href="login.html">Logout</a></li>
 
                 </ul>
                 <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -67,25 +76,26 @@
             <!-- Login Form -->
             <form class="col s12 m6">
 
-                <!-- Username -->
-                <div class="row">
-                    <div class="input-field  col s6 l5  white-text">
-                        <input id="loginuser" type="text" class="validate">
-                        <label class="active" for="loginuser">Username</label>
-                    </div>
-                </div>
+              <!-- Username -->
+             <div class="row">
+                 <div class="input-field  col s6 l5  white-text">
+                     <input id="loginuser" type="text" class="validate" name="loginuser">
+                     <label class="active" for="loginuser">Username</label>
+                 </div>
+             </div>
 
-                <!-- Password -->
-                <div class="row">
-                    <div class="input-field  col s6 l5 white-text">
-                        <input id="userpassword" type="password" class="validate">
-                        <label class="active" for="userpassword">Password</label>
-                    </div>
-                </div>
+             <!-- Password -->
+             <div class="row">
+                 <div class="input-field  col s6 l5 white-text">
+                     <input id="userpassword" type="password" class="validate" name="userpassword">
+                     <label class="active" for="userpassword">Password</label>
+                 </div>
+             </div>
 
                 <!-- Submit Button -->
                 <div class="row">
                      <button id="login" class="col s3 m2 btn waves-effect waves-light blue lighten-2" type="submit" name="action">Login</button>
+
                     <button id="createaccount" class="col s3 m2 btn waves-effect waves-light blue lighten-2" type="submit" name="action">Create Account</button>
                 </div>
             </form>
@@ -95,6 +105,9 @@
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
+    <!-- <script src="js/materialize.js"></script> -->
+    <script src="js/login.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
 

@@ -19,7 +19,7 @@ var observations;
             dataType: 'json',
             // Comment in to hook up locally
             url: 'http://localhost:8000/observations',
-            // url: 'https://nightlited.herokuapp.com/observations',
+            //url: 'https://nightlited.herokuapp.com/observations',
             method: 'GET',
             cache: false,
         })
@@ -98,7 +98,7 @@ require([
 
     function initFunc(map) {
         if (navigator.geolocation) {
-            console.log("observations", observations);
+            // console.log("observations", observations);
             navigator.geolocation.getCurrentPosition(zoomToLocation, locationError);
             watchId = navigator.geolocation.watchPosition(showLocation, locationError);
         } else {

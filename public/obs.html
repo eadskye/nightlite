@@ -110,6 +110,45 @@
                                     </div>
 
                                     <div class="row">
+
+                                    <button id="upload_widget_opener" class="col s3 btn waves-effect waves-light blue lighten-2" type="button" name="upload_widget_opener">Add Photo</button>
+
+                                      <script>
+                                        document.getElementById("upload_widget_opener").addEventListener("click", function() {
+
+                                          cloudinary.openUploadWidget(
+                                            {
+                                              cloud_name: 'nightlite',
+                                              upload_preset: 'obsPreset'
+                                            },
+                                            function(error, result) {
+                                              console.log(error, result);
+                                              var imgUrl = result[0].secure_url;
+                                              console.log(imgUrl);
+                                              // $.ajax({
+                                              //         dataType: 'json',
+                                              //         // Comment in to hook up locally
+                                              //         url: 'http://localhost:8000/observations',
+                                              //         // url: 'https://nightlited.herokuapp.com/observations',
+                                              //         method: 'POST',
+                                              //         cache: false,
+                                              //         data: imgUrl
+                                              //     })
+                                              //     .done(function(data) {
+                                              //         observations = data;
+                                              //     })
+                                              //     .fail(function(jqXHR, textStatus, errorThrown) {
+                                              //         console.log("jxXHR : ", jqXHR, " - status : ", textStatus, " - error : ", errorThrown);
+                                              //     });
+
+                                            });
+
+                                        }, false);
+                                      </script>
+
+                                   </div>
+
+                                    <div class="row">
                                         <div class="input-field col s6">
                                             <input id="user_id" type="text" class="validate">
                                             <label for="user_id">User ID</label>
@@ -145,6 +184,7 @@
     <script src="https://use.fontawesome.com/55219fed36.js"></script>
     <script src="js/init.js"></script>
     <script src="js/postObs.js"></script>
+    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript" defer></script>
 
 </body>
 
