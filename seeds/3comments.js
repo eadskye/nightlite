@@ -23,16 +23,16 @@ exports.seed = function(knex, Promise) {
         }),
         knex('comments').insert({
           id: 3,
-          user_id: 2,
+          user_id: 6,
           observation_id:1,
-          comment: "Clear skys, great spot",
+          comment: "brendan post one",
           stars: 5
         }),
         knex('comments').insert({
           id: 6,
-          user_id: 2,
+          user_id: 6,
           observation_id:1,
-          comment: "Clear skys, great spot",
+          comment: "brendan post two",
           stars: 5
         })
       ]);

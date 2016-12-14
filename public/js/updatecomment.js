@@ -12,7 +12,7 @@ $(document).ready(function(){
 
 function getComments(data){
   $.ajax({
-    url:'http://localhost:8000/comments/users/2',
+    url:'http://localhost:8000/comments/users',
     jsonp: "callback",
     data: data,
     type: 'get',
@@ -22,7 +22,8 @@ function getComments(data){
       drawComments(data);
     },
     error: function(){
-      console.log("error");
+      Materialize.toast('Please login to gain access', 3000);
+      console.log('error line 26');
     }
   });
 }
@@ -48,7 +49,7 @@ function drawComments(data){
             '</div>' +
           '</div>' +
           '<div class="col s2"></div>' +
-        '</div>' 
+        '</div>'
         );
       }
 
