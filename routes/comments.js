@@ -10,6 +10,13 @@ const bcrypt = require('bcrypt');
 
 const bodyParser = require('body-parser');
 
+router.use(function (req,res,next) {
+  if (!req.session) {
+    res.sendStatus(401);
+  } else {
+    next();
+  }
+ });
 //get comments for a given user
 router.get('/comments/users/', (req, res, next) => {
   let admin = req.session.isAdmin;
@@ -30,7 +37,7 @@ router.get('/comments/users/', (req, res, next) => {
      .where({
        'user_id': userid})
     .select(['comments.id', 'comments.user_id', 'comments.comment', 'comments.stars', 'comments.created_at', 'comments.updated_at', 'users.username', 'admin'])
-    .orderBy('users.username', 'desc')
+    .orderBy('comments.id', 'desc')
     .then((results) => {
       res.send(results);
     })
