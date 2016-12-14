@@ -7,6 +7,17 @@
      padding: 0px;
      width: 100%;
  }*/
+.submit-button, .comments-button  {
+  opacity: 2;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.0625em;
+  opacity: 0.8;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  
+}
 
  .comment-buttons {
    opacity: 2;
@@ -20,7 +31,7 @@
    margin-top: 10px;
       }
 
- #make-comment  {
+ #make-comment,   {
    opacity: 2;
    font-family: 'Raleway', sans-serif;
    font-weight: 700;

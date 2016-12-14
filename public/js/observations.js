@@ -6,7 +6,7 @@ $(document).ready(function() {
 
     $(".information").on('click', function(event) {
         console.log(event.target);
-        if ($(event.target).hasClass('commentsButton')) {
+        if ($(event.target).hasClass('comments-button')) {
             console.log(event.target.getAttribute('attr'));
             obsID = event.target.getAttribute('attr');
 
@@ -24,7 +24,7 @@ $(document).ready(function() {
         console.log('submit clicked');
     });
 
-    $(".commentsButton").on('click', function(event) {
+    $(".comments-button").on('click', function(event) {
         console.log('submit clicked');
     });
 
@@ -35,8 +35,8 @@ var comments;
 
 function getObservations(data) {
     $.ajax({
-        url: 'https://nightlited.herokuapp.com/observations',
-        // url: 'http://localhost:8000/observations/',
+        // url: 'https://nightlited.herokuapp.com/observations',
+        url: 'http://localhost:8000/observations/',
         jsonp: "callback",
         data: data,
         type: 'get',
@@ -53,8 +53,8 @@ function getObservations(data) {
 function getComments(data) {
     console.log("in HERE");
     $.ajax({
-        url: 'https://nightlited.herokuapp.com/observations' + obsID,
-        // url: 'http://localhost:8000/observations/comments/' + obsID,
+        // url: 'https://nightlited.herokuapp.com/observations' + obsID,
+        url: 'http://localhost:8000/observations/comments/' + obsID,
         jsonp: "callback",
         data: data,
         type: 'get',
@@ -78,12 +78,11 @@ function getComments(data) {
 
                 $('#content').append(
                     '<h5 class="black-text">' + data[i].name + '</h5>' +
-                    '<div class="black-text">Comment: ' + data[i].comment + '</div>' +
-                    '<div class="black-text">Rating: ' + data[i].stars + '</div>' +
+                    '<div class="black-text">Comment:  ' + data[i].comment + '</div>' +
+                    '<div class="black-text">Rating:  ' + data[i].stars + '</div>' +
                     '<div class="black-text">Coordinates:  Latitude:  ' + data[i].latitude + ' Longitude:  ' + data[i].longitude + '</div>' +
-                    '<div class="black-text">Date: ' + cdate + '</div>' +
-                    '<div class="black-text">Posted by: ' + data[i].username + '</div>' +
-                    '<div class="id black-text">ID: ' + data[i].id + '</div>'
+                    '<div class="black-text">Date:  ' + cdate + '</div>' +
+                    '<div class="black-text">Posted by:  ' + data[i].username + '</div>'
                 );
             }
         },
@@ -99,31 +98,28 @@ function drawObservations(data) {
 
     $('.information').empty();
     var template = [];
-    template.push('<button id="testButton">TEST BUTTON</button>');
 
     for (var i = 0; i < data.length; i++) {
-        var date = data[i].updated_at
+        var date = data[i].updated_at;
         date = date.substring(0, 10);
 
         template.push(
             '<div class="row">' +
-            '<hr>' +
             '<div class="col s12">' +
             '<h5 class="black-text">' + data[i].name + '</h5>' +
-            '<div class="black-text">Location: ' + data[i].name + '</div>' +
-            '<div class="black-text">Description: ' + data[i].description + '</div>' +
-            '<div class="black-text">Rating: ' + data[i].stars + '</div>' +
-            '<div class="black-text">Coordinates:  Latitude:  ' + data[i].latitude + ' Longitude:  ' + data[i].longitude + '</div>' +
-            '<div class="black-text">Date: ' + date + '</div>' +
-            '<div class="black-text">Posted by: ' + data[i].username + '</div>' +
-            '<div class="id black-text">ID: ' + data[i].id + '</div>' +
+            '<div class="black-text">Location:  ' + data[i].name + '</div>' +
+            '<div class="black-text">Description:  ' + data[i].description + '</div>' +
+            '<div class="black-text">Rating:  ' + data[i].stars + '</div>' +
+            '<div class="black-text">Coordinates:  Latitude:  ' + data[i].latitude + '  Longitude:  ' + data[i].longitude + '</div>' +
+            '<div class="black-text">Date:  ' + date + '</div>' +
+            '<div class="black-text">Posted by:  ' + data[i].username + '</div>' +
+            // '<div class="id black-text">ID: ' + data[i].id + '</div>' +
 
             '<div class="input-field s6 m6 l3">' +
-            '<input value="" type="text" class="validate comments">' +
+            '<input placeholder="Add a comment" type="text" class="validate comments">' +
             '<label class="active black-text" for="comments">Comments: ' + '</label>' +
-            '<button class="submit-button" class="col s3 btn waves-effect waves-light blue lighten-1" type="button" name="make-comment">Add Comment</button>' +
-            '<button attr=' + data[i].id + ' class="commentsButton white-text col s6 btn waves-effect waves-light blue lighten-1" type="button" name="view-comment">View Comments</button>' +
-
+            '<button class="submit-button white-text col s3 btn waves-effect waves-light blue lighten-1" type="button" name="make-comment">Add Comment</button>' +
+            '<button attr=' + data[i].id + ' class="comments-button white-text col s3 btn waves-effect waves-light blue lighten-1" type="button" name="view-comment">View Comments</button>' +
             '<div id="commentsDiv' + data[i].id + '">' +
             '</div>' +
             '</div>' +
