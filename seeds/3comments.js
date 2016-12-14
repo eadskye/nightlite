@@ -1,6 +1,7 @@
 'use strict';
 //TODO seed comments
 exports.seed = function(knex, Promise) {
+
         // Deletes ALL existing entries
 
         return knex('comments').del()
@@ -30,11 +31,7 @@ exports.seed = function(knex, Promise) {
                                                 observation_id: 3,
                                                 comment: "This is a great reccommendation",
                                                 stars: 5
-                                            }),
-
-
-
-
+                                           
 
 
                                             knex('comments').insert({
@@ -144,3 +141,4 @@ exports.seed = function(knex, Promise) {
                                       }) ;
                                     };
                             });
+
