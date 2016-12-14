@@ -20,6 +20,20 @@ exports.seed = function(knex, Promise) {
           observation_id:1,
           comment: "Clear skys, great spot",
           stars: 5
+        }),
+        knex('comments').insert({
+          id: 3,
+          user_id: 6,
+          observation_id:1,
+          comment: "brendan post one",
+          stars: 5
+        }),
+        knex('comments').insert({
+          id: 6,
+          user_id: 6,
+          observation_id:1,
+          comment: "brendan post two",
+          stars: 5
         })
       ]);
     })
