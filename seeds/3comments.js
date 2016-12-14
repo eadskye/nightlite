@@ -17,7 +17,7 @@ exports.seed = function(knex, Promise) {
         knex('comments').insert({
           id: 2,
           user_id: 2,
-          observation_id:2,
+          observation_id:1,
           comment: "Clear skys, great spot",
           stars: 5
         })
