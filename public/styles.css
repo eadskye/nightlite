@@ -261,6 +261,7 @@ button {
 #obsform {
   padding: 30px;
   color: rgb(43, 43, 40);
+
 }
 
 #enter {
@@ -311,6 +312,7 @@ button {
  opacity: 0.8;
  font-family: 'Raleway', sans-serif;
  font-weight: 700;
+ color: white;
  letter-spacing: 0.0625em;
  -webkit-border-radius: 8px;
  -moz-border-radius: 8px;
