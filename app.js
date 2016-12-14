@@ -5,6 +5,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
+const cookieSession = require('cookie-session');
 
 //switches to dev or test environments
 switch (app.get('env')) {
@@ -19,12 +20,23 @@ switch (app.get('env')) {
   default:
 }
 
+app.use(cookieSession({
+  name: 'session',
+  keys: ['supersecretkey']
+
+  // Cookie Options
+  // maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}));
+
 app.use(bodyParser.json());
 app.use(cookieParser());
 
 const path = require('path');
 
 app.use(express.static(path.join('public')));
+
+//vital to read users info
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // CSRF protection
 // app.use((req, res, next) => {
@@ -38,10 +50,13 @@ app.use(express.static(path.join('public')));
 const users = require('./routes/users');
 const observations = require('./routes/observations');
 const comments = require('./routes/comments');
+const login = require('./routes/login');
+
 
 app.use(users);
 app.use(observations);
 app.use(comments);
+app.use(login);
 
 app.use((err, _req, res, _next) => {
   if (err.output && err.output.statusCode) {
