@@ -10,14 +10,6 @@ const knex = require('../knex');
 
 const bodyParser = require('body-parser');
 
-router.use(function (req,res,next) {
- if (!req.session) {
-   res.sendStatus(401);
- } else {
-   next();
- }
-});
-
 //get comments for a given user
 router.get('/comments/users/', (req, res, next) => {
   let admin = req.session.isAdmin;
@@ -65,6 +57,23 @@ router.get('/comments/obs/:obsid', (req, res, next) => {
   });
 });
 
+//get comments for a given observation id
+router.get('/comments/obs/:obsid', (req, res, next) => {
+  let observationId = parseInt(req.params.obsid);
+
+   knex.from('comments').leftJoin('observations', 'comments.id', 'observations.id')
+   .where({
+     observation_id: observationId
+   })
+  //.orderBy('updated_at', 'desc')
+  .then((results) => {
+    res.send(results);
+  })
+  .catch((err) => {
+    next(err);
+  });
+});
+
 //TODO update observaton_id and user_id location from post request - is it in body or cookie??
 router.post('/comments', ev(validations.post), (req, res, next) => {
   console.log(req.body);
@@ -83,9 +92,8 @@ router.post('/comments', ev(validations.post), (req, res, next) => {
       });
 
 });
-//patch comment by commentid
+//patch comment by id
 router.patch('/comments/:id', (req, res, next) => {
-  console.log(req.body.comment);
   var id = req.params.id;
   knex('comments')
   .where({
@@ -102,7 +110,7 @@ router.patch('/comments/:id', (req, res, next) => {
     .where({'id' : id});
   })
   .then((comments) => {
-    res.send(comments);
+    res.send(comments[0]);
   })
   .catch ((err) => {
     next(err);
