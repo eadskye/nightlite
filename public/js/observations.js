@@ -54,8 +54,8 @@ function getObservations(data) {
 // this only works for the first post
 function addComment(comment, stars) {
   $.ajax({
-      // url: 'https://nightlited.herokuapp.com/comments',
-      url: 'http://localhost:8000/comments/',
+      url: 'https://nightlited.herokuapp.com/comments',
+      // url: 'http://localhost:8000/comments/',
       method: 'POST', // Default is GET
       data: {
         'observation_id': obsID,
