@@ -140,4 +140,3 @@ exports.seed = function(knex, Promise) {
                                         return knex.raw("SELECT setval('comments_id_seq', (SELECT MAX(id) FROM comments))");
                                       });
                                     };
-});
