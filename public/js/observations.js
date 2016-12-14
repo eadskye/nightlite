@@ -35,8 +35,8 @@ var comments;
 
 function getObservations(data) {
     $.ajax({
-        // url: 'https://nightlited.herokuapp.com/observations',
-        url: 'http://localhost:8000/observations/',
+        url: 'https://nightlited.herokuapp.com/observations',
+        // url: 'http://localhost:8000/observations/',
         jsonp: "callback",
         data: data,
         type: 'get',
@@ -53,8 +53,8 @@ function getObservations(data) {
 function getComments(data) {
     console.log("in HERE");
     $.ajax({
-        // url: 'https://nightlited.herokuapp.com/observations',
-        url: 'http://localhost:8000/observations/comments/' + obsID,
+        url: 'https://nightlited.herokuapp.com/observations' + obsID,
+        // url: 'http://localhost:8000/observations/comments/' + obsID,
         jsonp: "callback",
         data: data,
         type: 'get',
