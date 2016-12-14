@@ -14,12 +14,14 @@ $( document ).ready(function() {
 var observations;
 // Heroku is https, so we have to make the call making https
 // Localhost uses http, so call using http
+
+// Immediately retrieve pins to render on map;
 (function($) {
     $.ajax({
             dataType: 'json',
             // Comment in to hook up locally
             url: 'http://localhost:8000/observations',
-            //url: 'https://nightlited.herokuapp.com/observations',
+            // url: 'https://nightlited.herokuapp.com/observations',
             method: 'GET',
             cache: false,
         })
