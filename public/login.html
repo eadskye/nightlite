@@ -6,59 +6,47 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
-    <title>Login</title>
+    <title>NightLite</title>
 
-    <!-- CSS  -->
+    <!-- Materialize CSS CDN -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <!-- CSS -->
+    <link href="styles.css" type="text/css" rel="stylesheet" media="screen,projection">
 
     <!-- Font  -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway:400,500,600,700,800" rel="stylesheet">
-
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <link href="styles.css" type="text/css" rel="stylesheet" media="screen,projection">
 </head>
 
 <body class="loginBG">
-    <div class="navbar-fixed">
-        <nav class="transparent" role="navigation">
-            <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><a href="index.html">nightlite</a>
-                <ul class="right hide-on-med-and-down">
+  <!-- Navigation -->
+<nav class="transparent" role="navigation">
+  <div class="nav-wrapper container">
+    <a id="logo-container" href="index.html" class="logo"><img src="imgs/nitelightLogo.png"/></a>
+      <ul class="right hide-on-med-and-down">
+          <li><a href="index.html">Logout</a></li>
+      </ul>
+      <ul class="right hide-on-med-and-down">
+          <li><a href="login.html">Login</a></li>
+      </ul>
+      <ul class="right hide-on-med-and-down">
+          <li><a href="learn.html">Explore</a></li>
+      </ul>
+      <ul class="right hide-on-med-and-down">
+          <li><a href="map.html">View Map</a></li>
+      </ul>
 
-                </ul>
+      <ul id="nav-mobile" class="side-nav">
+          <li><a href="index.html">Logout</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="learn.html">Explore</a></li>
+          <li><a href="map.html">View Map</a></li>
 
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="login.html" class="logout" >Logout</a></li>
-                </ul>
-
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="learn.html">Learn</a></li>
-                </ul>
-
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="map.html">Explore</a></li>
-                </ul>
-
-
-
-                <ul id="nav-mobile" class="side-nav">
-
-                    <li><a href="learn.html">Learn</a></li>
-                    <li><a href="map.html">Explore</a></li>
-                    <li><a class="logout" href="login.html">Logout</a></li>
-
-                </ul>
-                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-
-        </nav>
-
-</div>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+  </div>
+</nav>
 
 
     <div class="container">
