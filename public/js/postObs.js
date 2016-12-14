@@ -41,7 +41,7 @@ $(document).ready(function() {
 
         newObs = JSON.stringify(newObs);
 
-        var $xhr = $.ajax({
+        $.ajax({
             method: 'POST',
             url: '/observations/',
             dataType: 'json',
