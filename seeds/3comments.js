@@ -1,6 +1,7 @@
 'use strict';
 //TODO seed comments
 exports.seed = function(knex, Promise) {
+
         // Deletes ALL existing entries
 
         return knex('comments').del()
@@ -30,7 +31,9 @@ exports.seed = function(knex, Promise) {
                                                 observation_id: 3,
                                                 comment: "This is a great reccommendation",
                                                 stars: 5
+
                                               }),
+
                                             knex('comments').insert({
                                                 id: 4,
                                                 user_id: 2,
@@ -137,3 +140,5 @@ exports.seed = function(knex, Promise) {
                                         return knex.raw("SELECT setval('comments_id_seq', (SELECT MAX(id) FROM comments))");
                                       }) ;
                                     };
+
+                            });
