@@ -55,41 +55,61 @@ function drawComments(data){
   $('#newcomments').append(results.join(''));
   $('.update').click(function(){
     var updatenum = $(this).val();
-    var sibling = $(this).parent().find('input').val();
-    console.log(sibling);
-
-    console.log(updatenum);
+    var text = $(this).parent().find('input').val();
+    updateComment(updatenum, text);
   });
 
 
   $('.delete').click(function(){
     var deletenum = $(this).val();
     console.log(deletenum);
+    deleteComment(deletenum);
   });
   }
 
-function updateComment(id, data){
+function updateComment(id, text){
     let commentid = id;
-    let commentdata = data;
+    let newcomment = text;
+    var data = {
+      comment: newcomment
+    }
+    console.log(data);
+    console.log(newcomment, text);
 
-    $.ajax({
-      url:'http://localhost:8000/comments/' + commentid,
-      jsonp: "callback",
-      data: commentdata,
-      type: 'patch',
-      success: function (data){
+    const options = {
+      contentType: 'application/json',
+      data: JSON.stringify(data),
+      dataType: 'json',
+      type: 'PATCH',
+      url: 'http://localhost:8000/comments/' + commentid
+    };
+
+    $.ajax(options)
+      .done(() => {
         console.log('success');
-        drawComments(data);
-      },
-      error: function(){
-        console.log("error");
-      }
-    });
+        getComments(data);
+      })
+      .fail(($xhr) => {
+        console.log('shr response text');
+      });
 
-}
+    }
 
 function deleteComment(id){
+  const options = {
+    contentType: 'application/json',
+    type: 'DELETE',
+    url: 'http://localhost:8000/comments/' + id
+  };
 
+    $.ajax(options)
+      .done(() => {
+        console.log('success');
+        getComments();
+      })
+      .fail(($xhr) => {
+        console.log('shr response text');
+      });
 }
 
 

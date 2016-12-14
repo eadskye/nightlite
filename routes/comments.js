@@ -47,6 +47,7 @@ router.post('/comments', ev(validations.post), (req, res, next) => {
 });
 //patch comment by commentid
 router.patch('/comments/:id', (req, res, next) => {
+  console.log(req.body.comment);
   var id = req.params.id;
   knex('comments')
   .where({
@@ -63,7 +64,7 @@ router.patch('/comments/:id', (req, res, next) => {
     .where({'id' : id});
   })
   .then((comments) => {
-    res.send(comments[0]);
+    res.send(comments);
   })
   .catch ((err) => {
     next(err);
