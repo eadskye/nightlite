@@ -30,13 +30,7 @@ exports.seed = function(knex, Promise) {
                                                 observation_id: 3,
                                                 comment: "This is a great reccommendation",
                                                 stars: 5
-                                            }),
-
-
-
-
-
-
+                                              }),
                                             knex('comments').insert({
                                                 id: 4,
                                                 user_id: 2,
@@ -63,14 +57,14 @@ exports.seed = function(knex, Promise) {
                                                 id: 7,
                                                 user_id: 6,
                                                 observation_id: 1,
-                                                comment: "brendan post one",
+                                                comment: "I went during the day so it was a little hard to see.",
                                                 stars: 5
                                             }),
                                             knex('comments').insert({
                                                 id: 8,
                                                 user_id: 6,
-                                                observation_id: 1,
-                                                comment: "brendan post two",
+                                                observation_id: 3,
+                                                comment: "Great night, great skies.",
                                                 stars: 5
                                             }),
                                             knex('comments').insert({
@@ -143,4 +137,3 @@ exports.seed = function(knex, Promise) {
                                         return knex.raw("SELECT setval('comments_id_seq', (SELECT MAX(id) FROM comments))");
                                       }) ;
                                     };
-                            });
