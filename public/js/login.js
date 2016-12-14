@@ -10,8 +10,8 @@ $(document).ready(function(){
     let username = $('#loginuser').val().trim();
     let password = $('#userpassword').val();
 
-    console.log(username);
-    console.log(password);
+    // console.log(username);
+    // console.log(password);
 
     if (!username) {
       return Materialize.toast('Please include a username', 3000);
@@ -26,8 +26,7 @@ $(document).ready(function(){
     login.password = password;
 
     login = JSON.stringify(login);
-
-    console.log(login);
+    // console.log(login);
 
     let $xhr = $.ajax({
       method: 'POST',
@@ -38,15 +37,14 @@ $(document).ready(function(){
     });
 
     $xhr.done(function(req) {
-      console.log("Account created, you are logged in");
-      console.log(req);
+      Materialize.toast('Account created, you are logged in', 3000);
+      window.location = '/map.html';
     });
     $xhr.fail(function() {
-      console.log('An error occurred, please try again');
+      Materialize.toast('An error occurred when creating your account. Please try using a different username', 3000);
     });
 
   });//end create account
-
 
   // login to existing account
   $('#login').on('click', function(event){
@@ -55,8 +53,8 @@ $(document).ready(function(){
     let username = $('#loginuser').val().trim();
     let password = $('#userpassword').val();
 
-    console.log(username);
-    console.log(password);
+    // console.log(username);
+    // console.log(password);
 
     if (!username) {
       return Materialize.toast('Please include a   username', 3000);
@@ -83,16 +81,19 @@ $(document).ready(function(){
     });
 
     $xhr.done(function(req) {
-      console.log("You are logged in");
+      window.location = '/map.html';
+      console.log('logged in')
       console.log(req);
     });
-    $xhr.fail(function() {
-      console.log('An error occurred, please try   logging in again');
+    $xhr.fail(function(err) {
+      Materialize.toast('Incorrect username or password, please try again', 3000);
+      // console.log(err);
     });
+
   }); // login existing
 
   //logout
-  $('#logout').on('click', function(event){
+  $('.logout').on('click', function(event){
     event.preventDefault();
 
     let $xhr = $.ajax({
@@ -102,14 +103,13 @@ $(document).ready(function(){
     });
 
     $xhr.done(function() {
-      console.log("you are logged in");
+      console.log("you are logged out");
     });
     $xhr.fail(function(err) {
-      console.log('please try logging in again');
+      // console.log(err);
     });
     window.location = '/';
   });//end logout
 
 }); //end of doc
 //login.html
-//add <a href="/user.html">button code</a>

@@ -1,22 +1,16 @@
 'use strict';
 
 const express = require('express');
-// const app = express();
 const router = express.Router();
-
 const knex = require('../knex');
 
 const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
 const bcrypt = require('bcrypt');
 
-// const boom = require('boom');
-// router.use(bodyParser.json());
-
 router.use(bodyParser.urlencoded({ extended: false }));
 
 //new acct
-// is working and posting to db
 router.post('/login/createaccount', (req,res,next) => {
 
   let userName = req.body.username;
@@ -40,7 +34,8 @@ router.post('/login/createaccount', (req,res,next) => {
 
         console.log(req.session);
 
-        res.redirect('/login.html');
+        res.send(req.session);
+        // console.log("req sent");
 
       })
       .catch(function (err) {
@@ -57,13 +52,13 @@ router.post('/login/createaccount', (req,res,next) => {
 router.post('/login/existinglogin',(req, res, next) =>{
 
   let userName = req.body.username;
-  let hashedPW = req.body.password;
+  let password = req.body.password;
   // let hashedPW = bcrypt.hashSync(req.body.password, 8);
 
   console.log(userName);
-  console.log(hashedPW);
+  console.log(password);
 
-  if (!userName || !hashedPW) {
+  if (!userName || !password) {
     res.sendStatus(400);
   }
 
@@ -71,31 +66,26 @@ router.post('/login/existinglogin',(req, res, next) =>{
       .where({username: userName})
       .first()
       .then((result) => {
-        console.log(result);
-        console.log("im here a");
-        console.log(result.hashed_password);
-        console.log(result.username);
-        console.log(hashedPW);
+        // console.log(result);
+        // console.log(result.hashed_password);
+        // console.log(result.username);
+        // console.log(password);
 
-          if (!result || !bcrypt.compareSync(hashedPW,result.hashed_password)) {
-            console.log("error is here");
+          if(!result || !bcrypt.compareSync(password,result.hashed_password)) {
+            // console.log("error is here");
             res.sendStatus(401);
-
           }else{
-            console.log("here now");
+            // console.log("else");
             req.session.id = result.id;
             req.session.username = result.username;
             req.session.isAdmin = result.admin;
             req.session.created = result.created_at;
 
             console.log(req.session.username);
-            //logging user's id
-            res.redirect('/login.html');
+
+            res.send(req.session);
           }
-
-          res.send('im here');
-
-
+          // res.send('im here');
       })
       .catch((err)=>{
         next(err);
@@ -111,6 +101,5 @@ router.post('/login/logout', (req, res, next) => {
   console.log(req.session);
   res.send(req.session);
 });
-
 
 module.exports = router;
