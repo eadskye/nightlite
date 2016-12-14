@@ -31,9 +31,7 @@ exports.seed = function(knex, Promise) {
                                                 observation_id: 3,
                                                 comment: "This is a great reccommendation",
                                                 stars: 5
-
                                               }),
-
                                             knex('comments').insert({
                                                 id: 4,
                                                 user_id: 2,
