@@ -46,19 +46,23 @@ function getObservations(data) {
     });
 }
 
-function addComment() {
+function addComment(comment) {
   $.ajax({
       // url: 'https://nightlited.herokuapp.com/observations',
-      url: 'http://localhost:8000/observations/',
-      jsonp: "callback",
-      data: data,
-      type: 'get',
+      url: 'http://localhost:8000/comments/',
+      method: 'POST', // Default is GET
+      data: {
+        'observation_id': obsID,
+        'comment': comment,
+        'user_id': '2', // TODO: Fix this
+        'stars': '2' // TODO : Fix this
+        },
+      // type: 'post', // An alias for method, use type if you're using versions of jQuery prior to 1.9.0.
       success: function(data) {
-          obsData = data;
-          drawObservations(obsData);
+        Materialize.toast("Comment added!", 3000, 'rounded');
       },
-      error: function() {
-          console.log("error");
+      error: function(jqXHR, textStatus, errorThrown) {
+        Materialize.toast("Error!", 3000, 'rounded');
       }
   });
 }
