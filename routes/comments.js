@@ -10,14 +10,45 @@ const bcrypt = require('bcrypt');
 
 const bodyParser = require('body-parser');
 
-router.get('/comments/users/:userid', (req, res, next) => {
-  let userid = req.params.userid;
-  console.log(userid);
+//get comments for a given user
+router.get('/comments/users/', (req, res, next) => {
+  let admin = req.session.isAdmin;
+  let userid = req.session.id;
 
-   knex.from('comments').leftJoin('users', 'comments.id', 'users.id')
+  if (admin === true){
+    knex.from('comments').leftJoin('users', 'comments.user_id', 'users.id')
+   .select(['comments.id', 'comments.user_id', 'comments.comment', 'comments.stars', 'comments.created_at', 'comments.updated_at', 'username', 'admin'])
+   .orderBy('comments.id', 'desc')
+   .then((results) => {
+     res.send(results);
+   })
+   .catch((err) => {
+     next(err);
+   });
+  } else {
+   knex.from('comments').leftJoin('users', 'comments.user_id', 'users.id')
+     .where({
+       'user_id': userid})
+    .select(['comments.id', 'comments.user_id', 'comments.comment', 'comments.stars', 'comments.created_at', 'comments.updated_at', 'users.username', 'admin'])
+    .orderBy('users.username', 'desc')
+    .then((results) => {
+      res.send(results);
+    })
+    .catch((err) => {
+      next(err);
+    });
+  }
+});
+
+//get comments for a given observation id
+router.get('/comments/obs/:obsid', (req, res, next) => {
+  let observationId = parseInt(req.params.obsid);
+
+   knex.from('comments').leftJoin('observations', 'comments.id', 'observations.id')
    .where({
-     'user_id': userid})
-  .select(['comments.id', 'comments.user_id', 'comments.comment', 'comments.stars', 'comments.created_at', 'comments.updated_at', 'username', 'admin'])
+     observation_id: observationId
+   })
+  //.orderBy('updated_at', 'desc')
   .then((results) => {
     res.send(results);
   })
