@@ -6,14 +6,9 @@ const router = express.Router();
 const ev = require('express-validation');
 const validations = require('../validations/observations');
 const knex = require('../knex');
-
-const {decamelizeKeys, camelizeKeys} = require('humps');
-const bcrypt = require('bcrypt');
 const boom = require('boom');
 
 var obsGET;
-
-
 
 //get comments for a given observation id
 router.get('/observations/comments/:obsid', (req, res, next) => {
