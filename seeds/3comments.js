@@ -31,9 +31,7 @@ exports.seed = function(knex, Promise) {
                                                 observation_id: 3,
                                                 comment: "This is a great reccommendation",
                                                 stars: 5
-
                                               }),
-
                                             knex('comments').insert({
                                                 id: 4,
                                                 user_id: 2,
@@ -139,4 +137,8 @@ exports.seed = function(knex, Promise) {
                                     .then(function() {
                                         return knex.raw("SELECT setval('comments_id_seq', (SELECT MAX(id) FROM comments))");
                                       });
+<<<<<<< HEAD
                               }
+=======
+                                    };
+>>>>>>> 31a95b63d0b99aa84f1749dfd91d40e20ce33252

@@ -4,46 +4,43 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-    <title>NightLite</title>
+    <title>nightlite</title>
 
-    <!-- CSS  -->
+    <!-- Materialize CSS CDN -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="styles.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+
+    <!-- CSS -->
+    <link href="styles.css" type="text/css" rel="stylesheet" media="screen,projection">
 
     <!-- Font  -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand|Raleway:400,500,600,700,800" rel="stylesheet">
-
-    <!-- Compiled and minified jQuery -->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 </head>
 
 <body class="obsBG">
-    <!-- Navigation -->
-    <nav class="transparent" role="navigation">
-        <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">nightlite</a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="login.html">Login</a></li>
-            </ul>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="learn.html">Learn</a></li>
-            </ul>
+  <!-- Navigation -->
+  <nav class="transparent" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="index.html" class="logo"><img src="imgs/nitelightLogo.png"/></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a class="logout" href="index.html">Logout</a></li>
+        </ul>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="login.html">Login</a></li>
+        </ul>
+        <ul class="right hide-on-med-and-down">
+       <li><a href="learn.html">Explore</a></li>
+   </ul>
+      <ul id="nav-mobile" class="side-nav">
+          <li><a href="login.html">Login</a></li>
+          <li><a class="logout" href="index.html">Logout</a></li>
+          <li><a href="learn.html">Learn</a></li>
+          </ul>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+  </nav>
 
-
-            <ul id="nav-mobile" class="side-nav">
-                <li><a href="login.html">Login</a></li>
-                <li><a href="learn.html">Learn</a></li>
-
-
-            </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-        </div>
-    </nav>
 
     <div class="section" id="index-banner">
         <div class="container">
@@ -109,45 +106,6 @@
                                     </div>
 
                                     <div class="row">
-
-                                    <button id="upload_widget_opener" class="col s3 btn waves-effect waves-light blue lighten-2" type="button" name="upload_widget_opener">Add Photo</button>
-
-                                      <script>
-                                        document.getElementById("upload_widget_opener").addEventListener("click", function() {
-
-                                          cloudinary.openUploadWidget(
-                                            {
-                                              cloud_name: 'nightlite',
-                                              upload_preset: 'obsPreset'
-                                            },
-                                            function(error, result) {
-                                              console.log(error, result);
-                                              var imgUrl = result[0].secure_url;
-                                              console.log(imgUrl);
-                                              // $.ajax({
-                                              //         dataType: 'json',
-                                              //         // Comment in to hook up locally
-                                                      // url: 'http://localhost:8000/observations',
-                                              //         // url: 'https://nightlited.herokuapp.com/observations',
-                                              //         method: 'POST',
-                                              //         cache: false,
-                                              //         data: imgUrl
-                                              //     })
-                                              //     .done(function(data) {
-                                              //         observations = data;
-                                              //     })
-                                              //     .fail(function(jqXHR, textStatus, errorThrown) {
-                                              //         console.log("jxXHR : ", jqXHR, " - status : ", textStatus, " - error : ", errorThrown);
-                                              //     });
-
-                                            });
-
-                                        }, false);
-                                      </script>
-
-                                   </div>
-
-                                    <div class="row">
                                         <div class="input-field col s6">
                                             <input id="user_id" type="text" class="validate">
                                             <label for="user_id">User ID</label>
@@ -178,13 +136,13 @@
         </div>
     </div>
 
-
     <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
     <script src="https://use.fontawesome.com/55219fed36.js"></script>
     <script src="js/init.js"></script>
     <script src="js/postObs.js"></script>
-    <script src="https://widget.cloudinary.com/global/all.js" type="text/javascript" defer></script>
-
 </body>
 
 </html>

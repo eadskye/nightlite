@@ -10,6 +10,7 @@ const knex = require('../knex');
 
 const bodyParser = require('body-parser');
 
+
 //if not logged in, no access
 router.use(function (req,res,next) {
   if (!req.session) {
@@ -39,7 +40,7 @@ router.get('/comments/users/', (req, res, next) => {
      .where({
        'user_id': userid})
     .select(['comments.id', 'comments.user_id', 'comments.comment', 'comments.stars', 'comments.created_at', 'comments.updated_at', 'users.username', 'admin'])
-    .orderBy('users.username', 'desc')
+    .orderBy('comments.id', 'desc')
     .then((results) => {
       res.send(results);
     })
