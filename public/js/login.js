@@ -74,7 +74,7 @@ $(document).ready(function(){
 
     let $xhr = $.ajax({
       method: 'POST',
-      url:'http://localhost:8000/login/existinglogin',
+      url:'https://mittino-nightlight.herokuapp.com/login/existinglogin',
       dataType: 'json',
       contentType: 'application/json',
       data: login
@@ -98,7 +98,7 @@ $(document).ready(function(){
 
     let $xhr = $.ajax({
       method: 'POST',
-      url:'http://localhost:8000/login/logout',
+      url:'https://mittino-nightlight.herokuapp.com/login/logout',
       dataType: 'json',
     });
 
