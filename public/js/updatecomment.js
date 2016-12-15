@@ -34,6 +34,10 @@ $(document).ready(function() {
       var i;
       var results = [];
       $('#newcomments').empty();
+
+      if(data.length<1){
+        return Materialize.toast('You have not made any comments', 3000);
+      }else{
       for (i = 0; i < data.length; i++) {
         results.push(
           '<div class="row">' +
@@ -52,6 +56,7 @@ $(document).ready(function() {
             '<div class="col s2"></div>' +
           '</div>'
           );
+        }
       }
         $('#newcomments').append(results.join(''));
         $('.update').click(function() {

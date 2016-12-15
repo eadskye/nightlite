@@ -55,6 +55,7 @@ router.get('/observations', (req, res, next) => {
 
 //TODO will get all of a users observations to update and delete
 router.get('/observations/:user_id', (req, res, next) => {
+
   let userId = parseInt(req.params.user_id);
 
   knex('observations')
@@ -121,9 +122,6 @@ router.post('/observations', (req, res, next) => {
     });
 });
 
-// router.patch('/observations', ev(validations.patch), (req, res, next) => {
-//
-// });
 
 //
 router.delete('/observations/:id', (req, res, next) => {

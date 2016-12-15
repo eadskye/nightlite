@@ -8,13 +8,15 @@ const knex = require('../knex');
 
 const bodyParser = require('body-parser');
 
+//if not logged in, no access
 router.use(function (req,res,next) {
   if (!req.session) {
     res.sendStatus(401);
   } else {
     next();
   }
- });
+});
+
 //get comments for a given user
 router.get('/comments/users/', (req, res, next) => {
   let admin = req.session.isAdmin;
@@ -126,7 +128,6 @@ router.patch('/comments/:id', (req, res, next) => {
     next(err);
   });
 });
-
 
 //delete comment by id
 router.delete('/comments/:id', (req, res, next) => {

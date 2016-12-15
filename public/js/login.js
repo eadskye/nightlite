@@ -2,6 +2,7 @@
 
 $(document).ready(function(){
   // $('.button-collapse').sideNav();
+  // var userInfo = null;
 
   //create account
   $('#createaccount').on('click', function(event){
@@ -37,7 +38,8 @@ $(document).ready(function(){
     });
 
     $xhr.done(function(req) {
-      Materialize.toast('Account created, you are logged in', 3000);
+      // Materialize.toast('Account created. You are logged in ' + req[0].username + '.', 3000);
+      // console.log(req);
       window.location = '/map.html';
     });
     $xhr.fail(function() {
@@ -57,10 +59,10 @@ $(document).ready(function(){
     // console.log(password);
 
     if (!username) {
-      return Materialize.toast('Please include a   username', 3000);
+      return Materialize.toast('Please include a username', 3000);
     }
     if (!password) {
-      return Materialize.toast('Please include a   password.', 3000);
+      return Materialize.toast('Please include a password.', 3000);
     }
 
     var login = {};
@@ -70,7 +72,7 @@ $(document).ready(function(){
 
     login = JSON.stringify(login);
 
-    console.log(login);
+    // console.log(login);
 
     let $xhr = $.ajax({
       method: 'POST',
@@ -81,9 +83,9 @@ $(document).ready(function(){
     });
 
     $xhr.done(function(req) {
+      // console.log('logged in')
+      // console.log(req.username);
       window.location = '/map.html';
-      console.log('logged in')
-      console.log(req);
     });
     $xhr.fail(function(err) {
       Materialize.toast('Incorrect username or password, please try again', 3000);

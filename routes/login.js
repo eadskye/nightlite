@@ -32,6 +32,7 @@ router.post('/login/createaccount', (req,res,next) => {
 
         res.send(req.session);
 
+
       })
       .catch(function (err) {
         next(err);
