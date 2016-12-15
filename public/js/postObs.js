@@ -37,7 +37,7 @@ $(document).ready(function() {
         newObs.longitude = longitude;
         newObs.description = description;
         newObs.stars = stars;
-        newObs.user_id = user_id;
+        // newObs.user_id = user_id;
 
         newObs = JSON.stringify(newObs);
 

@@ -79,8 +79,11 @@ router.get('/observations/:user_id', (req, res, next) => {
 
 router.post('/observations', (req, res, next) => {
 
+  let userId = req.session.id;
+  let username = req.session.username;
+
   const newObservation = {
-    user_id: req.body.user_id,
+    user_id: userId,
     latitude: req.body.latitude,
     longitude: req.body.longitude,
     stars: req.body.stars,
