@@ -67,12 +67,12 @@ $(document).ready(function() {
     }
 
     function updateComment(id, text) {
-<<<<<<< HEAD
         let commentid = id;
         let newcomment = text;
         var data = {
             comment: newcomment
-        }
+        };
+        
         console.log(data);
         console.log(newcomment, text);
 
@@ -94,20 +94,19 @@ $(document).ready(function() {
             .fail(($xhr) => {
                 console.log('shr response text');
             });
-=======
       let commentid = id;
       let newcomment = text;
       var data = {
         comment: newcomment
       }
+
       const options = {
         contentType: 'application/json',
         data: JSON.stringify(data),
         dataType: 'json',
         type: 'PATCH',
-        url: 'http://localhost:8000/comments/' + commentid
+        url: 'https://localhost:8000/comments/' + commentid
       };
->>>>>>> 31a95b63d0b99aa84f1749dfd91d40e20ce33252
 
       $.ajax(options)
         .done(() => {
