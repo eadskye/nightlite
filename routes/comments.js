@@ -5,18 +5,18 @@ const router = express.Router();
 const ev = require('express-validation');
 const validations = require('../validations/comments');
 const knex = require('../knex');
-const {decamelizeKeys, camelizeKeys} = require('humps');
-const bcrypt = require('bcrypt');
 
 const bodyParser = require('body-parser');
 
+//if not logged in, no access
 router.use(function (req,res,next) {
   if (!req.session) {
     res.sendStatus(401);
   } else {
     next();
   }
- });
+});
+
 //get comments for a given user
 router.get('/comments/users/', (req, res, next) => {
   let admin = req.session.isAdmin;
@@ -85,18 +85,19 @@ router.get('/comments/obs/:obsid', (req, res, next) => {
 //TODO update observaton_id and user_id location from post request - is it in body or cookie??
 router.post('/comments', ev(validations.post), (req, res, next) => {
   let userId = req.session.id;
-  let username = req.session.username;
+  // let username = req.session.username;
 
   console.log(req.body);
     knex('comments')
       .insert({
-        user_id: req.body.user_id,
+        user_id: userId,
         observation_id: req.body.observation_id,
         comment: req.body.comment,
         stars: req.body.stars,
       })
       .then(
         res.send('update comment')
+        // res.send(userId);
       )
       .catch((err) => {
         next(err);
@@ -127,7 +128,6 @@ router.patch('/comments/:id', (req, res, next) => {
     next(err);
   });
 });
-
 
 //delete comment by id
 router.delete('/comments/:id', (req, res, next) => {

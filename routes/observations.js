@@ -6,14 +6,9 @@ const router = express.Router();
 const ev = require('express-validation');
 const validations = require('../validations/observations');
 const knex = require('../knex');
-
-const {decamelizeKeys, camelizeKeys} = require('humps');
-const bcrypt = require('bcrypt');
 const boom = require('boom');
 
 var obsGET;
-
-
 
 //get comments for a given observation id
 router.get('/observations/comments/:obsid', (req, res, next) => {
@@ -38,6 +33,10 @@ router.get('/observations/comments/:obsid', (req, res, next) => {
 
 //get observations with username for observation cards on map page
 router.get('/observations', (req, res, next) => {
+
+  let userId = req.session.id;
+  let username = req.session.username;
+
   knex.from('observations').leftJoin('users', 'observations.id', 'users.id')
     .select(['observations.id','observations.user_id','latitude', 'longitude', 'stars', 'name', 'description','observations.created_at', 'observations.updated_at', 'username'])
     .then((result) => {
@@ -56,6 +55,7 @@ router.get('/observations', (req, res, next) => {
 
 //TODO will get all of a users observations to update and delete
 router.get('/observations/:user_id', (req, res, next) => {
+
   let userId = parseInt(req.params.user_id);
 
   knex('observations')
@@ -77,7 +77,7 @@ router.get('/observations/:user_id', (req, res, next) => {
 
 //TODO validaton code router.post('/observations', ev(validations.post), (req, res, next) => {
 
-router.post('/observations', ev(validations.post), (req, res, next) => {
+router.post('/observations', (req, res, next) => {
 
   const newObservation = {
     user_id: req.body.user_id,
@@ -122,9 +122,6 @@ router.post('/observations', ev(validations.post), (req, res, next) => {
     });
 });
 
-// router.patch('/observations', ev(validations.patch), (req, res, next) => {
-//
-// });
 
 //
 router.delete('/observations/:id', (req, res, next) => {
