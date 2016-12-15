@@ -30,7 +30,7 @@ $(document).ready(function(){
 
     let $xhr = $.ajax({
       method: 'POST',
-      url:'https://mittino-nightlight.herokuapp.com/login/createaccount',
+      url:'/login/createaccount',
       dataType: 'json',
       contentType: 'application/json',
       data: login
@@ -74,7 +74,7 @@ $(document).ready(function(){
 
     let $xhr = $.ajax({
       method: 'POST',
-      url:'https://mittino-nightlight.herokuapp.com/login/existinglogin',
+      url:'/login/existinglogin',
       dataType: 'json',
       contentType: 'application/json',
       data: login
@@ -98,7 +98,7 @@ $(document).ready(function(){
 
     let $xhr = $.ajax({
       method: 'POST',
-      url:'https://mittino-nightlight.herokuapp.com/login/logout',
+      url:'/login/logout',
       dataType: 'json',
     });
 

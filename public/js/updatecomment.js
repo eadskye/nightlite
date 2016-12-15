@@ -14,7 +14,7 @@ $(document).ready(function() {
         $.ajax({
 
             // url: 'http://localhost:8000/comments/users',
-            url: 'https://mittino-nightlight.herokuapp.com/comments/users',
+            url: '/comments/users',
             jsonp: "callback",
             data: data,
             type: 'get',
@@ -81,7 +81,7 @@ $(document).ready(function() {
             dataType: 'json',
             type: 'PATCH',
             // url: 'http://localhost:8000/comments/' + commentid
-            url: 'https://mittino-nightlight.herokuapp.com/comments/' + commentid
+            url: '/comments/' + commentid
 
         };
 
@@ -110,7 +110,7 @@ $(document).ready(function() {
             contentType: 'application/json',
             type: 'DELETE',
             // url: 'http://localhost:8000/comments/' + id
-            url: 'https://mittino-nightlight.herokuapp.com/comments/' + id
+            url: '/comments/' + id
 
         };
 

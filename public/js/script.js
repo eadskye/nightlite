@@ -21,7 +21,7 @@ var observations;
             dataType: 'json',
             // Comment in to hook up locally
             // url: 'http://localhost:8000/observations',
-            url: 'https://mittino-nightlight.herokuapp.com/observations',
+            url: '/observations',
             method: 'GET',
             cache: false,
         })
@@ -78,13 +78,13 @@ require([
     search.startup();
 
 // Add layers to amp
-    var grayBase = new ArcGISTiledMapServiceLayer("https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer/");
+    var grayBase = new ArcGISTiledMapServiceLayer("//services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer/");
     map.addLayer(grayBase);
 
-    var tiled1 = new ArcGISTiledMapServiceLayer("https://tiles.arcgis.com/tiles/b3fMqPOmotX6SV4k/arcgis/rest/services/ArtificialSkyBrightness/MapServer/");
+    var tiled1 = new ArcGISTiledMapServiceLayer("//tiles.arcgis.com/tiles/b3fMqPOmotX6SV4k/arcgis/rest/services/ArtificialSkyBrightness/MapServer/");
     map.addLayer(tiled1);
 
-    tiled2 = new ArcGISTiledMapServiceLayer("https://services.arcgisonline.com/arcgis/rest/services/Reference/World_Boundaries_and_Places/MapServer/");
+    tiled2 = new ArcGISTiledMapServiceLayer("//services.arcgisonline.com/arcgis/rest/services/Reference/World_Boundaries_and_Places/MapServer/");
     tiled2Flag = true;
     map.addLayer(tiled2);
 
