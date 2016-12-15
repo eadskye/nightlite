@@ -13,7 +13,14 @@ const boom = require('boom');
 
 var obsGET;
 
-
+//if not logged in, no access
+router.use(function (req,res,next) {
+  if (!req.session) {
+    res.sendStatus(401);
+  } else {
+    next();
+  }
+});
 
 //get comments for a given observation id
 router.get('/observations/comments/:obsid', (req, res, next) => {
