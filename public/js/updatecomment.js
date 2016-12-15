@@ -31,46 +31,43 @@ $(document).ready(function() {
     }
 
     function drawComments(data) {
-        var i;
-        var results = [];
-        console.log(data);
-        $('#newcomments').empty();
-        for (i = 0; i < data.length; i++) {
-            results.push(
-                '<div class="row">' +
-                '<div class="col s2"></div>' +
-                '<div class="col s8">' +
-                '<div class="card-panel white">' +
-                '<p class="black-text">"' + data[i].comment + '"</p>' +
-                '<p class="black-text"> Star Rating: ' + data[i].stars + '</p>' +
-                '<p class="black-text"> Added By: ' + data[i].username + '</p>' +
-                '<p class="black-text"> Updated At: ' + moment(data[i].updated_at).format('MMM-D-YYYY') + '</p>' +
-                '<input id="input' + data[i].id + '" class="materialize-textarea" type="text">' +
-                '<button value=' + data[i].id + ' class="update"> Update </button>' +
-                '<button value=' + data[i].id + ' class="delete"> Delete </button>' +
-                '</div>' +
-                '</div>' +
-                '<div class="col s2"></div>' +
-                '</div>'
-            );
-        }
-
+      var i;
+      var results = [];
+      $('#newcomments').empty();
+      for (i = 0; i < data.length; i++) {
+        results.push(
+          '<div class="row">' +
+            '<div class="col s2"></div>' +
+            '<div class="col s8">' +
+            '<div class="card-panel white">' +
+              '<p class="black-text">"' + data[i].comment + '"</p>' +
+              '<p class="black-text"> Star Rating: ' + data[i].stars + '</p>' +
+              '<p class="black-text"> Added By: ' + data[i].username + '</p>' +
+              '<p class="black-text"> Updated At: ' + moment(data[i].updated_at).format('MMM-D-YYYY') + '</p>' +
+              '<input id="input' + data[i].id + '" class="materialize-textarea" type="text">' +
+              '<button value=' + data[i].id + ' class="update"> Update </button>' +
+              '<button value=' + data[i].id + ' class="delete"> Delete </button>' +
+              '</div>' +
+            '</div>' +
+            '<div class="col s2"></div>' +
+          '</div>'
+          );
+      }
         $('#newcomments').append(results.join(''));
         $('.update').click(function() {
-            var updatenum = $(this).val();
-            var text = $(this).parent().find('input').val();
-            updateComment(updatenum, text);
+          var updatenum = $(this).val();
+          var text = $(this).parent().find('input').val();
+          updateComment(updatenum, text);
         });
-
 
         $('.delete').click(function() {
             var deletenum = $(this).val();
-            console.log(deletenum);
             deleteComment(deletenum);
         });
     }
 
     function updateComment(id, text) {
+<<<<<<< HEAD
         let commentid = id;
         let newcomment = text;
         var data = {
@@ -97,7 +94,29 @@ $(document).ready(function() {
             .fail(($xhr) => {
                 console.log('shr response text');
             });
+=======
+      let commentid = id;
+      let newcomment = text;
+      var data = {
+        comment: newcomment
+      }
+      const options = {
+        contentType: 'application/json',
+        data: JSON.stringify(data),
+        dataType: 'json',
+        type: 'PATCH',
+        url: 'http://localhost:8000/comments/' + commentid
+      };
+>>>>>>> 31a95b63d0b99aa84f1749dfd91d40e20ce33252
 
+      $.ajax(options)
+        .done(() => {
+            console.log('success');
+            getComments(data);
+        })
+        .fail(($xhr) => {
+            console.log('error');
+        });
     }
 
     function deleteComment(id) {
@@ -115,7 +134,7 @@ $(document).ready(function() {
                 getComments();
             })
             .fail(($xhr) => {
-                console.log('shr response text');
+                console.log('error');
             });
     }
 });
