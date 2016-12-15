@@ -13,7 +13,8 @@ const bodyParser = require('body-parser');
 
 //if not logged in, no access
 router.use(function (req,res,next) {
-  if (!req.session) {
+  if (!req.session.user) {
+    console.log("no access to this page");
     res.sendStatus(401);
   } else {
     next();

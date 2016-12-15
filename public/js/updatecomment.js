@@ -13,8 +13,8 @@ $(document).ready(function() {
     function getComments(data) {
         $.ajax({
 
-            // url: 'http://localhost:8000/comments/users',
-            url: 'https://nightlited.herokuapp.com/comments/users',
+            url: 'http://localhost:8000/comments/users',
+            // url: 'https://nightlited.herokuapp.com/comments/users',
             jsonp: "callback",
             data: data,
             type: 'get',
@@ -67,7 +67,7 @@ $(document).ready(function() {
     }
 
     function updateComment(id, text) {
-<<<<<<< HEAD
+
         let commentid = id;
         let newcomment = text;
         var data = {
@@ -81,8 +81,8 @@ $(document).ready(function() {
             data: JSON.stringify(data),
             dataType: 'json',
             type: 'PATCH',
-            // url: 'http://localhost:8000/comments/' + commentid
-            url: 'https://nightlited.herokuapp.com/comments/' + commentid
+            url: 'http://localhost:8000/comments/' + commentid
+            // url: 'https://nightlited.herokuapp.com/comments/' + commentid
 
         };
 
@@ -94,20 +94,6 @@ $(document).ready(function() {
             .fail(($xhr) => {
                 console.log('shr response text');
             });
-=======
-      let commentid = id;
-      let newcomment = text;
-      var data = {
-        comment: newcomment
-      }
-      const options = {
-        contentType: 'application/json',
-        data: JSON.stringify(data),
-        dataType: 'json',
-        type: 'PATCH',
-        url: 'http://localhost:8000/comments/' + commentid
-      };
->>>>>>> 31a95b63d0b99aa84f1749dfd91d40e20ce33252
 
       $.ajax(options)
         .done(() => {
@@ -123,8 +109,8 @@ $(document).ready(function() {
         const options = {
             contentType: 'application/json',
             type: 'DELETE',
-            // url: 'http://localhost:8000/comments/' + id
-            url: 'https://nightlited.herokuapp.com/comments/' + id
+            url: 'http://localhost:8000/comments/' + id
+            // url: 'https://nightlited.herokuapp.com/comments/' + id
 
         };
 
