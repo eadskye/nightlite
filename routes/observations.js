@@ -26,7 +26,11 @@ router.use(function (req,res,next) {
 router.get('/observations/comments/:obsid', (req, res, next) => {
   let observationId = parseInt(req.params.obsid);
 
+  let userId = req.session.id;
+  let username = req.session.username;
+
    knex.from('comments').leftJoin('observations', 'comments.id', 'observations.id')
+   .select('comments.comment', 'comments.created_at', 'comments.updated_at')
    .where({
      observation_id: observationId
    })
