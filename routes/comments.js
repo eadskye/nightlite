@@ -85,7 +85,7 @@ router.get('/comments/obs/:obsid', (req, res, next) => {
 //TODO update observaton_id and user_id location from post request - is it in body or cookie??
 router.post('/comments', ev(validations.post), (req, res, next) => {
   let userId = req.session.id;
-  let username = req.session.username;
+  // let username = req.session.username;
 
   console.log(req.body);
     knex('comments')
