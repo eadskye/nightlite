@@ -30,7 +30,7 @@ $(document).ready(function(){
 
     let $xhr = $.ajax({
       method: 'POST',
-      url:'http://localhost:8000/login/createaccount',
+      url:'https://mittino-nightlight.herokuapp.com/login/createaccount',
       dataType: 'json',
       contentType: 'application/json',
       data: login
