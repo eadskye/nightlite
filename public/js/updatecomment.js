@@ -13,8 +13,8 @@ $(document).ready(function() {
     function getComments(data) {
         $.ajax({
 
-            url: 'http://localhost:8000/comments/users',
-            // url: 'https://nightlited.herokuapp.com/comments/users',
+            // url: 'http://localhost:8000/comments/users',
+            url: '/comments/users',
             jsonp: "callback",
             data: data,
             type: 'get',
@@ -81,8 +81,8 @@ $(document).ready(function() {
             data: JSON.stringify(data),
             dataType: 'json',
             type: 'PATCH',
-            url: 'http://localhost:8000/comments/' + commentid
-            // url: 'https://nightlited.herokuapp.com/comments/' + commentid
+            // url: 'http://localhost:8000/comments/' + commentid
+            url: '/comments/' + commentid
 
         };
 
@@ -109,8 +109,8 @@ $(document).ready(function() {
         const options = {
             contentType: 'application/json',
             type: 'DELETE',
-            url: 'http://localhost:8000/comments/' + id
-            // url: 'https://nightlited.herokuapp.com/comments/' + id
+            // url: 'http://localhost:8000/comments/' + id
+            url: '/comments/' + id
 
         };
 

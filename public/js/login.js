@@ -31,7 +31,7 @@ $(document).ready(function(){
 
     let $xhr = $.ajax({
       method: 'POST',
-      url:'http://localhost:8000/login/createaccount',
+      url:'/login/createaccount',
       dataType: 'json',
       contentType: 'application/json',
       data: login
@@ -76,7 +76,7 @@ $(document).ready(function(){
 
     let $xhr = $.ajax({
       method: 'POST',
-      url:'http://localhost:8000/login/existinglogin',
+      url:'/login/existinglogin',
       dataType: 'json',
       contentType: 'application/json',
       data: login
@@ -100,7 +100,7 @@ $(document).ready(function(){
 
     let $xhr = $.ajax({
       method: 'POST',
-      url:'http://localhost:8000/login/logout',
+      url:'/login/logout',
       dataType: 'json',
     });
 

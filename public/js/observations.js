@@ -32,8 +32,9 @@ var comments;
 
 function getObservations(data) {
     $.ajax({
-        // url: 'https://nightlited.herokuapp.com/observations',
-        url: 'http://localhost:8000/observations/',
+
+        url: '/observations',
+        // url: 'http://localhost:8000/observations/',
         jsonp: "callback",
         data: data,
         type: 'get',
@@ -51,8 +52,8 @@ function getObservations(data) {
 // this only works for the first post
 function addComment(comment, stars) {
     $.ajax({
-        // url: 'https://nightlited.herokuapp.com/comments',
-        url: 'http://localhost:8000/comments/',
+        url: '/comments',
+        // url: 'http://localhost:8000/comments/',
         method: 'POST', // Default is GET
         data: {
             'observation_id': obsID,
@@ -76,8 +77,9 @@ function getComments(data) {
     console.log("in HERE");
     console.log(obsID);
     $.ajax({
-        // url: 'https://nightlited.herokuapp.com/observations/comments/' + obsID,
-        url: 'http://localhost:8000/observations/comments/' + obsID,
+
+        url: '/observations/comments/' + obsID,
+        // url: 'http://localhost:8000/observations/comments/' + obsID,
         jsonp: "callback",
         data: data,
         type: 'get',
