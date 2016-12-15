@@ -14,7 +14,7 @@ $(document).ready(function() {
         $.ajax({
 
             // url: 'http://localhost:8000/comments/users',
-            url: 'https://nightlited.herokuapp.com/comments/users',
+            url: 'https://mittino-nightlight.herokuapp.com/comments/users',
             jsonp: "callback",
             data: data,
             type: 'get',
