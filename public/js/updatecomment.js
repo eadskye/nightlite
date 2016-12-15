@@ -19,13 +19,13 @@ $(document).ready(function() {
             data: data,
             type: 'get',
             success: function(data) {
-                console.log('success');
-                console.log(data);
+                // console.log('success');
+                // console.log(data);
                 drawComments(data);
             },
             error: function() {
                 Materialize.toast('Please login to gain access', 3000);
-                console.log('error line 26');
+                // console.log('error line 26');
             }
         });
     }

@@ -3,9 +3,7 @@
 const express = require('express');
 const router = express.Router();
 const knex = require('../knex');
-
 const bodyParser = require('body-parser');
-const cookieSession = require('cookie-session');
 const bcrypt = require('bcrypt');
 
 router.use(bodyParser.urlencoded({ extended: false }));
@@ -32,17 +30,14 @@ router.post('/login/createaccount', (req,res,next) => {
         req.session.isAdmin = result[0].admin;
         req.session.created = result[0].created_at;
 
-        console.log(req.session);
-
         res.send(req.session);
-        // console.log("req sent");
 
       })
       .catch(function (err) {
         next(err);
       });
+
     }else{
-      //need to let them know that name already taken
       res.status(400).send('Username already exists');
     }
   });
@@ -53,10 +48,6 @@ router.post('/login/existinglogin',(req, res, next) =>{
 
   let userName = req.body.username;
   let password = req.body.password;
-  // let hashedPW = bcrypt.hashSync(req.body.password, 8);
-
-  console.log(userName);
-  console.log(password);
 
   if (!userName || !password) {
     res.sendStatus(400);
@@ -66,26 +57,21 @@ router.post('/login/existinglogin',(req, res, next) =>{
       .where({username: userName})
       .first()
       .then((result) => {
-        // console.log(result);
-        // console.log(result.hashed_password);
-        // console.log(result.username);
-        // console.log(password);
 
           if(!result || !bcrypt.compareSync(password,result.hashed_password)) {
-            // console.log("error is here");
+
             res.sendStatus(401);
+
           }else{
-            // console.log("else");
+
             req.session.id = result.id;
             req.session.username = result.username;
             req.session.isAdmin = result.admin;
             req.session.created = result.created_at;
 
-            console.log(req.session.username);
-
             res.send(req.session);
           }
-          // res.send('im here');
+
       })
       .catch((err)=>{
         next(err);
