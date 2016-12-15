@@ -5,7 +5,6 @@ const router = express.Router();
 // const ev = require('express-validation');
 // const validations = require('../validations/comments');
 const knex = require('../knex');
-const {decamelizeKeys, camelizeKeys} = require('humps');
 const bcrypt = require('bcrypt');
 
 router.get('/users', (req, res, next) => {
@@ -62,7 +61,7 @@ router.delete('/users/:id', (req, res, next) => {
       if(!result){
         return next();
       }
-      
+
       user = result;
 
       return knex('users')
