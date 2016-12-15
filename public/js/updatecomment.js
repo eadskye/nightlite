@@ -11,20 +11,23 @@ $(document).ready(function() {
     getComments();
 
     function getComments(data) {
-      $.ajax({
-        url: 'http://localhost:8000/comments/users',
-        jsonp: "callback",
-        data: data,
-        type: 'get',
-        success: function(data) {
-            drawComments(data);
-            console.log('success');
-        },
-        error: function() {
-            Materialize.toast('Please login to gain access', 3000);
-            console.log('error');
-        }
-      });
+        $.ajax({
+
+            // url: 'http://localhost:8000/comments/users',
+            url: 'https://nightlited.herokuapp.com/comments/users',
+            jsonp: "callback",
+            data: data,
+            type: 'get',
+            success: function(data) {
+                console.log('success');
+                console.log(data);
+                drawComments(data);
+            },
+            error: function() {
+                Materialize.toast('Please login to gain access', 3000);
+                console.log('error line 26');
+            }
+        });
     }
 
     function drawComments(data) {
@@ -64,6 +67,34 @@ $(document).ready(function() {
     }
 
     function updateComment(id, text) {
+<<<<<<< HEAD
+        let commentid = id;
+        let newcomment = text;
+        var data = {
+            comment: newcomment
+        }
+        console.log(data);
+        console.log(newcomment, text);
+
+        const options = {
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            dataType: 'json',
+            type: 'PATCH',
+            // url: 'http://localhost:8000/comments/' + commentid
+            url: 'https://nightlited.herokuapp.com/comments/' + commentid
+
+        };
+
+        $.ajax(options)
+            .done(() => {
+                console.log('success');
+                getComments(data);
+            })
+            .fail(($xhr) => {
+                console.log('shr response text');
+            });
+=======
       let commentid = id;
       let newcomment = text;
       var data = {
@@ -76,6 +107,7 @@ $(document).ready(function() {
         type: 'PATCH',
         url: 'http://localhost:8000/comments/' + commentid
       };
+>>>>>>> 31a95b63d0b99aa84f1749dfd91d40e20ce33252
 
       $.ajax(options)
         .done(() => {
@@ -91,7 +123,9 @@ $(document).ready(function() {
         const options = {
             contentType: 'application/json',
             type: 'DELETE',
-            url: 'http://localhost:8000/comments/' + id
+            // url: 'http://localhost:8000/comments/' + id
+            url: 'https://nightlited.herokuapp.com/comments/' + id
+
         };
 
         $.ajax(options)
