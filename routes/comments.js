@@ -90,13 +90,14 @@ router.post('/comments', ev(validations.post), (req, res, next) => {
   console.log(req.body);
     knex('comments')
       .insert({
-        user_id: req.body.user_id,
+        user_id: userId,
         observation_id: req.body.observation_id,
         comment: req.body.comment,
         stars: req.body.stars,
       })
       .then(
         res.send('update comment')
+        // res.send(userId);
       )
       .catch((err) => {
         next(err);

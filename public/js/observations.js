@@ -57,7 +57,7 @@ function addComment(comment, stars) {
         data: {
             'observation_id': obsID,
             'comment': comment,
-            'user_id': '2', // TODO: Fix this
+  // TODO: Fix this
             'stars': stars
         },
         // type: 'post', // An alias for method, use type if you're using versions of jQuery prior to 1.9.0.
